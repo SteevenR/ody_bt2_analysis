@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kingshot Bear Trap Stats</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Kingshot – Bear Trap Stats</h1>
+    <p>Analyse des performances des joueurs sur l'événement Bear Trap.</p>
+  </header>
+
+  <main>
+    <section id="summary">
+      <h2>Dernier événement</h2>
+      <div id="last-event-info">
+        <p><strong>Nom :</strong> <span id="last-event-name">-</span></p>
+        <p><strong>Date :</strong> <span id="last-event-date">-</span></p>
+        <p><strong>Joueurs :</strong> <span id="last-event-players-count">-</span></p>
+        <p><strong>Dégâts totaux :</strong> <span id="last-event-total-damage">-</span></p>
+      </div>
+    </section>
+
+    <section id="ranking">
+      <h2>Classement des joueurs (dernier événement)</h2>
+      <table id="ranking-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Joueur</th>
+            <th>Dégâts</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section id="charts">
+      <h2>Graphique des dégâts (dernier événement)</h2>
+      <canvas id="damage-chart" height="120"></canvas>
+    </section>
+
+    <section id="history">
+      <h2>Historique des événements</h2>
+      <ul id="events-list"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Projet perso Steeven – Kingshot Bear Trap Stats</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
