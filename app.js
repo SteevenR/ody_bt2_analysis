@@ -662,6 +662,8 @@ function updateUIText() {
     "page-title": t("title"),
     "page-subtitle": t("subtitle"),
     "language-label": t("language"),
+    "nav-dashboard": t("menu_dashboard"),
+    "manage-players-link": t("menu_manage_players"),
     
     // Dernière section d'événement
     "last-event-label": t("last_event"),
@@ -708,6 +710,8 @@ function updateUIText() {
       el.textContent = text;
     }
   }
+
+  document.title = `${t("title")} – ${t("menu_dashboard")}`;
 }
 
 document.addEventListener("DOMContentLoaded", async () => {

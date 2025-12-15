@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kingshot [ODY] BearTrap 2</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 8px; border-bottom: 1px solid #eee; text-align: left; }
+    .toolbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 10px 0; }
+    input[type="search"] { padding: 8px; width: 300px; }
+    .badge { background:#eef; color:#334; border:1px solid #ccd; border-radius: 4px; padding:2px 6px; font-size:12px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="nav-left">
+        <h1 id="players-title">Gestion des joueurs</h1>
+        <p id="players-subtitle">Visualiser les joueurs détectés, leurs alias et noms par langue.</p>
+      </div>
+      <div class="nav-right">
+        <a href="index.html" id="nav-dashboard-players" class="nav-link">Dashboard</a>
+        <a href="players.html" id="players-nav-link" class="nav-link active">Joueurs</a>
+        <label for="languageSelectPlayers" class="lang-label" id="language-label-players">Langue:</label>
+        <select id="languageSelectPlayers">
+          <option value="en">🇬🇧 English</option>
+          <option value="ko">🇰🇷 한국어</option>
+          <option value="es">🇪🇸 Español</option>
+          <option value="fr">🇫🇷 Français</option>
+          <option value="ru">🇷🇺 Русский</option>
+          <option value="zh">🇨🇳 中文</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="Rechercher id / nom / alias..." />
+      <span id="count" class="badge">0 joueurs</span>
+    </div>
+    <table id="players-table">
+      <thead>
+        <tr>
+          <th id="players-col-id">ID</th>
+          <th id="players-col-language">Langue</th>
+          <th id="players-col-names">Noms (par langue)</th>
+          <th id="players-col-aliases">Alias</th>
+          <th id="players-col-status">Statut</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </main>
+
+  <script>
+    async function getDataPath(filename){
+      const segs = location.pathname.split('/').filter(Boolean);
+      if (segs.includes('web')) return `../data/${filename}`;
+      if (segs.includes('ody_bt2_analysis')) return `./data/${filename}`;
+      return `../data/${filename}`;
+    }
+    async function loadUITranslations(){
+      try{
+        const res = await fetch(await getDataPath('ui_translations.json'));
+        return await res.json();
+      }catch(e){ return {}; }
+    }
+    function getSavedLanguage(){
+      try{ return localStorage.getItem('selectedLanguage') || 'en'; }catch(e){ return 'en'; }
+    }
+    function saveLanguage(lang){
+      try{ localStorage.setItem('selectedLanguage', lang); }catch(e){}
+    }
+    function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));}
+    function renderRow(id, p){
+      const names = p.names_by_language || {}; const aliases = p.aliases || []; const lang=p.language_detected||'';
+      const namesPretty = Object.entries(names).filter(([,v])=>v).map(([k,v])=>`<span class="badge">${k}</span> ${escapeHtml(v)}`).join('<br/>');
+      const aliasesPretty = aliases.map(a=>`<span class="badge">alias</span> ${escapeHtml(a)}`).join('<br/>') || '-';
+      const status = p.pending_review ? '<span class="badge">pending</span>' : '<span class="badge">ok</span>';
+      return `<tr><td>${escapeHtml(id)}</td><td>${escapeHtml(lang)}</td><td>${namesPretty||'-'}</td><td>${aliasesPretty}</td><td>${status}</td></tr>`;
+    }
+    async function load(){
+      const ui = await loadUITranslations();
+      const langSel = document.getElementById('languageSelectPlayers');
+      const current = getSavedLanguage();
+      langSel.value = current;
+      const t = (key)=> (ui[current] && ui[current][key]) ? ui[current][key] : key;
+      const navPlayers = document.getElementById('players-nav-link');
+      const navDashboard = document.getElementById('nav-dashboard-players');
+      const title = document.getElementById('players-title');
+      const subtitle = document.getElementById('players-subtitle');
+      const langLabel = document.getElementById('language-label-players');
+      const searchInput = document.getElementById('search');
+      const colId = document.getElementById('players-col-id');
+      const colLang = document.getElementById('players-col-language');
+      const colNames = document.getElementById('players-col-names');
+      const colAliases = document.getElementById('players-col-aliases');
+      const colStatus = document.getElementById('players-col-status');
+      if (navDashboard) navDashboard.textContent = t('menu_dashboard');
+      if (navPlayers) navPlayers.textContent = t('menu_manage_players');
+      if (title) title.textContent = `${t('title')} – ${t('players')}`;
+      if (subtitle) subtitle.textContent = t('players_subtitle');
+      if (langLabel) langLabel.textContent = t('language') + ':';
+      if (searchInput) searchInput.setAttribute('placeholder', t('players_search_placeholder'));
+      if (colId) colId.textContent = t('players_col_id');
+      if (colLang) colLang.textContent = t('players_col_language');
+      if (colNames) colNames.textContent = t('players_col_names');
+      if (colAliases) colAliases.textContent = t('players_col_aliases');
+      if (colStatus) colStatus.textContent = t('players_col_status');
+      langSel.addEventListener('change',()=>{ saveLanguage(langSel.value); location.reload(); });
+      document.title = `${t('title')} – ${t('players')}`;
+      const url = await getDataPath('player_translations.json');
+      const res = await fetch(url);
+      const store = await res.json();
+      const tbody = document.querySelector('#players-table tbody');
+      const all = Object.entries(store.players||{});
+      const search = document.getElementById('search');
+      const count = document.getElementById('count');
+      function apply(){
+        const q = (search.value||'').toLowerCase();
+        const rows = [];
+        let n=0;
+        for(const [id, p] of all){
+          const hay = [id, (p.language_detected||''), ...(p.aliases||[]), ...Object.values(p.names_by_language||{})].join(' ').toLowerCase();
+          if(!q || hay.includes(q)){
+            rows.push(renderRow(id,p));
+            n++;
+          }
+        }
+        tbody.innerHTML = rows.join('');
+        count.textContent = `${n} joueurs`;
+      }
+      search.addEventListener('input', apply);
+      apply();
+    }
+    load();
+  </script>
+</body>
+</html>

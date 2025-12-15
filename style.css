@@ -9,7 +9,7 @@ body {
 header {
   padding: 20px;
   background: linear-gradient(90deg, #1a1f3b, #4b1b41);
-  text-align: center;
+  text-align: left;
 }
 
 header h1 {
@@ -20,6 +20,53 @@ header h1 {
 header p {
   margin: 8px 0 0;
   color: #ccc;
+}
+
+/* Navigation bar */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.nav-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.nav a.nav-link {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 12px;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 6px;
+  background: rgba(255,255,255,0.06);
+  transition: transform 0.08s ease, background 0.2s ease, border-color 0.2s ease;
+}
+.nav a.nav-link:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.35);
+}
+.nav a.nav-link.active {
+  background: rgba(255,255,255,0.18);
+  border-color: rgba(255,255,255,0.6);
+}
+.nav .lang-label {
+  font-weight: 600;
+}
+.nav select {
+  padding: 8px 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: #0c1020;
+  color: #f5f5f5;
 }
 
 main {

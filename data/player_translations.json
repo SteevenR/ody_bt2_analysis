@@ -1,11 +1,11 @@
 {
   "languages": {
-    "fr": "Français",
-    "en": "English",
-    "es": "Español",
-    "zh": "中文",
-    "ru": "Русский",
-    "ko": "한국어"
+    "fr": "fr",
+    "en": "en",
+    "es": "es",
+    "zh": "zh",
+    "ru": "ru",
+    "ko": "ko"
   },
   "primary_language": "fr",
   "players": {
@@ -81,7 +81,7 @@
     "pl_domination": {
       "names_by_language": {
         "fr": "",
-        "en": "DomInation",
+        "en": "Dom1nation",
         "es": "",
         "zh": "",
         "ru": "",
@@ -120,14 +120,15 @@
       },
       "language_detected": "en",
       "aliases": [
-        "The 1 True King"
+        "The 1 True King",
+        "The ] True King"
       ],
       "pending_review": true
     },
     "pl_tiboun": {
       "names_by_language": {
         "fr": "",
-        "en": "TibOun",
+        "en": "Tib0un",
         "es": "",
         "zh": "",
         "ru": "",
@@ -143,7 +144,8 @@
       },
       "language_detected": "en",
       "aliases": [
-        "TibOun"
+        "TibOun",
+        "Tib0un"
       ],
       "pending_review": true
     },
@@ -284,6 +286,260 @@
         "Menace the Tank"
       ],
       "pending_review": true
+    },
+    "pl_ginny": {
+      "names_by_language": {
+        "fr": "",
+        "en": "Ginny",
+        "es": "",
+        "zh": "",
+        "ru": "",
+        "ko": ""
+      },
+      "transliterations_by_language": {
+        "fr": null,
+        "en": null,
+        "es": null,
+        "zh": null,
+        "ru": null,
+        "ko": null
+      },
+      "language_detected": "en",
+      "aliases": [
+        "Ginny"
+      ],
+      "pending_review": true
+    },
+    "pl_donxo": {
+      "names_by_language": {
+        "fr": "",
+        "en": "Donxo",
+        "es": "",
+        "zh": "",
+        "ru": "",
+        "ko": ""
+      },
+      "transliterations_by_language": {
+        "fr": null,
+        "en": null,
+        "es": null,
+        "zh": null,
+        "ru": null,
+        "ko": null
+      },
+      "language_detected": "en",
+      "aliases": [
+        "Donxo"
+      ],
+      "pending_review": true
+    },
+    "pl_ayman": {
+      "names_by_language": {
+        "fr": "",
+        "en": "Ayman",
+        "es": "",
+        "zh": "",
+        "ru": "",
+        "ko": ""
+      },
+      "transliterations_by_language": {
+        "fr": null,
+        "en": null,
+        "es": null,
+        "zh": null,
+        "ru": null,
+        "ko": null
+      },
+      "language_detected": "en",
+      "aliases": [
+        "Ayman"
+      ],
+      "pending_review": true
+    },
+    "pl_anxiko": {
+      "names_by_language": {
+        "fr": "",
+        "en": "Anxiko",
+        "es": "",
+        "zh": "",
+        "ru": "",
+        "ko": ""
+      },
+      "transliterations_by_language": {
+        "fr": null,
+        "en": null,
+        "es": null,
+        "zh": null,
+        "ru": null,
+        "ko": null
+      },
+      "language_detected": "en",
+      "aliases": [
+        "Anxiko"
+      ],
+      "pending_review": true
+    },
+    "pl_wild_lord": {
+      "names_by_language": {
+        "fr": "",
+        "en": "Wild Lord",
+        "es": "",
+        "zh": "",
+        "ru": "",
+        "ko": ""
+      },
+      "transliterations_by_language": {
+        "fr": null,
+        "en": null,
+        "es": null,
+        "zh": null,
+        "ru": null,
+        "ko": null
+      },
+      "language_detected": "en",
+      "aliases": [
+        "Wild Lord"
+      ],
+      "pending_review": true
+    },
+    "pl_danieladh": {
+      "names_by_language": {
+        "fr": "",
+        "en": "Danieladh",
+        "es": "",
+        "zh": "",
+        "ru": "",
+        "ko": ""
+      },
+      "transliterations_by_language": {
+        "fr": null,
+        "en": null,
+        "es": null,
+        "zh": null,
+        "ru": null,
+        "ko": null
+      },
+      "language_detected": "en",
+      "aliases": [
+        "Danieladh"
+      ],
+      "pending_review": true
+    },
+    "pl_warmachine5e": {
+      "names_by_language": {
+        "fr": "",
+        "en": "Warmachine58",
+        "es": "",
+        "zh": "",
+        "ru": "",
+        "ko": ""
+      },
+      "transliterations_by_language": {
+        "fr": null,
+        "en": null,
+        "es": null,
+        "zh": null,
+        "ru": null,
+        "ko": null
+      },
+      "language_detected": "en",
+      "aliases": [
+        "Warmachine5e",
+        "Warmachine58"
+      ],
+      "pending_review": true
+    },
+    "pl_rapportde_combat": {
+      "names_by_language": {
+        "fr": "",
+        "en": "Rapportde Combat",
+        "es": "",
+        "zh": "",
+        "ru": "",
+        "ko": ""
+      },
+      "transliterations_by_language": {
+        "fr": null,
+        "en": null,
+        "es": null,
+        "zh": null,
+        "ru": null,
+        "ko": null
+      },
+      "language_detected": "en",
+      "aliases": [
+        "Rapportde Combat"
+      ],
+      "pending_review": true
+    },
+    "pl_rapportdecombat": {
+      "names_by_language": {
+        "fr": "",
+        "en": "RapportdeCombat",
+        "es": "",
+        "zh": "",
+        "ru": "",
+        "ko": ""
+      },
+      "transliterations_by_language": {
+        "fr": null,
+        "en": null,
+        "es": null,
+        "zh": null,
+        "ru": null,
+        "ko": null
+      },
+      "language_detected": "en",
+      "aliases": [
+        "RapportdeCombat"
+      ],
+      "pending_review": true
+    },
+    "pl_rapportdacombat": {
+      "names_by_language": {
+        "fr": "",
+        "en": "RapportdaCombat",
+        "es": "",
+        "zh": "",
+        "ru": "",
+        "ko": ""
+      },
+      "transliterations_by_language": {
+        "fr": null,
+        "en": null,
+        "es": null,
+        "zh": null,
+        "ru": null,
+        "ko": null
+      },
+      "language_detected": "en",
+      "aliases": [
+        "RapportdaCombat"
+      ],
+      "pending_review": true
+    },
+    "pl_the_true_king": {
+      "names_by_language": {
+        "fr": "",
+        "en": "The ] True King",
+        "es": "",
+        "zh": "",
+        "ru": "",
+        "ko": ""
+      },
+      "transliterations_by_language": {
+        "fr": null,
+        "en": null,
+        "es": null,
+        "zh": null,
+        "ru": null,
+        "ko": null
+      },
+      "language_detected": "en",
+      "aliases": [
+        "The ] True King"
+      ],
+      "pending_review": true
     }
   },
   "alias_to_id": {
@@ -298,6 +554,17 @@
     "sky": "pl_sky",
     "money": "pl_money",
     "samiwalksalone": "pl_samiwalksalone",
-    "menace the tank": "pl_menace_the_tank"
+    "menace the tank": "pl_menace_the_tank",
+    "ginny": "pl_ginny",
+    "donxo": "pl_donxo",
+    "ayman": "pl_ayman",
+    "anxiko": "pl_anxiko",
+    "wild lord": "pl_wild_lord",
+    "danieladh": "pl_danieladh",
+    "warmachine5e": "pl_warmachine5e",
+    "rapportde combat": "pl_rapportde_combat",
+    "rapportdecombat": "pl_rapportdecombat",
+    "rapportdacombat": "pl_rapportdacombat",
+    "the true king": "pl_the_true_king"
   }
 }
