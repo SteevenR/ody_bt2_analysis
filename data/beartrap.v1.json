@@ -15,7 +15,7 @@
               "canonical_id": "pl_ogtomatoguy",
               "name": "OGTomatoGuy",
               "name_original": "OGTomatoGuy",
-              "matched_by": "alias",
+              "matched_by": "auto",
               "language_detected": "en",
               "damage": 8561295,
               "is_leader": false
@@ -33,7 +33,7 @@
               "canonical_id": "pl_korea_machine",
               "name": "Korea Machine",
               "name_original": "Korea Machine",
-              "matched_by": "alias",
+              "matched_by": "auto",
               "language_detected": "en",
               "damage": 7342282,
               "is_leader": false
@@ -42,7 +42,7 @@
               "canonical_id": "pl_domination",
               "name": "DomInation",
               "name_original": "DomInation",
-              "matched_by": "alias",
+              "matched_by": "auto",
               "language_detected": "en",
               "damage": 6813002,
               "is_leader": false
@@ -51,7 +51,7 @@
               "canonical_id": "pl_the_1_true_king",
               "name": "The 1 True King",
               "name_original": "The 1 True King",
-              "matched_by": "alias",
+              "matched_by": "auto",
               "language_detected": "en",
               "damage": 6618359,
               "is_leader": false
@@ -60,7 +60,7 @@
               "canonical_id": "pl_tiboun",
               "name": "TibOun",
               "name_original": "TibOun",
-              "matched_by": "alias",
+              "matched_by": "auto",
               "language_detected": "en",
               "damage": 6230174,
               "is_leader": false
@@ -69,7 +69,7 @@
               "canonical_id": "pl_menace_ventura",
               "name": "Menace Ventura",
               "name_original": "Menace Ventura",
-              "matched_by": "alias",
+              "matched_by": "auto",
               "language_detected": "en",
               "damage": 6230174,
               "is_leader": false
@@ -78,7 +78,7 @@
               "canonical_id": "pl_lord_goldwater",
               "name": "Lord Goldwater",
               "name_original": "Lord Goldwater",
-              "matched_by": "alias",
+              "matched_by": "auto",
               "language_detected": "en",
               "damage": 6221383,
               "is_leader": false
@@ -87,7 +87,7 @@
               "canonical_id": "pl_sky",
               "name": "Sky",
               "name_original": "Sky",
-              "matched_by": "alias",
+              "matched_by": "auto",
               "language_detected": "en",
               "damage": 5280073,
               "is_leader": false
@@ -96,7 +96,7 @@
               "canonical_id": "pl_money",
               "name": "Money",
               "name_original": "Money",
-              "matched_by": "alias",
+              "matched_by": "auto",
               "language_detected": "en",
               "damage": 5178733,
               "is_leader": false
@@ -105,7 +105,7 @@
               "canonical_id": "pl_samiwalksalone",
               "name": "SamiWalksAlone",
               "name_original": "SamiWalksAlone",
-              "matched_by": "alias",
+              "matched_by": "auto",
               "language_detected": "en",
               "damage": 5168370,
               "is_leader": false
@@ -114,7 +114,7 @@
               "canonical_id": "pl_menace_the_tank",
               "name": "Menace the Tank",
               "name_original": "Menace the Tank",
-              "matched_by": "alias",
+              "matched_by": "auto",
               "language_detected": "en",
               "damage": 4817835,
               "is_leader": false
@@ -123,7 +123,7 @@
         },
         {
           "id": "2025-12-11-rally-2",
-          "leader": "OGTomatoGuy",
+          "leader": "Rapportde Combat",
           "participants": [
             {
               "canonical_id": "pl_ogtomatoguy",
@@ -132,7 +132,7 @@
               "matched_by": "alias",
               "language_detected": "en",
               "damage": 12744009,
-              "is_leader": true
+              "is_leader": false
             },
             {
               "canonical_id": "pl_buffy",
@@ -183,7 +183,7 @@
               "canonical_id": "pl_ginny",
               "name": "Ginny",
               "name_original": "Ginny",
-              "matched_by": "alias",
+              "matched_by": "auto",
               "language_detected": "en",
               "damage": 8200147,
               "is_leader": false
@@ -228,7 +228,7 @@
         },
         {
           "id": "2025-12-11-rally-3",
-          "leader": null,
+          "leader": "Rapportde Combat",
           "participants": [
             {
               "canonical_id": "pl_ogtomatoguy",
@@ -243,7 +243,7 @@
               "canonical_id": "pl_donxo",
               "name": "Donxo",
               "name_original": "Donxo",
-              "matched_by": "alias",
+              "matched_by": "auto",
               "language_detected": "en",
               "damage": 3347817,
               "is_leader": false
@@ -270,7 +270,7 @@
               "canonical_id": "pl_ayman",
               "name": "Ayman",
               "name_original": "Ayman",
-              "matched_by": "alias",
+              "matched_by": "auto",
               "language_detected": "en",
               "damage": 2872372,
               "is_leader": false
@@ -279,7 +279,7 @@
               "canonical_id": "pl_anxiko",
               "name": "Anxiko",
               "name_original": "Anxiko",
-              "matched_by": "alias",
+              "matched_by": "auto",
               "language_detected": "en",
               "damage": 2846059,
               "is_leader": false
@@ -333,7 +333,7 @@
         },
         {
           "id": "2025-12-11-rally-4",
-          "leader": "Donxo",
+          "leader": "Rapportde Combat",
           "participants": [
             {
               "canonical_id": "pl_ogtomatoguy",
@@ -423,7 +423,7 @@
               "matched_by": "alias",
               "language_detected": "en",
               "damage": 2713631,
-              "is_leader": true
+              "is_leader": false
             },
             {
               "canonical_id": "pl_menace_the_tank",
@@ -447,7 +447,7 @@
         },
         {
           "id": "2025-12-11-rally-5",
-          "leader": "TibOun",
+          "leader": "Rapportde Combat",
           "participants": [
             {
               "canonical_id": "pl_ogtomatoguy",
@@ -501,7 +501,7 @@
               "matched_by": "alias",
               "language_detected": "en",
               "damage": 2651293,
-              "is_leader": true
+              "is_leader": false
             },
             {
               "canonical_id": "pl_korea_machine",
@@ -525,7 +525,7 @@
               "canonical_id": "pl_wild_lord",
               "name": "Wild Lord",
               "name_original": "Wild Lord",
-              "matched_by": "alias",
+              "matched_by": "auto",
               "language_detected": "en",
               "damage": 1744008,
               "is_leader": false
@@ -543,7 +543,7 @@
         },
         {
           "id": "2025-12-11-rally-6",
-          "leader": "Korea Machine",
+          "leader": "Rapportde Combat",
           "participants": [
             {
               "canonical_id": "pl_the_1_true_king",
@@ -597,7 +597,7 @@
               "matched_by": "alias",
               "language_detected": "en",
               "damage": 1012885,
-              "is_leader": true
+              "is_leader": false
             },
             {
               "canonical_id": "pl_samiwalksalone",
@@ -612,7 +612,7 @@
         },
         {
           "id": "2025-12-11-rally-7",
-          "leader": "SamiWalksAlone",
+          "leader": "Rapportde Combat",
           "participants": [
             {
               "canonical_id": "pl_ogtomatoguy",
@@ -693,13 +693,13 @@
               "matched_by": "alias",
               "language_detected": "en",
               "damage": 436464,
-              "is_leader": true
+              "is_leader": false
             }
           ]
         },
         {
           "id": "2025-12-11-rally-8",
-          "leader": "OGTomatoGuy",
+          "leader": "Rapportde Combat",
           "participants": [
             {
               "canonical_id": "pl_ogtomatoguy",
@@ -708,7 +708,7 @@
               "matched_by": "alias",
               "language_detected": "en",
               "damage": 10535610,
-              "is_leader": true
+              "is_leader": false
             },
             {
               "canonical_id": "pl_domination",
@@ -813,7 +813,7 @@
         },
         {
           "id": "2025-12-11-rally-9",
-          "leader": null,
+          "leader": "RapportdeCombat",
           "participants": [
             {
               "canonical_id": "pl_ogtomatoguy",
@@ -918,7 +918,7 @@
               "canonical_id": "pl_danieladh",
               "name": "Danieladh",
               "name_original": "Danieladh",
-              "matched_by": "alias",
+              "matched_by": "auto",
               "language_detected": "en",
               "damage": 1074865,
               "is_leader": false
@@ -927,7 +927,7 @@
         },
         {
           "id": "2025-12-11-rally-10",
-          "leader": "Donxo",
+          "leader": "RapportdeCombat",
           "participants": [
             {
               "canonical_id": "pl_ogtomatoguy",
@@ -999,7 +999,7 @@
               "matched_by": "alias",
               "language_detected": "en",
               "damage": 3145108,
-              "is_leader": true
+              "is_leader": false
             },
             {
               "canonical_id": "pl_samiwalksalone",
@@ -1041,7 +1041,7 @@
         },
         {
           "id": "2025-12-11-rally-11",
-          "leader": "TibOun",
+          "leader": "RapportdeCombat",
           "participants": [
             {
               "canonical_id": "pl_ogtomatoguy",
@@ -1095,7 +1095,7 @@
               "matched_by": "alias",
               "language_detected": "en",
               "damage": 2328652,
-              "is_leader": true
+              "is_leader": false
             },
             {
               "canonical_id": "pl_menace_the_tank",
@@ -1107,10 +1107,10 @@
               "is_leader": false
             },
             {
-              "canonical_id": "pl_warmachine58",
-              "name": "Warmachine58",
+              "canonical_id": "pl_warmachine5e",
+              "name": "Warmachine5e",
               "name_original": "Warmachine5e",
-              "matched_by": "alias",
+              "matched_by": "auto",
               "language_detected": "en",
               "damage": 2130801,
               "is_leader": false
@@ -1137,7 +1137,7 @@
         },
         {
           "id": "2025-12-11-rally-12",
-          "leader": "SamiWalksAlone",
+          "leader": "Rapportde Combat",
           "participants": [
             {
               "canonical_id": "pl_donxo",
@@ -1227,7 +1227,7 @@
               "matched_by": "alias",
               "language_detected": "en",
               "damage": 421784,
-              "is_leader": true
+              "is_leader": false
             },
             {
               "canonical_id": "pl_lord_goldwater",
@@ -1242,7 +1242,7 @@
         },
         {
           "id": "2025-12-11-rally-13",
-          "leader": "Korea Machine",
+          "leader": "RapportdaCombat",
           "participants": [
             {
               "canonical_id": "pl_money",
@@ -1296,7 +1296,7 @@
               "matched_by": "alias",
               "language_detected": "en",
               "damage": 1325639,
-              "is_leader": true
+              "is_leader": false
             },
             {
               "canonical_id": "pl_domination",
@@ -1329,7 +1329,7 @@
         },
         {
           "id": "2025-12-11-rally-14",
-          "leader": null,
+          "leader": "Rapportde Combat",
           "participants": [
             {
               "canonical_id": "pl_ogtomatoguy",
@@ -1409,7 +1409,7 @@
               "name_original": "Money",
               "matched_by": "alias",
               "language_detected": "en",
-              "damage": 1607448,
+              "damage": 81607448,
               "is_leader": false
             },
             {
@@ -1443,7 +1443,7 @@
         },
         {
           "id": "2025-12-11-rally-15",
-          "leader": "Donxo",
+          "leader": "Rapportde Combat",
           "participants": [
             {
               "canonical_id": "pl_the_1_true_king",
@@ -1506,7 +1506,7 @@
               "matched_by": "alias",
               "language_detected": "en",
               "damage": 3409112,
-              "is_leader": true
+              "is_leader": false
             },
             {
               "canonical_id": "pl_wild_lord",
@@ -1557,7 +1557,7 @@
         },
         {
           "id": "2025-12-11-rally-16",
-          "leader": "DomInation",
+          "leader": "Rapportde Combat",
           "participants": [
             {
               "canonical_id": "pl_buffy",
@@ -1575,7 +1575,7 @@
               "matched_by": "alias",
               "language_detected": "en",
               "damage": 4784764,
-              "is_leader": true
+              "is_leader": false
             },
             {
               "canonical_id": "pl_donxo",
@@ -1671,7 +1671,7 @@
         },
         {
           "id": "2025-12-11-rally-17",
-          "leader": "TibOun",
+          "leader": "Rapportde Combat",
           "participants": [
             {
               "canonical_id": "pl_korea_machine",
@@ -1725,7 +1725,7 @@
               "matched_by": "alias",
               "language_detected": "en",
               "damage": 2358936,
-              "is_leader": true
+              "is_leader": false
             },
             {
               "canonical_id": "pl_donxo",
@@ -1776,7 +1776,7 @@
         },
         {
           "id": "2025-12-11-rally-18",
-          "leader": "SamiWalksAlone",
+          "leader": "Rapportde Combat",
           "participants": [
             {
               "canonical_id": "pl_ogtomatoguy",
@@ -1857,7 +1857,7 @@
               "matched_by": "alias",
               "language_detected": "en",
               "damage": 386154,
-              "is_leader": true
+              "is_leader": false
             },
             {
               "canonical_id": "pl_menace_ventura",
@@ -1881,7 +1881,7 @@
         },
         {
           "id": "2025-12-11-rally-19",
-          "leader": "Korea Machine",
+          "leader": "Rapportde Combat",
           "participants": [
             {
               "canonical_id": "pl_ogtomatoguy",
@@ -1917,7 +1917,7 @@
               "matched_by": "alias",
               "language_detected": "en",
               "damage": 1197785,
-              "is_leader": true
+              "is_leader": false
             },
             {
               "canonical_id": "pl_menace_ventura",
@@ -1968,7 +1968,7 @@
         },
         {
           "id": "2025-12-11-rally-20",
-          "leader": "Buffy",
+          "leader": "Rapportde Combat",
           "participants": [
             {
               "canonical_id": "pl_buffy",
@@ -1977,7 +1977,7 @@
               "matched_by": "alias",
               "language_detected": "en",
               "damage": 9516178,
-              "is_leader": true
+              "is_leader": false
             },
             {
               "canonical_id": "pl_domination",
@@ -2082,7 +2082,7 @@
         },
         {
           "id": "2025-12-11-rally-21",
-          "leader": null,
+          "leader": "RapportdaCombat",
           "participants": [
             {
               "canonical_id": "pl_korea_machine",
@@ -2130,10 +2130,10 @@
               "is_leader": false
             },
             {
-              "canonical_id": "pl_the_1_true_king",
-              "name": "The 1 True King",
+              "canonical_id": "pl_the_true_king",
+              "name": "The ] True King",
               "name_original": "The ] True King",
-              "matched_by": "alias",
+              "matched_by": "auto",
               "language_detected": "en",
               "damage": 1900901,
               "is_leader": false
@@ -2196,7 +2196,7 @@
         },
         {
           "id": "2025-12-11-rally-22",
-          "leader": "Donxo",
+          "leader": "RapportdaCombat",
           "participants": [
             {
               "canonical_id": "pl_the_1_true_king",
@@ -2241,7 +2241,7 @@
               "matched_by": "alias",
               "language_detected": "en",
               "damage": 3141503,
-              "is_leader": true
+              "is_leader": false
             },
             {
               "canonical_id": "pl_menace_ventura",
@@ -2310,7 +2310,7 @@
         },
         {
           "id": "2025-12-11-rally-23",
-          "leader": "TibOun",
+          "leader": "Rapportde Combat",
           "participants": [
             {
               "canonical_id": "pl_the_1_true_king",
@@ -2391,7 +2391,7 @@
               "matched_by": "alias",
               "language_detected": "en",
               "damage": 2453276,
-              "is_leader": true
+              "is_leader": false
             },
             {
               "canonical_id": "pl_ginny",
@@ -2406,7 +2406,7 @@
         },
         {
           "id": "2025-12-11-rally-24",
-          "leader": "Buffy",
+          "leader": "Rapportde Combat",
           "participants": [
             {
               "canonical_id": "pl_ogtomatoguy",
@@ -2424,7 +2424,7 @@
               "matched_by": "alias",
               "language_detected": "en",
               "damage": 6345178,
-              "is_leader": true
+              "is_leader": false
             },
             {
               "canonical_id": "pl_tiboun",
@@ -2520,7 +2520,7 @@
         },
         {
           "id": "2025-12-11-rally-25",
-          "leader": "OGTomatoGuy",
+          "leader": "RapportdeCombat",
           "participants": [
             {
               "canonical_id": "pl_ogtomatoguy",
@@ -2529,7 +2529,7 @@
               "matched_by": "alias",
               "language_detected": "en",
               "damage": 12996716,
-              "is_leader": true
+              "is_leader": false
             },
             {
               "canonical_id": "pl_buffy",
@@ -2634,7 +2634,7 @@
         },
         {
           "id": "2025-12-11-rally-26",
-          "leader": null,
+          "leader": "RapportdeCombat",
           "participants": [
             {
               "canonical_id": "pl_tiboun",
@@ -2748,7 +2748,7 @@
         },
         {
           "id": "2025-12-11-rally-27",
-          "leader": "DomInation",
+          "leader": "RapportdeCombat",
           "participants": [
             {
               "canonical_id": "pl_ogtomatoguy",
@@ -2766,7 +2766,7 @@
               "matched_by": "alias",
               "language_detected": "en",
               "damage": 4206932,
-              "is_leader": true
+              "is_leader": false
             },
             {
               "canonical_id": "pl_tiboun",
@@ -2864,6 +2864,11 @@
       "source_hash": "22c745af96ae0fc988b2b5ed625ce291ad15cf2d",
       "players": [
         {
+          "id": "pl_money",
+          "name": "Money",
+          "total_damage": 124479039
+        },
+        {
           "id": "pl_ogtomatoguy",
           "name": "OGTomatoGuy",
           "total_damage": 113363715
@@ -2891,7 +2896,7 @@
         {
           "id": "pl_the_1_true_king",
           "name": "The 1 True King",
-          "total_damage": 69837404
+          "total_damage": 67936503
         },
         {
           "id": "pl_donxo",
@@ -2912,11 +2917,6 @@
           "id": "pl_lord_goldwater",
           "name": "Lord Goldwater",
           "total_damage": 45586513
-        },
-        {
-          "id": "pl_money",
-          "name": "Money",
-          "total_damage": 44479039
         },
         {
           "id": "pl_anxiko",
@@ -2954,9 +2954,14 @@
           "total_damage": 11607463
         },
         {
-          "id": "pl_warmachine58",
-          "name": "Warmachine58",
+          "id": "pl_warmachine5e",
+          "name": "Warmachine5e",
           "total_damage": 2130801
+        },
+        {
+          "id": "pl_the_true_king",
+          "name": "The ] True King",
+          "total_damage": 1900901
         }
       ]
     }

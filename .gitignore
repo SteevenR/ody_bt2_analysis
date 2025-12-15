@@ -2,3 +2,17 @@
 data/beartrap.backup.json
 
 data/debug_rows/
+
+data/debug_roi_tests/
+
+__pycache__/
+
+data/debug_avatar/
+
+data/debug_tl50/
+
+data/damage_aggregation_log.jsonl
+
+data/flag_metrics.jsonl
+
+data/ocr_extraction_log.jsonl

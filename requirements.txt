@@ -2,3 +2,6 @@ easyocr
 opencv-python
 pandas
 Pillow
+torch
+torchvision
+torchaudio

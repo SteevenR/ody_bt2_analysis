@@ -151,15 +151,22 @@ function colorPalette(i) {
 function updateLastEventInfo(event) {
   document.getElementById("last-event-name").textContent = event.name;
   document.getElementById("last-event-date").textContent = event.date;
+  document.getElementById("last-event-rallies-count").textContent =
+    event.rally_count_total || (event.rallies ? event.rallies.length : 0);
+  
+  // Count unique players from all rallies
+  const uniquePlayerIds = new Set();
+  if (event.rallies) {
+    for (const rally of event.rallies) {
+      for (const p of rally.participants || []) {
+        uniquePlayerIds.add(p.canonical_id || p.id || p.name);
+      }
+    }
+  }
   document.getElementById("last-event-players-count").textContent =
-    event.players.length;
-
-  const totalDamage = event.players.reduce(
-    (sum, p) => sum + (p.total_damage || 0),
-    0
-  );
+    uniquePlayerIds.size;
   document.getElementById("last-event-total-damage").textContent =
-    formatDamage(totalDamage);
+    formatDamage(event.alliance_total_damage || 0);
 }
 
 function updateRankingTable(event) {
@@ -669,8 +676,9 @@ function updateUIText() {
     "last-event-label": t("last_event"),
     "last-event-name-label": t("event_name"),
     "last-event-date-label": t("date"),
+    "last-event-rallies-label": t("rallies"),
     "last-event-players-label": t("players"),
-    "last-event-damage-label": t("total_damage"),
+    "last-event-damage-label": t("alliance_total_damage"),
     
     // Tableau de classement
     "ranking-title": t("ranking"),

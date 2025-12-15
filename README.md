@@ -111,11 +111,11 @@ Le système détecte automatiquement la langue d'un nom de joueur et gère les t
     **Fichier:** `.github/workflows/deploy.yml`
 
     **Triggers:**
-    - Push vers `main` + changement dans `beartrap_data/`, `data/`, ou `analyse_beartrap.py`
+    - Push vers `main` + changement dans `beartrap_data/`, `data/`, ou `beartrap_analysis_parallel.py`
     - Manuel: Actions → "Run workflow"
 
     **Étapes:**
-    1. Run `python analyse_beartrap.py`
+    1. Run `python beartrap_analysis_parallel.py`
     2. Commit `data/*.json`, `player_translations.json` back to `main`
     3. Copy `web/*` + `data/*` to `deploy/`
     4. Push to `gh-pages` branch
@@ -129,7 +129,7 @@ Le système détecte automatiquement la langue d'un nom de joueur et gère les t
 
     Après une modification du code (extraction, nettoyage, etc.):
 
-    - [ ] Tester localement: `python analyse_beartrap.py`
+    - [ ] Tester localement: `python beartrap_analysis_parallel.py`
     - [ ] Inspecter `data/ocr_extraction_log.jsonl` pour les erreurs
     - [ ] Vérifier `data/player_translations.json` pour les nouveaux joueurs
     - [ ] Ouvrir dashboard local: `python -m http.server 8000`
@@ -152,7 +152,7 @@ Le système détecte automatiquement la langue d'un nom de joueur et gère les t
 
 ## Fichiers clés
 
-- ``analyse_beartrap.py``  Pipeline complet (calibration  segmentation  OCR  JSON multilingue).
+- ``beartrap_analysis_parallel.py``  Pipeline complet (parallèle: calibration, segmentation, OCR, JSON multilingue).
 - ``web/index.html``  Page web avec sections interactives.
 - ``web/translations.html``  Gestion des noms multilingues des joueurs.
 - ``web/app.js``  Chargement JSON, agrégations, graphes Chart.js.

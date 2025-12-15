@@ -81,7 +81,7 @@
     "pl_domination": {
       "names_by_language": {
         "fr": "",
-        "en": "Dom1nation",
+        "en": "DomInation",
         "es": "",
         "zh": "",
         "ru": "",
@@ -120,8 +120,7 @@
       },
       "language_detected": "en",
       "aliases": [
-        "The 1 True King",
-        "The ] True King"
+        "The 1 True King"
       ],
       "pending_review": true
     },
@@ -144,8 +143,7 @@
       },
       "language_detected": "en",
       "aliases": [
-        "TibOun",
-        "Tib0un"
+        "TibOun"
       ],
       "pending_review": true
     },
@@ -425,7 +423,7 @@
       ],
       "pending_review": true
     },
-    "pl_warmachine5e": {
+    "pl_warmachine58": {
       "names_by_language": {
         "fr": "",
         "en": "Warmachine58",
@@ -469,6 +467,10 @@
     "anxiko": "pl_anxiko",
     "wild lord": "pl_wild_lord",
     "danieladh": "pl_danieladh",
-    "warmachine5e": "pl_warmachine5e"
+    "warmachine5e": "pl_warmachine58",
+    "rapportde combat": "pl_rapportde_combat",
+    "rapportdecombat": "pl_rapportdecombat",
+    "rapportdacombat": "pl_rapportdacombat",
+    "the true king": "pl_the_1_true_king"
   }
 }
