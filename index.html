@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kingshot Bear Trap Stats</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+</head>
+<body>
+  <header>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 id="page-title">Kingshot – Bear Trap Stats</h1>
+        <p id="page-subtitle">Analyse des performances des joueurs sur l'événement Bear Trap.</p>
+      </div>
+      <div style="text-align: right;">
+        <label for="languageSelect" style="margin-right: 10px; font-weight: bold;" id="language-label">Langue:</label>
+        <select id="languageSelect" style="padding: 8px; font-size: 14px;">
+          <option value="fr">🇫🇷 Français</option>
+          <option value="en">🇬🇧 English</option>
+          <option value="es">🇪🇸 Español</option>
+          <option value="zh">🇨🇳 中文</option>
+          <option value="ru">🇷🇺 Русский</option>
+          <option value="ko">🇰🇷 한국어</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="summary">
+      <h2 id="last-event-label">Dernier événement</h2>
+      <div id="last-event-info">
+        <p><strong id="last-event-name-label">Nom :</strong> <span id="last-event-name">-</span></p>
+        <p><strong id="last-event-date-label">Date :</strong> <span id="last-event-date">-</span></p>
+        <p><strong id="last-event-players-label">Joueurs :</strong> <span id="last-event-players-count">-</span></p>
+        <p><strong id="last-event-damage-label">Dégâts totaux :</strong> <span id="last-event-total-damage">-</span></p>
+      </div>
+    </section>
+
+    <section id="ranking">
+      <h2 id="ranking-title">Classement des joueurs (dernier événement)</h2>
+      <table id="ranking-table">
+        <thead>
+          <tr>
+            <th id="ranking-rank-header">#</th>
+            <th id="ranking-player-header">Joueur</th>
+            <th id="ranking-damage-header">Dégâts</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section id="charts">
+      <h2 id="damage-chart-title">Graphique des dégâts (dernier événement)</h2>
+      <canvas id="damage-chart" height="120"></canvas>
+    </section>
+
+    <section id="events-timeseries-section">
+      <h2 id="events-evolution-title">Évolution des événements</h2>
+      <div class="controls">
+        <label><input type="checkbox" id="toggleDamage" checked /> <span id="toggle-damage-label">Dégâts totaux</span></label>
+        <label><input type="checkbox" id="toggleRallies" checked /> <span id="toggle-rallies-label">Ralliements</span></label>
+        <label><input type="checkbox" id="togglePlayers" checked /> <span id="toggle-players-label">Joueurs présents</span></label>
+      </div>
+      <canvas id="events-timeseries" height="140"></canvas>
+    </section>
+
+    <section id="players-over-time-section">
+      <h2 id="players-over-time-title">Évolution des joueurs (Top N)</h2>
+      <div class="controls">
+        <label for="topNSelect" id="topN-label">Top N:</label>
+        <select id="topNSelect">
+          <option value="5">5</option>
+          <option value="10" selected>10</option>
+          <option value="15">15</option>
+        </select>
+      </div>
+      <canvas id="players-over-time" height="180"></canvas>
+    </section>
+
+    <section id="leader-analytics-section">
+      <h2 id="leader-analytics-title">Leader – Totaux des ralliements</h2>
+      <div class="controls">
+        <label for="leaderSelect" id="leaderSelect-label">Leader:</label>
+        <select id="leaderSelect"></select>
+        <label><input type="checkbox" id="leaderShowRallies" /> <span id="leaderShowRallies-label">Afficher les ralliements (points)</span></label>
+      </div>
+      <canvas id="leader-rallies-over-time" height="140"></canvas>
+    </section>
+
+    <section id="player-detail-section">
+      <h2 id="player-detail-title">Joueur – Meilleur ralliement par événement</h2>
+      <div class="controls">
+        <label for="playerSelect" id="playerSelect-label">Joueur:</label>
+        <select id="playerSelect"></select>
+      </div>
+      <canvas id="player-max-rally" height="120"></canvas>
+      <h3 id="playerMaxRally-label">Détails</h3>
+      <table id="player-max-table">
+        <thead>
+          <tr>
+            <th id="player-detail-date-header">Date</th>
+            <th id="player-detail-rally-header">Ralliement</th>
+            <th id="player-detail-leader-header">Leader</th>
+            <th id="player-detail-damage-header">Dégâts</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p id="footer-text">Projet perso Steeven – Kingshot Bear Trap Stats</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

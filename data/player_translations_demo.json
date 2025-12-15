@@ -1,0 +1,57 @@
+{
+  "languages": {
+    "fr": "Français",
+    "en": "English",
+    "es": "Español",
+    "zh": "中文",
+    "ru": "Русский",
+    "ko": "한국어"
+  },
+  "primary_language": "fr",
+  "players": {
+    "pl_buffy": {
+      "name": "Buffy",
+      "language": "en",
+      "transliteration": null,
+      "aliases": ["Buffy"],
+      "pending_review": false
+    },
+    "pl_alexandra": {
+      "name": "Александра",
+      "language": "ru",
+      "transliteration": "Aleksandra",
+      "aliases": ["Александра", "Alex"],
+      "pending_review": false
+    },
+    "pl_zhang_wei": {
+      "name": "张伟",
+      "language": "zh",
+      "transliteration": "Zhāng Wěi",
+      "aliases": ["张伟"],
+      "pending_review": false
+    },
+    "pl_min_jun": {
+      "name": "민준",
+      "language": "ko",
+      "transliteration": "Min-jun",
+      "aliases": ["민준"],
+      "pending_review": false
+    },
+    "pl_jose": {
+      "name": "José María",
+      "language": "en",
+      "transliteration": null,
+      "aliases": ["José María", "Jose"],
+      "pending_review": false
+    }
+  },
+  "alias_to_id": {
+    "buffy": "pl_buffy",
+    "aleksandra": "pl_alexandra",
+    "alex": "pl_alexandra",
+    "zhang wei": "pl_zhang_wei",
+    "min jun": "pl_min_jun",
+    "jose maria": "pl_jose",
+    "jose": "pl_jose"
+  }
+}

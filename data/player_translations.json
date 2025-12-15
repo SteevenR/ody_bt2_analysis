@@ -1,0 +1,303 @@
+{
+  "languages": {
+    "fr": "Français",
+    "en": "English",
+    "es": "Español",
+    "zh": "中文",
+    "ru": "Русский",
+    "ko": "한국어"
+  },
+  "primary_language": "fr",
+  "players": {
+    "pl_buffy": {
+      "names_by_language": {
+        "fr": "",
+        "en": "Buffy",
+        "es": "",
+        "zh": "",
+        "ru": "",
+        "ko": ""
+      },
+      "transliterations_by_language": {
+        "fr": null,
+        "en": null,
+        "es": null,
+        "zh": null,
+        "ru": null,
+        "ko": null
+      },
+      "language_detected": "en",
+      "aliases": [
+        "Buffy"
+      ],
+      "pending_review": true
+    },
+    "pl_ogtomatoguy": {
+      "names_by_language": {
+        "fr": "",
+        "en": "OGTomatoGuy",
+        "es": "",
+        "zh": "",
+        "ru": "",
+        "ko": ""
+      },
+      "transliterations_by_language": {
+        "fr": null,
+        "en": null,
+        "es": null,
+        "zh": null,
+        "ru": null,
+        "ko": null
+      },
+      "language_detected": "en",
+      "aliases": [
+        "OGTomatoGuy"
+      ],
+      "pending_review": true
+    },
+    "pl_korea_machine": {
+      "names_by_language": {
+        "fr": "",
+        "en": "Korea Machine",
+        "es": "",
+        "zh": "",
+        "ru": "",
+        "ko": ""
+      },
+      "transliterations_by_language": {
+        "fr": null,
+        "en": null,
+        "es": null,
+        "zh": null,
+        "ru": null,
+        "ko": null
+      },
+      "language_detected": "en",
+      "aliases": [
+        "Korea Machine"
+      ],
+      "pending_review": true
+    },
+    "pl_domination": {
+      "names_by_language": {
+        "fr": "",
+        "en": "DomInation",
+        "es": "",
+        "zh": "",
+        "ru": "",
+        "ko": ""
+      },
+      "transliterations_by_language": {
+        "fr": null,
+        "en": null,
+        "es": null,
+        "zh": null,
+        "ru": null,
+        "ko": null
+      },
+      "language_detected": "en",
+      "aliases": [
+        "DomInation"
+      ],
+      "pending_review": true
+    },
+    "pl_the_1_true_king": {
+      "names_by_language": {
+        "fr": "",
+        "en": "The 1 True King",
+        "es": "",
+        "zh": "",
+        "ru": "",
+        "ko": ""
+      },
+      "transliterations_by_language": {
+        "fr": null,
+        "en": null,
+        "es": null,
+        "zh": null,
+        "ru": null,
+        "ko": null
+      },
+      "language_detected": "en",
+      "aliases": [
+        "The 1 True King"
+      ],
+      "pending_review": true
+    },
+    "pl_tiboun": {
+      "names_by_language": {
+        "fr": "",
+        "en": "TibOun",
+        "es": "",
+        "zh": "",
+        "ru": "",
+        "ko": ""
+      },
+      "transliterations_by_language": {
+        "fr": null,
+        "en": null,
+        "es": null,
+        "zh": null,
+        "ru": null,
+        "ko": null
+      },
+      "language_detected": "en",
+      "aliases": [
+        "TibOun"
+      ],
+      "pending_review": true
+    },
+    "pl_menace_ventura": {
+      "names_by_language": {
+        "fr": "",
+        "en": "Menace Ventura",
+        "es": "",
+        "zh": "",
+        "ru": "",
+        "ko": ""
+      },
+      "transliterations_by_language": {
+        "fr": null,
+        "en": null,
+        "es": null,
+        "zh": null,
+        "ru": null,
+        "ko": null
+      },
+      "language_detected": "en",
+      "aliases": [
+        "Menace Ventura"
+      ],
+      "pending_review": true
+    },
+    "pl_lord_goldwater": {
+      "names_by_language": {
+        "fr": "",
+        "en": "Lord Goldwater",
+        "es": "",
+        "zh": "",
+        "ru": "",
+        "ko": ""
+      },
+      "transliterations_by_language": {
+        "fr": null,
+        "en": null,
+        "es": null,
+        "zh": null,
+        "ru": null,
+        "ko": null
+      },
+      "language_detected": "en",
+      "aliases": [
+        "Lord Goldwater"
+      ],
+      "pending_review": true
+    },
+    "pl_sky": {
+      "names_by_language": {
+        "fr": "",
+        "en": "Sky",
+        "es": "",
+        "zh": "",
+        "ru": "",
+        "ko": ""
+      },
+      "transliterations_by_language": {
+        "fr": null,
+        "en": null,
+        "es": null,
+        "zh": null,
+        "ru": null,
+        "ko": null
+      },
+      "language_detected": "en",
+      "aliases": [
+        "Sky"
+      ],
+      "pending_review": true
+    },
+    "pl_money": {
+      "names_by_language": {
+        "fr": "",
+        "en": "Money",
+        "es": "",
+        "zh": "",
+        "ru": "",
+        "ko": ""
+      },
+      "transliterations_by_language": {
+        "fr": null,
+        "en": null,
+        "es": null,
+        "zh": null,
+        "ru": null,
+        "ko": null
+      },
+      "language_detected": "en",
+      "aliases": [
+        "Money"
+      ],
+      "pending_review": true
+    },
+    "pl_samiwalksalone": {
+      "names_by_language": {
+        "fr": "",
+        "en": "SamiWalksAlone",
+        "es": "",
+        "zh": "",
+        "ru": "",
+        "ko": ""
+      },
+      "transliterations_by_language": {
+        "fr": null,
+        "en": null,
+        "es": null,
+        "zh": null,
+        "ru": null,
+        "ko": null
+      },
+      "language_detected": "en",
+      "aliases": [
+        "SamiWalksAlone"
+      ],
+      "pending_review": true
+    },
+    "pl_menace_the_tank": {
+      "names_by_language": {
+        "fr": "",
+        "en": "Menace the Tank",
+        "es": "",
+        "zh": "",
+        "ru": "",
+        "ko": ""
+      },
+      "transliterations_by_language": {
+        "fr": null,
+        "en": null,
+        "es": null,
+        "zh": null,
+        "ru": null,
+        "ko": null
+      },
+      "language_detected": "en",
+      "aliases": [
+        "Menace the Tank"
+      ],
+      "pending_review": true
+    }
+  },
+  "alias_to_id": {
+    "buffy": "pl_buffy",
+    "ogtomatoguy": "pl_ogtomatoguy",
+    "korea machine": "pl_korea_machine",
+    "domination": "pl_domination",
+    "the 1 true king": "pl_the_1_true_king",
+    "tiboun": "pl_tiboun",
+    "menace ventura": "pl_menace_ventura",
+    "lord goldwater": "pl_lord_goldwater",
+    "sky": "pl_sky",
+    "money": "pl_money",
+    "samiwalksalone": "pl_samiwalksalone",
+    "menace the tank": "pl_menace_the_tank"
+  }
+}
