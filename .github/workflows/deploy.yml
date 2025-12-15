@@ -1,0 +1,65 @@
+name: Build & Deploy Dashboard
+
+on:
+  # Déclencher quand il y a des données screenshots
+  push:
+    paths:
+      - 'beartrap_data/**'
+      - 'data/beartrap.json'
+      - 'player_aliases.json'
+      - 'player_translations.json'
+      - 'analyse_beartrap.py'
+      - '.github/workflows/deploy.yml'
+    branches:
+      - main
+  
+  # Déclencher manuellement
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: Run analysis
+        run: python analyse_beartrap.py
+      
+      - name: Prepare deployment directory
+        run: |
+          # Créer un dossier temporaire pour le déploiement
+          mkdir -p deploy
+          
+          # Copier le contenu de /web
+          cp -r web/* deploy/
+          
+          # Copier les données dans deploy/data
+          mkdir -p deploy/data
+          cp -r data/* deploy/data/
+          
+          # Afficher le contenu
+          echo "=== Contenu du dossier deploy ==="
+          ls -la deploy/
+          ls -la deploy/data/
+      
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./deploy
+          cname: false
+

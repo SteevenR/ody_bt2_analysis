@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test Translations</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .language-test { margin: 20px 0; padding: 10px; border: 1px solid #ddd; }
+    h2 { color: #333; }
+    .key { font-weight: bold; color: #0066cc; }
+    .value { color: #666; }
+  </style>
+</head>
+<body>
+  <h1>Translation System Test</h1>
+  <p>Testing if translations load correctly...</p>
+  
+  <div id="results"></div>
+  
+  <script>
+    async function testTranslations() {
+      const resultsDiv = document.getElementById('results');
+      
+      try {
+        // Test loading ui_translations.json
+        const uiTransResponse = await fetch('../data/ui_translations.json');
+        const uiTransData = await uiTransResponse.json();
+        console.log('UI Translations loaded:', uiTransData);
+        
+        // Test loading player_translations.json
+        const playerTransResponse = await fetch('../data/player_translations.json');
+        const playerTransData = await playerTransResponse.json();
+        console.log('Player Translations loaded:', playerTransData);
+        
+        // Display results
+        let html = '<h2>UI Translations</h2>';
+        for (const lang of Object.keys(uiTransData).sort()) {
+          const keyCount = Object.keys(uiTransData[lang]).length;
+          const title = uiTransData[lang]['title'];
+          html += `
+            <div class="language-test">
+              <p><strong>${lang.toUpperCase()}</strong> (${keyCount} keys)</p>
+              <p class="value">Title: "${title}"</p>
+            </div>
+          `;
+        }
+        
+        html += '<h2>Player Translations</h2>';
+        const playerCount = Object.keys(playerTransData.players || {}).length;
+        html += `<p>Total players: <strong>${playerCount}</strong></p>`;
+        
+        resultsDiv.innerHTML = html;
+        resultsDiv.style.color = 'green';
+        resultsDiv.innerHTML += '<p style="color: green; font-weight: bold;">✓ All translations loaded successfully!</p>';
+        
+      } catch (err) {
+        resultsDiv.innerHTML = `<p style="color: red;">Error: ${err.message}</p>`;
+        console.error('Error loading translations:', err);
+      }
+    }
+    
+    // Run tests when page loads
+    window.addEventListener('load', testTranslations);
+  </script>
+</body>
+</html>

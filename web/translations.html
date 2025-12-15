@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des traductions - Bear Trap Analysis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #64b5f6;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .navigation a {
+            margin: 0 10px;
+            padding: 8px 15px;
+            background: #2196F3;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .navigation a:hover {
+            background: #1976D2;
+        }
+
+        .section {
+            background-color: #2a2a2a;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .player-card {
+            background-color: #333;
+            border-left: 4px solid #64b5f6;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+
+        .player-id {
+            font-weight: bold;
+            color: #64b5f6;
+            margin-bottom: 10px;
+        }
+
+        .lang-group {
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 2px solid #555;
+        }
+
+        .lang-label {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .lang-name {
+            padding: 5px 10px;
+            background-color: #444;
+            border-radius: 3px;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .aliases {
+            font-size: 13px;
+            color: #bbb;
+            margin-top: 5px;
+        }
+
+        .pending {
+            background-color: #d4a541;
+            color: #000;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 11px;
+            margin-left: 10px;
+        }
+
+        .controls {
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+
+        button:hover {
+            background-color: #1976D2;
+        }
+
+        button.secondary {
+            background-color: #666;
+        }
+
+        button.secondary:hover {
+            background-color: #888;
+        }
+
+        input[type="text"], select {
+            padding: 8px 12px;
+            background-color: #444;
+            color: #e0e0e0;
+            border: 1px solid #666;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stat-box {
+            background-color: #333;
+            padding: 15px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #64b5f6;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #999;
+            margin-top: 5px;
+        }
+
+        .language-selector {
+            margin-bottom: 20px;
+        }
+
+        .language-selector label {
+            margin-right: 10px;
+            font-weight: 500;
+        }
+
+        .language-selector select {
+            padding: 8px 12px;
+        }
+
+        .message {
+            padding: 12px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            display: none;
+        }
+
+        .message.success {
+            background-color: #4caf50;
+            color: white;
+            display: block;
+        }
+
+        .message.error {
+            background-color: #f44336;
+            color: white;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌍 Gestion des traductions joueurs</h1>
+
+        <div class="navigation">
+            <a href="../web/index.html">← Retour au dashboard</a>
+        </div>
+
+        <div class="message success" id="success-msg"></div>
+        <div class="message error" id="error-msg"></div>
+
+        <div class="section">
+            <h2>Statistiques</h2>
+            <div class="stats">
+                <div class="stat-box">
+                    <div class="stat-value" id="total-players">-</div>
+                    <div class="stat-label">Joueurs totaux</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="pending-count">-</div>
+                    <div class="stat-label">À réviser</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="languages-count">6</div>
+                    <div class="stat-label">Langues supportées</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Filtres</h2>
+            <div class="language-selector">
+                <label for="filter-lang">Afficher uniquement:</label>
+                <select id="filter-lang">
+                    <option value="">Tous les joueurs</option>
+                    <option value="pending">À réviser</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Joueurs</h2>
+            <div id="players-container" style="max-height: 800px; overflow-y: auto;"></div>
+        </div>
+    </div>
+
+    <script>
+        async function loadTranslations() {
+            try {
+                const response = await fetch("../data/player_translations.json");
+                if (!response.ok) throw new Error("Translations file not found");
+                return await response.json();
+            } catch (err) {
+                console.error("Erreur chargement traductions:", err);
+                showError("Impossible de charger les traductions");
+                return { players: {}, languages: {} };
+            }
+        }
+
+        function showSuccess(msg) {
+            const el = document.getElementById("success-msg");
+            el.textContent = msg;
+            el.style.display = "block";
+            setTimeout(() => { el.style.display = "none"; }, 3000);
+        }
+
+        function showError(msg) {
+            const el = document.getElementById("error-msg");
+            el.textContent = msg;
+            el.style.display = "block";
+            setTimeout(() => { el.style.display = "none"; }, 3000);
+        }
+
+        function getLanguageName(code) {
+            const names = {
+                "fr": "🇫🇷 Français",
+                "en": "🇬🇧 English",
+                "es": "🇪🇸 Español",
+                "zh": "🇨🇳 中文",
+                "ru": "🇷🇺 Русский",
+                "ko": "🇰🇷 한국어"
+            };
+            return names[code] || code;
+        }
+
+        function renderPlayers(data, filterPending = false) {
+            const container = document.getElementById("players-container");
+            const players = data.players || {};
+
+            let html = "";
+            let count = 0;
+
+            for (const [playerId, player] of Object.entries(players)) {
+                if (filterPending && !player.pending_review) continue;
+                
+                count++;
+                const pending = player.pending_review ? '<span class="pending">À RÉVISER</span>' : '';
+                const name = player.name || playerId;
+                const lang = player.language || '?';
+                const trans = player.transliteration;
+                const aliases = player.aliases || [];
+                
+                const displayName = trans ? `${name} (${trans})` : name;
+                const aliasesText = aliases.filter(a => a !== name).length > 0 
+                    ? `Alias: ${aliases.filter(a => a !== name).join(", ")}`
+                    : "";
+
+                html += `
+                    <div class="player-card">
+                        <div class="player-id">${escapeHtml(playerId)}${pending}</div>
+                        <div class="lang-group">
+                            <div class="lang-label">${getLanguageName(lang)}</div>
+                            <div class="lang-name">${escapeHtml(displayName)}</div>
+                            ${aliasesText ? `<div class="aliases">${escapeHtml(aliasesText)}</div>` : ""}
+                        </div>
+                    </div>
+                `;
+            }
+
+            container.innerHTML = html || "<p>Aucun joueur à afficher</p>";
+            document.getElementById("total-players").textContent = count;
+        }
+
+        function updateStats(data) {
+            const players = data.players || {};
+            const pendingCount = Object.values(players).filter(p => p.pending_review).length;
+            document.getElementById("pending-count").textContent = pendingCount;
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement("div");
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        document.getElementById("filter-lang").addEventListener("change", async (e) => {
+            const data = await loadTranslations();
+            renderPlayers(data, e.target.value === "pending");
+        });
+
+        // Initial load
+        (async () => {
+            const data = await loadTranslations();
+            renderPlayers(data, false);
+            updateStats(data);
+        })();
+    </script>
+</body>
+</html>

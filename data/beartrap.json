@@ -1,0 +1,189 @@
+{
+  "events": [
+    {
+      "id": "2025-12-11",
+      "date": "2025-12-11",
+      "name": "Bear Trap",
+      "alliance_total_damage": 1594708522,
+      "rally_count_total": 39,
+      "rallies": [
+        {
+          "id": "2025-12-11-rally-1",
+          "leader": "Buffy",
+          "participants": [
+            {
+              "canonical_id": "pl_ogtomatoguy",
+              "name": "OGTomatoGuy",
+              "name_original": "OGTomatoGuy",
+              "matched_by": "auto",
+              "language_detected": "en",
+              "damage": 8561295,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_buffy",
+              "name": "Buffy",
+              "name_original": "Buffy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 7687755,
+              "is_leader": true
+            },
+            {
+              "canonical_id": "pl_korea_machine",
+              "name": "Korea Machine",
+              "name_original": "Korea Machine",
+              "matched_by": "auto",
+              "language_detected": "en",
+              "damage": 7342282,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_domination",
+              "name": "DomInation",
+              "name_original": "DomInation",
+              "matched_by": "auto",
+              "language_detected": "en",
+              "damage": 6813002,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_the_1_true_king",
+              "name": "The 1 True King",
+              "name_original": "The 1 True King",
+              "matched_by": "auto",
+              "language_detected": "en",
+              "damage": 6618359,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_tiboun",
+              "name": "TibOun",
+              "name_original": "TibOun",
+              "matched_by": "auto",
+              "language_detected": "en",
+              "damage": 6230174,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_ventura",
+              "name": "Menace Ventura",
+              "name_original": "Menace Ventura",
+              "matched_by": "auto",
+              "language_detected": "en",
+              "damage": 6230174,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_lord_goldwater",
+              "name": "Lord Goldwater",
+              "name_original": "Lord Goldwater",
+              "matched_by": "auto",
+              "language_detected": "en",
+              "damage": 6221383,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_sky",
+              "name": "Sky",
+              "name_original": "Sky",
+              "matched_by": "auto",
+              "language_detected": "en",
+              "damage": 5280073,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_money",
+              "name": "Money",
+              "name_original": "Money",
+              "matched_by": "auto",
+              "language_detected": "en",
+              "damage": 5178733,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_samiwalksalone",
+              "name": "SamiWalksAlone",
+              "name_original": "SamiWalksAlone",
+              "matched_by": "auto",
+              "language_detected": "en",
+              "damage": 5168370,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_the_tank",
+              "name": "Menace the Tank",
+              "name_original": "Menace the Tank",
+              "matched_by": "auto",
+              "language_detected": "en",
+              "damage": 4817835,
+              "is_leader": false
+            }
+          ]
+        }
+      ],
+      "players": [
+        {
+          "id": "pl_ogtomatoguy",
+          "name": "OGTomatoGuy",
+          "total_damage": 8561295
+        },
+        {
+          "id": "pl_buffy",
+          "name": "Buffy",
+          "total_damage": 7687755
+        },
+        {
+          "id": "pl_korea_machine",
+          "name": "Korea Machine",
+          "total_damage": 7342282
+        },
+        {
+          "id": "pl_domination",
+          "name": "DomInation",
+          "total_damage": 6813002
+        },
+        {
+          "id": "pl_the_1_true_king",
+          "name": "The 1 True King",
+          "total_damage": 6618359
+        },
+        {
+          "id": "pl_tiboun",
+          "name": "TibOun",
+          "total_damage": 6230174
+        },
+        {
+          "id": "pl_menace_ventura",
+          "name": "Menace Ventura",
+          "total_damage": 6230174
+        },
+        {
+          "id": "pl_lord_goldwater",
+          "name": "Lord Goldwater",
+          "total_damage": 6221383
+        },
+        {
+          "id": "pl_sky",
+          "name": "Sky",
+          "total_damage": 5280073
+        },
+        {
+          "id": "pl_money",
+          "name": "Money",
+          "total_damage": 5178733
+        },
+        {
+          "id": "pl_samiwalksalone",
+          "name": "SamiWalksAlone",
+          "total_damage": 5168370
+        },
+        {
+          "id": "pl_menace_the_tank",
+          "name": "Menace the Tank",
+          "total_damage": 4817835
+        }
+      ]
+    }
+  ]
+}
