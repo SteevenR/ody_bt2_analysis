@@ -1,7 +1,8 @@
 {
   "fr": {
-    "title": "Kingshot – Bear Trap Stats",
+    "title": "Kingshot [ODY] Piège à ours 2",
     "subtitle": "Analyse des performances des joueurs sur l'événement Bear Trap.",
+    "menu_dashboard": "Tableau de bord",
     "language": "Langue",
     "last_event": "Dernier événement",
     "event_name": "Nom",
@@ -41,11 +42,20 @@
     "label_players_present": "Joueurs présents",
     "label_sum_per_event": "Somme par événement",
     "label_per_rally": "Par ralliement",
-    "label_best_rally": "Meilleur ralliement par événement"
+    "label_best_rally": "Meilleur ralliement par événement",
+    "menu_manage_players": "Joueurs",
+    "players_subtitle": "Visualiser les joueurs détectés, leurs alias et noms par langue.",
+    "players_search_placeholder": "Rechercher id / nom / alias...",
+    "players_col_id": "ID",
+    "players_col_language": "Langue",
+    "players_col_names": "Noms (par langue)",
+    "players_col_aliases": "Alias",
+    "players_col_status": "Statut"
   },
   "en": {
-    "title": "Kingshot – Bear Trap Stats",
+    "title": "Kingshot [ODY] Bear Trap 2",
     "subtitle": "Performance analysis of players on the Bear Trap event.",
+    "menu_dashboard": "Dashboard",
     "language": "Language",
     "last_event": "Last Event",
     "event_name": "Name",
@@ -85,11 +95,20 @@
     "label_players_present": "Players Present",
     "label_sum_per_event": "Sum per Event",
     "label_per_rally": "Per Rally",
-    "label_best_rally": "Best Rally per Event"
+    "label_best_rally": "Best Rally per Event",
+    "menu_manage_players": "Players",
+    "players_subtitle": "View detected players, aliases, and names by language.",
+    "players_search_placeholder": "Search id / name / alias...",
+    "players_col_id": "ID",
+    "players_col_language": "Language",
+    "players_col_names": "Names (by language)",
+    "players_col_aliases": "Aliases",
+    "players_col_status": "Status"
   },
   "es": {
-    "title": "Kingshot – Estadísticas de Bear Trap",
+    "title": "Kingshot [ODY] Trampa de osos 2",
     "subtitle": "Análisis del desempeño de los jugadores en el evento Bear Trap.",
+    "menu_dashboard": "Tablero",
     "language": "Idioma",
     "last_event": "Último Evento",
     "event_name": "Nombre",
@@ -129,11 +148,20 @@
     "label_players_present": "Jugadores Presentes",
     "label_sum_per_event": "Suma por Evento",
     "label_per_rally": "Por Rally",
-    "label_best_rally": "Mejor Rally por Evento"
+    "label_best_rally": "Mejor Rally por Evento",
+    "menu_manage_players": "Jugadores",
+    "players_subtitle": "Ver jugadores detectados, alias y nombres por idioma.",
+    "players_search_placeholder": "Buscar id / nombre / alias...",
+    "players_col_id": "ID",
+    "players_col_language": "Idioma",
+    "players_col_names": "Nombres (por idioma)",
+    "players_col_aliases": "Alias",
+    "players_col_status": "Estado"
   },
   "ru": {
-    "title": "Kingshot – Статистика Bear Trap",
+    "title": "Kingshot [ODY] Ловушка для медведя 2",
     "subtitle": "Анализ производительности игроков в событии Bear Trap.",
+    "menu_dashboard": "Панель",
     "language": "Язык",
     "last_event": "Последнее событие",
     "event_name": "Имя",
@@ -173,11 +201,20 @@
     "label_players_present": "Присутствующие игроки",
     "label_sum_per_event": "Итоги по событию",
     "label_per_rally": "По ралли",
-    "label_best_rally": "Лучшее ралли за событие"
+    "label_best_rally": "Лучшее ралли за событие",
+    "menu_manage_players": "Игроки",
+    "players_subtitle": "Просмотр игроков, их псевдонимов и имён по языкам.",
+    "players_search_placeholder": "Поиск id / имени / псевдонима...",
+    "players_col_id": "ID",
+    "players_col_language": "Язык",
+    "players_col_names": "Имена (по языкам)",
+    "players_col_aliases": "Псевдонимы",
+    "players_col_status": "Статус"
   },
   "ko": {
-    "title": "Kingshot – Bear Trap 통계",
+    "title": "Kingshot [ODY] 곰 덫 2",
     "subtitle": "Bear Trap 이벤트에서의 플레이어 성능 분석.",
+    "menu_dashboard": "대시보드",
     "language": "언어",
     "last_event": "마지막 이벤트",
     "event_name": "이름",
@@ -217,11 +254,20 @@
     "label_players_present": "참여 플레이어",
     "label_sum_per_event": "이벤트별 합계",
     "label_per_rally": "랠리별",
-    "label_best_rally": "이벤트별 최고 랠리"
+    "label_best_rally": "이벤트별 최고 랠리",
+    "menu_manage_players": "플레이어",
+    "players_subtitle": "감지된 플레이어, 별칭, 언어별 이름 보기.",
+    "players_search_placeholder": "ID / 이름 / 별칭 검색...",
+    "players_col_id": "ID",
+    "players_col_language": "언어",
+    "players_col_names": "이름 (언어별)",
+    "players_col_aliases": "별칭",
+    "players_col_status": "상태"
   },
   "zh": {
-    "title": "Kingshot – Bear Trap 统计",
+    "title": "Kingshot [ODY] 捕熊夹 2",
     "subtitle": "Bear Trap 事件中玩家表现分析。",
+    "menu_dashboard": "仪表盘",
     "language": "语言",
     "last_event": "最后的事件",
     "event_name": "名字",
@@ -261,6 +307,14 @@
     "label_players_present": "在场玩家",
     "label_sum_per_event": "每个事件的总和",
     "label_per_rally": "每次集合",
-    "label_best_rally": "每个事件的最佳集合"
+    "label_best_rally": "每个事件的最佳集合",
+    "menu_manage_players": "玩家",
+    "players_subtitle": "查看已检测的玩家、别名和按语言的姓名。",
+    "players_search_placeholder": "搜索 id / 姓名 / 别名...",
+    "players_col_id": "ID",
+    "players_col_language": "语言",
+    "players_col_names": "姓名（按语言）",
+    "players_col_aliases": "别名",
+    "players_col_status": "状态"
   }
 }

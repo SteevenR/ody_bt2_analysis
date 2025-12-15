@@ -2,27 +2,30 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Kingshot Bear Trap Stats</title>
+  <title>Kingshot [ODY] BearTrap 2</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
 </head>
 <body>
   <header>
-    <div style="display: flex; justify-content: space-between; align-items: center;">
-      <div>
+    <div class="nav">
+      <div class="nav-left">
         <h1 id="page-title">Kingshot – Bear Trap Stats</h1>
         <p id="page-subtitle">Analyse des performances des joueurs sur l'événement Bear Trap.</p>
       </div>
-      <div style="text-align: right;">
-        <label for="languageSelect" style="margin-right: 10px; font-weight: bold;" id="language-label">Langue:</label>
-        <select id="languageSelect" style="padding: 8px; font-size: 14px;">
-          <option value="fr">🇫🇷 Français</option>
+      <div class="nav-right">
+        <a href="index.html" id="nav-dashboard" class="nav-link active">Dashboard</a>
+        <a href="players.html" id="manage-players-link" class="nav-link">Joueurs</a>
+        <label for="languageSelect" class="lang-label" id="language-label">Langue:</label>
+        <select id="languageSelect">
           <option value="en">🇬🇧 English</option>
-          <option value="es">🇪🇸 Español</option>
-          <option value="zh">🇨🇳 中文</option>
-          <option value="ru">🇷🇺 Русский</option>
           <option value="ko">🇰🇷 한국어</option>
+          <option value="es">🇪🇸 Español</option>
+          <option value="fr">🇫🇷 Français</option>
+          <option value="ru">🇷🇺 Русский</option>
+          <option value="zh">🇨🇳 中文</option>
         </select>
       </div>
     </div>

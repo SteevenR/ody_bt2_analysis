@@ -5,6 +5,7 @@ from pathlib import Path
 import easyocr
 import cv2
 import numpy as np
+import hashlib
 
 
 # ============================
@@ -17,6 +18,7 @@ DATA_OUTPUT_DIR = BASE_DIR / "data"
 DATA_OUTPUT_FILE = DATA_OUTPUT_DIR / "beartrap.json"
 FLAG_TEMPLATE_PATH = BASE_DIR / "assets" / "flag.png"
 ALIASES_FILE = DATA_OUTPUT_DIR / "player_aliases.json"
+OCR_LOG_FILE = DATA_OUTPUT_DIR / "ocr_extraction_log.jsonl"
 
 DATA_OUTPUT_DIR.mkdir(exist_ok=True)
 RANK_TEMPLATES = {
@@ -24,6 +26,57 @@ RANK_TEMPLATES = {
     2: BASE_DIR / "assets" / "rank2.png",
     3: BASE_DIR / "assets" / "rank3.png",
 }
+
+
+# ============================
+# OCR EXTRACTION LOGGING
+# ============================
+
+class OCRLogger:
+    """Logs detailed OCR extraction results for debugging."""
+    def __init__(self, log_path: Path):
+        self.log_path = log_path
+        self.entries = []
+    
+    def log_extraction(self, event_id: str, rally_id: int, filename: str, 
+                       rank: int, raw_ocr_tokens: str, extracted_name: str, 
+                       damage: int, all_tokens: list):
+        """Record one name extraction with full context."""
+        entry = {
+            "event": event_id,
+            "rally": rally_id,
+            "file": filename,
+            "rank": rank,
+            "raw_ocr": raw_ocr_tokens,
+            "extracted_name": extracted_name,
+            "damage": damage,
+            "tokens": [{"text": t["text"], "x": int(t["x"]), "y": int(t["y"]), "conf": round(t["conf"], 2)} for t in all_tokens]
+        }
+        self.entries.append(entry)
+    
+    def save(self):
+        """Write all entries as JSONL for easy inspection."""
+        with open(self.log_path, "w", encoding="utf-8") as f:
+            for entry in self.entries:
+                f.write(json.dumps(entry, ensure_ascii=False) + "\n")
+        print(f"[INFO] Logs OCR sauvegardés dans {self.log_path} ({len(self.entries)} extractions)")
+
+
+def clean_extracted_name(name: str) -> str:
+    """Remove common OCR noise like leading 'R', 'Points de Dégâts', etc."""
+    if not name:
+        return name
+    # Strip leading R/r followed by space (OCR often prefixes with R)
+    name = re.sub(r"^[Rr]\s+", "", name)
+    # Remove embedded labels
+    patterns = [r"points\s+de\s+d[ée]g[âa]ts", r"rapport\s+de\s+combat", r"d[ée]g[âa]ts"]
+    for pat in patterns:
+        name = re.sub(pat, "", name, flags=re.IGNORECASE)
+    # Remove trailing colon or stray punctuation
+    name = re.sub(r"[:;.,]+$", "", name)
+    # Collapse whitespace
+    name = re.sub(r"\s+", " ", name).strip()
+    return name
 
 
 # ============================
@@ -202,9 +255,11 @@ def load_translations_store(path: Path) -> dict:
         }
 
 def save_translations_store(path: Path, store: dict):
-    """Sauvegarde le fichier de traductions."""
-    with open(path, "w", encoding="utf-8") as f:
+    """Sauvegarde atomiquement le fichier de traductions (non destructif)."""
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    with open(tmp, "w", encoding="utf-8") as f:
         json.dump(store, f, indent=2, ensure_ascii=False)
+    tmp.replace(path)
 
 def detect_language_from_text(text: str) -> str:
     """
@@ -255,8 +310,9 @@ def add_player_translation(trans_store: dict, player_id: str,
     
     player = trans_store["players"][player_id]
     
-    # Mettre à jour le nom pour la langue détectée
-    player["names_by_language"][language] = original_name
+    # Mettre à jour le nom pour la langue détectée (sans écraser un nom existant)
+    if not player["names_by_language"].get(language):
+        player["names_by_language"][language] = original_name
     player["language_detected"] = language
     
     # Générer translittération si non-latin
@@ -324,17 +380,20 @@ def resolve_with_translation(trans_store: dict, observed_name: str):
         canonical_name = get_name_for_language(trans_store, pid, detected_lang)
         return pid, canonical_name, detected_lang, "alias", False
     
-    # Exact name match
+    # Exact/normalized name match across languages
     for pid, player in trans_store["players"].items():
         names = player.get("names_by_language", {})
-        if observed_name in names.values():
-            # Link alias
-            if k and k not in trans_store["alias_to_id"]:
-                trans_store["alias_to_id"][k] = pid
-            if observed_name not in player.get("aliases", []):
-                player["aliases"].append(observed_name)
-            canonical_name = get_name_for_language(trans_store, pid, detected_lang)
-            return pid, canonical_name, detected_lang, "exact", False
+        for v in names.values():
+            if not v:
+                continue
+            if observed_name == v or _normalize_key(v) == k:
+                # Link alias
+                if k and k not in trans_store["alias_to_id"]:
+                    trans_store["alias_to_id"][k] = pid
+                if observed_name not in player.get("aliases", []):
+                    player.setdefault("aliases", []).append(observed_name)
+                canonical_name = get_name_for_language(trans_store, pid, detected_lang)
+                return pid, canonical_name, detected_lang, "exact", False
     
     # Auto-add new player
     pid = f"pl_{k.replace(' ', '_')}" if k else f"pl_{abs(hash(observed_name))}"
@@ -349,6 +408,29 @@ def get_display_name(trans_store: dict, player_id: str) -> str:
     Récupère le nom d'affichage d'un joueur (langue primaire).
     """
     return get_name_for_language(trans_store, player_id, PRIMARY_LANGUAGE)
+
+
+# ============================
+# INCREMENTAL BUILD HELPER
+# ============================
+
+def compute_event_source_hash(day_dir: Path) -> str:
+    """Compute a stable hash for all image files in an event folder.
+    Uses file name, size and mtime to detect additions/updates without
+    reading the full binary content (fast and good enough for CI).
+    """
+    parts = []
+    for f in sorted(day_dir.iterdir(), key=lambda p: p.name):
+        if f.suffix.lower() not in [".png", ".jpg", ".jpeg"]:
+            continue
+        try:
+            st = f.stat()
+            parts.append(f"{f.name}:{st.st_size}:{int(st.st_mtime)}")
+        except Exception:
+            # If stat fails, include just the name to avoid crashing
+            parts.append(f.name)
+    digest = hashlib.sha1("|".join(parts).encode("utf-8")).hexdigest()
+    return digest
 
 
 # ============================
@@ -1055,7 +1137,7 @@ def segment_lines_by_rank_positions(img_up, line_height_px, rank_y_positions: di
     return lines
 
 
-def extract_rally_participants_from_pages_v2(reader, page_files: list[Path]):
+def extract_rally_participants_from_pages_v2(reader, page_files: list[Path], ocr_logger=None, event_id="", rally_id=0):
     """
     Four-phase extraction:
     Phase 1: Calibrate line_height and rank positions from *.0 file using template matching
@@ -1063,6 +1145,8 @@ def extract_rally_participants_from_pages_v2(reader, page_files: list[Path]):
     Phase 3: OCR each line to extract rank, name, damage; reconstruct names by tokens
     Phase 4: Build statistics
     """
+    # Store event/rally context for logging
+    log_context = {"event_id": event_id, "rally_id": rally_id}
     # Phase 1: Calibrate from *.0 file
     dot_zero_file = None
     for f in page_files:
@@ -1166,22 +1250,33 @@ def extract_rally_participants_from_pages_v2(reader, page_files: list[Path]):
                 if has_points_label or (len(group) > 0 and not has_text):
                     dmg_group.extend(group)
             
-            # Reconstruct name: concatenate all name groups, sorted by X
-            name_tokens = []
-            for group in name_groups:
-                name_tokens.extend([t for t in group if "Points de" not in t["text"] and t["conf"] >= 0.3])
-            
-            name_tokens_sorted = sorted([t for t in name_tokens if not (t["x"] <= row_img.shape[1] * 0.15 and re.fullmatch(r"\d{1,2}", t["text"]))], key=lambda t: t["x"])
-            
-            # Filter out damage-like patterns at the end (formatted numbers with spaces)
-            name_parts = []
-            for t in name_tokens_sorted:
-                # Skip tokens that look like damage (pure numbers with spaces/dots/commas)
-                if re.fullmatch(r"\d[\d\s\.,kKmM]*", t["text"]):
+            # Reconstruct name: keep high-confidence tokens, filter damage labels
+            # Strategy: collect all tokens that are likely name (not digits, not labels),
+            # sort by X, and join them
+            name_candidates = []
+            for t in tokens:
+                text = t["text"].strip()
+                # Skip empty
+                if not text:
                     continue
-                name_parts.append(t["text"])
+                # Skip pure numbers (damage, rank)
+                if re.fullmatch(r"\d[\d\s\.,kKmM]*", text):
+                    continue
+                # Skip label patterns (case-insensitive)
+                if re.search(r"(points\s+de|de\s+d[ée]g[âa]ts|rapport\s+de|d[ée]g[âa]ts|ints|oi)", text, re.IGNORECASE):
+                    continue
+                # Skip very low confidence
+                if t["conf"] < 0.4:
+                    continue
+                # Keep this token as part of name
+                name_candidates.append(t)
             
-            name = " ".join(name_parts).strip()
+            # Sort by X position (left to right)
+            name_candidates.sort(key=lambda t: t["x"])
+            
+            # Join the tokens
+            name_parts = [t["text"] for t in name_candidates]
+            name = clean_extracted_name(" ".join(name_parts).strip())
             
             # Extract damage: find all numeric values, exclude rank numbers (1-20), take largest
             all_numbers = []
@@ -1207,6 +1302,20 @@ def extract_rally_participants_from_pages_v2(reader, page_files: list[Path]):
             cv2.imwrite(str(debug_path), row_img)
             
             print(f"[PHASE3] {f.name}::rank{rank} -> name='{name}', dmg={damage}")
+            
+            # Log extraction details for debugging
+            if ocr_logger:
+                raw_ocr = " ".join([t["text"] for t in tokens])
+                ocr_logger.log_extraction(
+                    event_id=log_context.get("event_id", ""),
+                    rally_id=log_context.get("rally_id", 0),
+                    filename=f.name,
+                    rank=rank,
+                    raw_ocr_tokens=raw_ocr,
+                    extracted_name=name,
+                    damage=damage,
+                    all_tokens=tokens
+                )
             
             if name and damage > 0:
                 participants.append({
@@ -1321,8 +1430,11 @@ def main():
     # Translations store (nouveau système multilingue)
     trans_store = load_translations_store(TRANSLATIONS_FILE)
     trans_modified = False
+    
+    # OCR extraction logger
+    ocr_logger = OCRLogger(OCR_LOG_FILE)
 
-    # Charger JSON existant (idempotence)
+    # Charger JSON existant (idempotence + mise à jour sélective)
     if DATA_OUTPUT_FILE.exists():
         with open(DATA_OUTPUT_FILE, "r", encoding="utf-8") as f:
             existing_json = json.load(f)
@@ -1338,8 +1450,11 @@ def main():
             continue
 
         date_str = day_dir.name
-        if date_str in existing_events:
-            print(f"[INFO] Event {date_str} déjà présent, skip.")
+        # Calculer l'empreinte des fichiers source pour décider de recalculer ou non
+        current_hash = compute_event_source_hash(day_dir)
+        prev_event = existing_events.get(date_str)
+        if prev_event is not None and prev_event.get("source_hash") == current_hash:
+            print(f"[INFO] Event {date_str} inchangé (hash identique), skip.")
             continue
 
         print(f"\n[INFO] Traitement du dossier {date_str}")
@@ -1365,7 +1480,8 @@ def main():
             "name": "Bear Trap",
             "alliance_total_damage": alliance_damage,
             "rally_count_total": rally_count,
-            "rallies": []
+            "rallies": [],
+            "source_hash": current_hash,
         }
 
         # ----- RALLIES -----
@@ -1392,7 +1508,7 @@ def main():
                     break
 
             # new approach: unified line height calibration + segmentation
-            participants_raw = extract_rally_participants_from_pages_v2(reader, files)
+            participants_raw = extract_rally_participants_from_pages_v2(reader, files, ocr_logger, date_str, rally_id)
 
             if not participants_raw:
                 print(f"[WARN] Aucun participant détecté pour ralliement {rally_id}")
@@ -1461,7 +1577,12 @@ def main():
         ]
 
         new_events.append(event)
-    existing_json["events"].extend(new_events)
+    # Fusionner: remplacer/ajouter les événements recalculés sans toucher aux autres
+    if new_events:
+        for ev in new_events:
+            existing_events[ev["id"]] = ev
+        # Conserver l'ordre chronologique par id (YYYY-MM-DD)
+        existing_json["events"] = [existing_events[k] for k in sorted(existing_events.keys())]
 
     print(f"\n[INFO] Sauvegarde dans {DATA_OUTPUT_FILE}")
     with open(DATA_OUTPUT_FILE, "w", encoding="utf-8") as f:
@@ -1482,6 +1603,12 @@ def main():
             save_translations_store(TRANSLATIONS_FILE, trans_store)
     except Exception as e:
         print(f"[WARN] Impossible de sauvegarder les traductions: {e}")
+    
+    # Save OCR extraction logs
+    try:
+        ocr_logger.save()
+    except Exception as e:
+        print(f"[WARN] Impossible de sauvegarder les logs OCR: {e}")
 
     print("[INFO] Terminé.")
 

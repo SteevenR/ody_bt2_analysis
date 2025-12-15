@@ -120,68 +120,2848 @@
               "is_leader": false
             }
           ]
+        },
+        {
+          "id": "2025-12-11-rally-2",
+          "leader": "Rapportde Combat",
+          "participants": [
+            {
+              "canonical_id": "pl_ogtomatoguy",
+              "name": "OGTomatoGuy",
+              "name_original": "OGTomatoGuy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 12744009,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_buffy",
+              "name": "Buffy",
+              "name_original": "Buffy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 10072849,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_domination",
+              "name": "DomInation",
+              "name_original": "DomInation",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 9248367,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_the_1_true_king",
+              "name": "The 1 True King",
+              "name_original": "The 1 True King",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 8847143,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_tiboun",
+              "name": "TibOun",
+              "name_original": "TibOun",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 8391775,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_ventura",
+              "name": "Menace Ventura",
+              "name_original": "Menace Ventura",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 8391775,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ginny",
+              "name": "Ginny",
+              "name_original": "Ginny",
+              "matched_by": "auto",
+              "language_detected": "en",
+              "damage": 8200147,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_lord_goldwater",
+              "name": "Lord Goldwater",
+              "name_original": "Lord Goldwater",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 7791441,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_korea_machine",
+              "name": "Korea Machine",
+              "name_original": "Korea Machine",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 7607141,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_sky",
+              "name": "Sky",
+              "name_original": "Sky",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 7112030,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_the_tank",
+              "name": "Menace the Tank",
+              "name_original": "Menace the Tank",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 6504915,
+              "is_leader": false
+            }
+          ]
+        },
+        {
+          "id": "2025-12-11-rally-3",
+          "leader": "Rapportde Combat",
+          "participants": [
+            {
+              "canonical_id": "pl_ogtomatoguy",
+              "name": "OGTomatoGuy",
+              "name_original": "OGTomatoGuy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3841130,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_donxo",
+              "name": "Donxo",
+              "name_original": "Donxo",
+              "matched_by": "auto",
+              "language_detected": "en",
+              "damage": 3347817,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_money",
+              "name": "Money",
+              "name_original": "Money",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3256006,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_buffy",
+              "name": "Buffy",
+              "name_original": "Buffy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2920507,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ayman",
+              "name": "Ayman",
+              "name_original": "Ayman",
+              "matched_by": "auto",
+              "language_detected": "en",
+              "damage": 2872372,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_anxiko",
+              "name": "Anxiko",
+              "name_original": "Anxiko",
+              "matched_by": "auto",
+              "language_detected": "en",
+              "damage": 2846059,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_the_1_true_king",
+              "name": "The 1 True King",
+              "name_original": "The 1 True King",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2410859,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_ventura",
+              "name": "Menace Ventura",
+              "name_original": "Menace Ventura",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2191734,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_tiboun",
+              "name": "TibOun",
+              "name_original": "TibOun",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2113220,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_samiwalksalone",
+              "name": "SamiWalksAlone",
+              "name_original": "SamiWalksAlone",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2074593,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_domination",
+              "name": "DomInation",
+              "name_original": "DomInation",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1983319,
+              "is_leader": false
+            }
+          ]
+        },
+        {
+          "id": "2025-12-11-rally-4",
+          "leader": "Rapportde Combat",
+          "participants": [
+            {
+              "canonical_id": "pl_ogtomatoguy",
+              "name": "OGTomatoGuy",
+              "name_original": "OGTomatoGuy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 5293007,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_the_1_true_king",
+              "name": "The 1 True King",
+              "name_original": "The 1 True King",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 4984484,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_tiboun",
+              "name": "TibOun",
+              "name_original": "TibOun",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 4735983,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_ventura",
+              "name": "Menace Ventura",
+              "name_original": "Menace Ventura",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 4735983,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_buffy",
+              "name": "Buffy",
+              "name_original": "Buffy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 4325938,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_anxiko",
+              "name": "Anxiko",
+              "name_original": "Anxiko",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 4153667,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_sky",
+              "name": "Sky",
+              "name_original": "Sky",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 4013745,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_samiwalksalone",
+              "name": "SamiWalksAlone",
+              "name_original": "SamiWalksAlone",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3177487,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ayman",
+              "name": "Ayman",
+              "name_original": "Ayman",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2954510,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_donxo",
+              "name": "Donxo",
+              "name_original": "Donxo",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2713631,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_the_tank",
+              "name": "Menace the Tank",
+              "name_original": "Menace the Tank",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2454523,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_lord_goldwater",
+              "name": "Lord Goldwater",
+              "name_original": "Lord Goldwater",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1990910,
+              "is_leader": false
+            }
+          ]
+        },
+        {
+          "id": "2025-12-11-rally-5",
+          "leader": "Rapportde Combat",
+          "participants": [
+            {
+              "canonical_id": "pl_ogtomatoguy",
+              "name": "OGTomatoGuy",
+              "name_original": "OGTomatoGuy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 4023028,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_ventura",
+              "name": "Menace Ventura",
+              "name_original": "Menace Ventura",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3180010,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_domination",
+              "name": "DomInation",
+              "name_original": "DomInation",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3177715,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_buffy",
+              "name": "Buffy",
+              "name_original": "Buffy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3096503,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_donxo",
+              "name": "Donxo",
+              "name_original": "DonXo",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2812717,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_tiboun",
+              "name": "TibOun",
+              "name_original": "TibOun",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2651293,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_korea_machine",
+              "name": "Korea Machine",
+              "name_original": "Korea Machine",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2638597,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_the_tank",
+              "name": "Menace the Tank",
+              "name_original": "Menace the Tank",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2457860,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_wild_lord",
+              "name": "Wild Lord",
+              "name_original": "Wild Lord",
+              "matched_by": "auto",
+              "language_detected": "en",
+              "damage": 1744008,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ayman",
+              "name": "Ayman",
+              "name_original": "Ayman",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1040671,
+              "is_leader": false
+            }
+          ]
+        },
+        {
+          "id": "2025-12-11-rally-6",
+          "leader": "Rapportde Combat",
+          "participants": [
+            {
+              "canonical_id": "pl_the_1_true_king",
+              "name": "The 1 True King",
+              "name_original": "The 1 True King",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1341827,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_tiboun",
+              "name": "TibOun",
+              "name_original": "TibOun",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1265516,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_donxo",
+              "name": "Donxo",
+              "name_original": "DonXo",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1153303,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_buffy",
+              "name": "Buffy",
+              "name_original": "Buffy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1142992,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_wild_lord",
+              "name": "Wild Lord",
+              "name_original": "Wild Lord",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1128100,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_korea_machine",
+              "name": "Korea Machine",
+              "name_original": "Korea Machine",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1012885,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_samiwalksalone",
+              "name": "SamiWalksAlone",
+              "name_original": "SamiWalksAlone",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 851925,
+              "is_leader": false
+            }
+          ]
+        },
+        {
+          "id": "2025-12-11-rally-7",
+          "leader": "Rapportde Combat",
+          "participants": [
+            {
+              "canonical_id": "pl_ogtomatoguy",
+              "name": "OGTomatoGuy",
+              "name_original": "OGTomatoGuy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1504632,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_buffy",
+              "name": "Buffy",
+              "name_original": "Buffy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1489325,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_tiboun",
+              "name": "TibOun",
+              "name_original": "TibOun",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1225058,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_sky",
+              "name": "Sky",
+              "name_original": "Sky",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1038237,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_donxo",
+              "name": "Donxo",
+              "name_original": "Donxo",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1037887,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ginny",
+              "name": "Ginny",
+              "name_original": "Ginny",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 919451,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_ventura",
+              "name": "Menace Ventura",
+              "name_original": "Menace Ventura",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 833123,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_wild_lord",
+              "name": "Wild Lord",
+              "name_original": "Wild Lord",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 584446,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_samiwalksalone",
+              "name": "SamiWalksAlone",
+              "name_original": "SamiWalksAlone",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 436464,
+              "is_leader": false
+            }
+          ]
+        },
+        {
+          "id": "2025-12-11-rally-8",
+          "leader": "Rapportde Combat",
+          "participants": [
+            {
+              "canonical_id": "pl_ogtomatoguy",
+              "name": "OGTomatoGuy",
+              "name_original": "OGTomatoGuy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 10535610,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_domination",
+              "name": "DomInation",
+              "name_original": "DomInation",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 7918416,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_ventura",
+              "name": "Menace Ventura",
+              "name_original": "Menace Ventura",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 7132530,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_buffy",
+              "name": "Buffy",
+              "name_original": "Buffy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 6639775,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_money",
+              "name": "Money",
+              "name_original": "Money",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 6617272,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ginny",
+              "name": "Ginny",
+              "name_original": "Ginny",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 6241967,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_sky",
+              "name": "Sky",
+              "name_original": "Sky",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 6044819,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_the_tank",
+              "name": "Menace the Tank",
+              "name_original": "Menace the Tank",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 5565047,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_tiboun",
+              "name": "TibOun",
+              "name_original": "TibOun",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 5107664,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_samiwalksalone",
+              "name": "SamiWalksAlone",
+              "name_original": "SamiWalksAlone",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 4975542,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ayman",
+              "name": "Ayman",
+              "name_original": "Ayman",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 4658038,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_lord_goldwater",
+              "name": "Lord Goldwater",
+              "name_original": "Lord Goldwater",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3333202,
+              "is_leader": false
+            }
+          ]
+        },
+        {
+          "id": "2025-12-11-rally-9",
+          "leader": "RapportdeCombat",
+          "participants": [
+            {
+              "canonical_id": "pl_ogtomatoguy",
+              "name": "OGTomatoGuy",
+              "name_original": "OGTomatoGuy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3402215,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_buffy",
+              "name": "Buffy",
+              "name_original": "Buffy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3263618,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_donxo",
+              "name": "Donxo",
+              "name_original": "DonXo",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2902588,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_domination",
+              "name": "DomInation",
+              "name_original": "DomInation",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2761879,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_tiboun",
+              "name": "TibOun",
+              "name_original": "TibOun",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2727635,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_lord_goldwater",
+              "name": "Lord Goldwater",
+              "name_original": "Lord Goldwater",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2723349,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_anxiko",
+              "name": "Anxiko",
+              "name_original": "Anxiko",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2674356,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ayman",
+              "name": "Ayman",
+              "name_original": "Ayman",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2613404,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_the_1_true_king",
+              "name": "The 1 True King",
+              "name_original": "The 1 True King",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2201829,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_ventura",
+              "name": "Menace Ventura",
+              "name_original": "Menace Ventura",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1918220,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_samiwalksalone",
+              "name": "SamiWalksAlone",
+              "name_original": "SamiWalksAlone",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1834901,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_danieladh",
+              "name": "Danieladh",
+              "name_original": "Danieladh",
+              "matched_by": "auto",
+              "language_detected": "en",
+              "damage": 1074865,
+              "is_leader": false
+            }
+          ]
+        },
+        {
+          "id": "2025-12-11-rally-10",
+          "leader": "RapportdeCombat",
+          "participants": [
+            {
+              "canonical_id": "pl_ogtomatoguy",
+              "name": "OGTomatoGuy",
+              "name_original": "OGTomatoGuy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 4594064,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_money",
+              "name": "Money",
+              "name_original": "Money",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3982332,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_the_1_true_king",
+              "name": "The 1 True King",
+              "name_original": "The 1 True King",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3916128,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_buffy",
+              "name": "Buffy",
+              "name_original": "Buffy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3641664,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_tiboun",
+              "name": "TibOun",
+              "name_original": "TibOun",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3356762,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_anxiko",
+              "name": "Anxiko",
+              "name_original": "Anxiko",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3265716,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_sky",
+              "name": "Sky",
+              "name_original": "Sky",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3149746,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_donxo",
+              "name": "Donxo",
+              "name_original": "Donxo",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3145108,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_samiwalksalone",
+              "name": "SamiWalksAlone",
+              "name_original": "SamiWalksAlone",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3067818,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_wild_lord",
+              "name": "Wild Lord",
+              "name_original": "Wild Lord",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3020091,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_the_tank",
+              "name": "Menace the Tank",
+              "name_original": "Menace the Tank",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1919580,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_danieladh",
+              "name": "Danieladh",
+              "name_original": "Danieladh",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1460882,
+              "is_leader": false
+            }
+          ]
+        },
+        {
+          "id": "2025-12-11-rally-11",
+          "leader": "RapportdeCombat",
+          "participants": [
+            {
+              "canonical_id": "pl_ogtomatoguy",
+              "name": "OGTomatoGuy",
+              "name_original": "OGTomatoGuy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3405061,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_buffy",
+              "name": "Buffy",
+              "name_original": "Buffy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3250250,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_ventura",
+              "name": "Menace Ventura",
+              "name_original": "Menace Ventura",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2749856,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_wild_lord",
+              "name": "Wild Lord",
+              "name_original": "Wild Lord",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2684865,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_donxo",
+              "name": "Donxo",
+              "name_original": "DonXo",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2539073,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_tiboun",
+              "name": "TibOun",
+              "name_original": "TibOun",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2328652,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_the_tank",
+              "name": "Menace the Tank",
+              "name_original": "Menace the Tank",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2141539,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_warmachine5e",
+              "name": "Warmachine5e",
+              "name_original": "Warmachine5e",
+              "matched_by": "auto",
+              "language_detected": "en",
+              "damage": 2130801,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_samiwalksalone",
+              "name": "SamiWalksAlone",
+              "name_original": "SamiWalksAlone",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1760583,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_danieladh",
+              "name": "Danieladh",
+              "name_original": "Danieladh",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1093492,
+              "is_leader": false
+            }
+          ]
+        },
+        {
+          "id": "2025-12-11-rally-12",
+          "leader": "Rapportde Combat",
+          "participants": [
+            {
+              "canonical_id": "pl_donxo",
+              "name": "Donxo",
+              "name_original": "Donxo",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1466439,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_the_1_true_king",
+              "name": "The 1 True King",
+              "name_original": "The 1 True King",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1437213,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_tiboun",
+              "name": "TibOun",
+              "name_original": "TibOun",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1341810,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_buffy",
+              "name": "Buffy",
+              "name_original": "Buffy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1288633,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_money",
+              "name": "Money",
+              "name_original": "Money",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1162705,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ginny",
+              "name": "Ginny",
+              "name_original": "Ginny",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 971717,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_ventura",
+              "name": "Menace Ventura",
+              "name_original": "Menace Ventura",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 879472,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ogtomatoguy",
+              "name": "OGTomatoGuy",
+              "name_original": "OGTomatoGuy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 723402,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_danieladh",
+              "name": "Danieladh",
+              "name_original": "Danieladh",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 515633,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_samiwalksalone",
+              "name": "SamiWalksAlone",
+              "name_original": "SamiWalksAlone",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 421784,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_lord_goldwater",
+              "name": "Lord Goldwater",
+              "name_original": "Lord Goldwater",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 409347,
+              "is_leader": false
+            }
+          ]
+        },
+        {
+          "id": "2025-12-11-rally-13",
+          "leader": "RapportdaCombat",
+          "participants": [
+            {
+              "canonical_id": "pl_money",
+              "name": "Money",
+              "name_original": "Money",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1812067,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_tiboun",
+              "name": "TibOun",
+              "name_original": "TibOun",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1750188,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_anxiko",
+              "name": "Anxiko",
+              "name_original": "Anxiko",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1582487,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ginny",
+              "name": "Ginny",
+              "name_original": "Ginny",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1578092,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_samiwalksalone",
+              "name": "SamiWalksAlone",
+              "name_original": "SamiWalksAlone",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1525117,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_korea_machine",
+              "name": "Korea Machine",
+              "name_original": "Korea Machine",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1325639,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_domination",
+              "name": "DomInation",
+              "name_original": "DomInation",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 825129,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_danieladh",
+              "name": "Danieladh",
+              "name_original": "Danieladh",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 674982,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_buffy",
+              "name": "Buffy",
+              "name_original": "Buffy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 395839,
+              "is_leader": false
+            }
+          ]
+        },
+        {
+          "id": "2025-12-11-rally-14",
+          "leader": "Rapportde Combat",
+          "participants": [
+            {
+              "canonical_id": "pl_ogtomatoguy",
+              "name": "OGTomatoGuy",
+              "name_original": "OGTomatoGuy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3474264,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_wild_lord",
+              "name": "Wild Lord",
+              "name_original": "Wild Lord",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2986007,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_tiboun",
+              "name": "TibOun",
+              "name_original": "TibOun",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2603318,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_buffy",
+              "name": "Buffy",
+              "name_original": "Buffy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2597876,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ayman",
+              "name": "Ayman",
+              "name_original": "Ayman",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2529066,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_samiwalksalone",
+              "name": "SamiWalksAlone",
+              "name_original": "SamiWalksAlone",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2221937,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_the_1_true_king",
+              "name": "The 1 True King",
+              "name_original": "The 1 True King",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2141719,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_the_tank",
+              "name": "Menace the Tank",
+              "name_original": "Menace the Tank",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2034884,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_money",
+              "name": "Money",
+              "name_original": "Money",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 81607448,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_donxo",
+              "name": "Donxo",
+              "name_original": "Donxo",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1594831,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_danieladh",
+              "name": "Danieladh",
+              "name_original": "Danieladh",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1044533,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_lord_goldwater",
+              "name": "Lord Goldwater",
+              "name_original": "Lord Goldwater",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 953506,
+              "is_leader": false
+            }
+          ]
+        },
+        {
+          "id": "2025-12-11-rally-15",
+          "leader": "Rapportde Combat",
+          "participants": [
+            {
+              "canonical_id": "pl_the_1_true_king",
+              "name": "The 1 True King",
+              "name_original": "The 1 True King",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 4257214,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ogtomatoguy",
+              "name": "OGTomatoGuy",
+              "name_original": "OGTomatoGuy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 4128177,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_tiboun",
+              "name": "TibOun",
+              "name_original": "TibOun",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 4033635,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_buffy",
+              "name": "Buffy",
+              "name_original": "Buffy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3671609,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_money",
+              "name": "Money",
+              "name_original": "Money",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3629367,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_anxiko",
+              "name": "Anxiko",
+              "name_original": "Anxiko",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3552480,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_donxo",
+              "name": "Donxo",
+              "name_original": "Donxo",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3409112,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_wild_lord",
+              "name": "Wild Lord",
+              "name_original": "Wild Lord",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3163431,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_ventura",
+              "name": "Menace Ventura",
+              "name_original": "Menace Ventura",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2805761,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_domination",
+              "name": "DomInation",
+              "name_original": "DomInation",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2130241,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_the_tank",
+              "name": "Menace the Tank",
+              "name_original": "Menace the Tank",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2074720,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_danieladh",
+              "name": "Danieladh",
+              "name_original": "Danieladh",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1583164,
+              "is_leader": false
+            }
+          ]
+        },
+        {
+          "id": "2025-12-11-rally-16",
+          "leader": "Rapportde Combat",
+          "participants": [
+            {
+              "canonical_id": "pl_buffy",
+              "name": "Buffy",
+              "name_original": "Buffy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 4853299,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_domination",
+              "name": "DomInation",
+              "name_original": "DomInation",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 4784764,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_donxo",
+              "name": "Donxo",
+              "name_original": "Donxo",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 4293637,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_ventura",
+              "name": "Menace Ventura",
+              "name_original": "Menace Ventura",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3924079,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_anxiko",
+              "name": "Anxiko",
+              "name_original": "Anxiko",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3850554,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_lord_goldwater",
+              "name": "Lord Goldwater",
+              "name_original": "Lord Goldwater",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3617710,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_sky",
+              "name": "Sky",
+              "name_original": "Sky",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3325657,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_samiwalksalone",
+              "name": "SamiWalksAlone",
+              "name_original": "SamiWalksAlone",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2583840,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ogtomatoguy",
+              "name": "OGTomatoGuy",
+              "name_original": "OGTomatoGuy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1808038,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_wild_lord",
+              "name": "Wild Lord",
+              "name_original": "Wild Lord",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1663415,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_tiboun",
+              "name": "TibOun",
+              "name_original": "TibOun",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1403250,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ayman",
+              "name": "Ayman",
+              "name_original": "Ayman",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 919520,
+              "is_leader": false
+            }
+          ]
+        },
+        {
+          "id": "2025-12-11-rally-17",
+          "leader": "Rapportde Combat",
+          "participants": [
+            {
+              "canonical_id": "pl_korea_machine",
+              "name": "Korea Machine",
+              "name_original": "Korea Machine",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2957255,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_the_1_true_king",
+              "name": "The 1 True King",
+              "name_original": "The 1 True King",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2916489,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_ventura",
+              "name": "Menace Ventura",
+              "name_original": "Menace Ventura",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2783781,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_buffy",
+              "name": "Buffy",
+              "name_original": "Buffy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2757813,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_samiwalksalone",
+              "name": "SamiWalksAlone",
+              "name_original": "SamiWalksAlone",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2501431,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_tiboun",
+              "name": "TibOun",
+              "name_original": "TibOun",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2358936,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_donxo",
+              "name": "Donxo",
+              "name_original": "Donxo",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2211188,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ginny",
+              "name": "Ginny",
+              "name_original": "Ginny",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1882153,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ogtomatoguy",
+              "name": "OGTomatoGuy",
+              "name_original": "OGTomatoGuy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1874668,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_danieladh",
+              "name": "Danieladh",
+              "name_original": "Danieladh",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1107850,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_domination",
+              "name": "DomInation",
+              "name_original": "DomInation",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 16446,
+              "is_leader": false
+            }
+          ]
+        },
+        {
+          "id": "2025-12-11-rally-18",
+          "leader": "Rapportde Combat",
+          "participants": [
+            {
+              "canonical_id": "pl_ogtomatoguy",
+              "name": "OGTomatoGuy",
+              "name_original": "OGTomatoGuy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1510688,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_the_1_true_king",
+              "name": "The 1 True King",
+              "name_original": "The 1 True King",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1170107,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_money",
+              "name": "Money",
+              "name_original": "Money",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1119860,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_tiboun",
+              "name": "TibOun",
+              "name_original": "TibOun",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1114222,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ginny",
+              "name": "Ginny",
+              "name_original": "Ginny",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 967767,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_sky",
+              "name": "Sky",
+              "name_original": "Sky",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 944303,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_donxo",
+              "name": "Donxo",
+              "name_original": "Donxo",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 673927,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_danieladh",
+              "name": "Danieladh",
+              "name_original": "Danieladh",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 440841,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_samiwalksalone",
+              "name": "SamiWalksAlone",
+              "name_original": "SamiWalksAlone",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 386154,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_ventura",
+              "name": "Menace Ventura",
+              "name_original": "Menace Ventura",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 294407,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_buffy",
+              "name": "Buffy",
+              "name_original": "Buffy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 123628,
+              "is_leader": false
+            }
+          ]
+        },
+        {
+          "id": "2025-12-11-rally-19",
+          "leader": "Rapportde Combat",
+          "participants": [
+            {
+              "canonical_id": "pl_ogtomatoguy",
+              "name": "OGTomatoGuy",
+              "name_original": "OGTomatoGuy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2218288,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_wild_lord",
+              "name": "Wild Lord",
+              "name_original": "Wild Lord",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1782569,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_tiboun",
+              "name": "TibOun",
+              "name_original": "TibOun",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1512574,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_korea_machine",
+              "name": "Korea Machine",
+              "name_original": "Korea Machine",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1197785,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_ventura",
+              "name": "Menace Ventura",
+              "name_original": "Menace Ventura",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1089999,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_money",
+              "name": "Money",
+              "name_original": "Money",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 819740,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_samiwalksalone",
+              "name": "SamiWalksAlone",
+              "name_original": "SamiWalksAlone",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 761302,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_danieladh",
+              "name": "Danieladh",
+              "name_original": "Danieladh",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 624875,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ginny",
+              "name": "Ginny",
+              "name_original": "Ginny",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 462791,
+              "is_leader": false
+            }
+          ]
+        },
+        {
+          "id": "2025-12-11-rally-20",
+          "leader": "Rapportde Combat",
+          "participants": [
+            {
+              "canonical_id": "pl_buffy",
+              "name": "Buffy",
+              "name_original": "Buffy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 9516178,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_domination",
+              "name": "DomInation",
+              "name_original": "DomInation",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 8220742,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_donxo",
+              "name": "Donxo",
+              "name_original": "Donxo",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 8177284,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_the_1_true_king",
+              "name": "The 1 True King",
+              "name_original": "The 1 True King",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 8036651,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_ventura",
+              "name": "Menace Ventura",
+              "name_original": "Menace Ventura",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 7487105,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_anxiko",
+              "name": "Anxiko",
+              "name_original": "Anxiko",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 6818119,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_money",
+              "name": "Money",
+              "name_original": "Money",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 6466573,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_sky",
+              "name": "Sky",
+              "name_original": "Sky",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 6345322,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ogtomatoguy",
+              "name": "OGTomatoGuy",
+              "name_original": "OGTomatoGuy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 6333212,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_the_tank",
+              "name": "Menace the Tank",
+              "name_original": "Menace the Tank",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 5747620,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_wild_lord",
+              "name": "Wild Lord",
+              "name_original": "Wild Lord",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 5581844,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ayman",
+              "name": "Ayman",
+              "name_original": "Ayman",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 4338988,
+              "is_leader": false
+            }
+          ]
+        },
+        {
+          "id": "2025-12-11-rally-21",
+          "leader": "RapportdaCombat",
+          "participants": [
+            {
+              "canonical_id": "pl_korea_machine",
+              "name": "Korea Machine",
+              "name_original": "Korea Machine",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2482356,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_buffy",
+              "name": "Buffy",
+              "name_original": "Buffy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2300792,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ayman",
+              "name": "Ayman",
+              "name_original": "Ayman",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2231771,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_samiwalksalone",
+              "name": "SamiWalksAlone",
+              "name_original": "SamiWalksAlone",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1996225,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_sky",
+              "name": "Sky",
+              "name_original": "Sky",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1930684,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_the_true_king",
+              "name": "The ] True King",
+              "name_original": "The ] True King",
+              "matched_by": "auto",
+              "language_detected": "en",
+              "damage": 1900901,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ogtomatoguy",
+              "name": "OGTomatoGuy",
+              "name_original": "OGTomatoGuy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1886557,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_wild_lord",
+              "name": "Wild Lord",
+              "name_original": "Wild Lord",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1879012,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_tiboun",
+              "name": "TibOun",
+              "name_original": "TibOun",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1689426,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_domination",
+              "name": "DomInation",
+              "name_original": "DomInation",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1431997,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_donxo",
+              "name": "Donxo",
+              "name_original": "DonXo",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1423954,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_the_tank",
+              "name": "Menace the Tank",
+              "name_original": "Menace the Tank",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1290056,
+              "is_leader": false
+            }
+          ]
+        },
+        {
+          "id": "2025-12-11-rally-22",
+          "leader": "RapportdaCombat",
+          "participants": [
+            {
+              "canonical_id": "pl_the_1_true_king",
+              "name": "The 1 True King",
+              "name_original": "The 1 True King",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3929303,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_tiboun",
+              "name": "TibOun",
+              "name_original": "TibOun",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3719742,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_buffy",
+              "name": "Buffy",
+              "name_original": "Buffy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3380860,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_anxiko",
+              "name": "Anxiko",
+              "name_original": "Anxiko",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3281851,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_donxo",
+              "name": "Donxo",
+              "name_original": "DonXo",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3141503,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_ventura",
+              "name": "Menace Ventura",
+              "name_original": "Menace Ventura",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2579131,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_lord_goldwater",
+              "name": "Lord Goldwater",
+              "name_original": "Lord Goldwater",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2218141,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ogtomatoguy",
+              "name": "OGTomatoGuy",
+              "name_original": "OGTomatoGuy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2088390,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_money",
+              "name": "Money",
+              "name_original": "Money",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1987778,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_wild_lord",
+              "name": "Wild Lord",
+              "name_original": "Wild Lord",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1836940,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_samiwalksalone",
+              "name": "SamiWalksAlone",
+              "name_original": "SamiWalksAlone",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1807116,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ayman",
+              "name": "Ayman",
+              "name_original": "Ayman",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1562900,
+              "is_leader": false
+            }
+          ]
+        },
+        {
+          "id": "2025-12-11-rally-23",
+          "leader": "Rapportde Combat",
+          "participants": [
+            {
+              "canonical_id": "pl_the_1_true_king",
+              "name": "The 1 True King",
+              "name_original": "The 1 True King",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3407124,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_ventura",
+              "name": "Menace Ventura",
+              "name_original": "Menace Ventura",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3241537,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_anxiko",
+              "name": "Anxiko",
+              "name_original": "Anxiko",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3179048,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_wild_lord",
+              "name": "Wild Lord",
+              "name_original": "Wild Lord",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3094617,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_donxo",
+              "name": "Donxo",
+              "name_original": "DonXo",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2558977,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_the_tank",
+              "name": "Menace the Tank",
+              "name_original": "Menace the Tank",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2518552,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ogtomatoguy",
+              "name": "OGTomatoGuy",
+              "name_original": "OGTomatoGuy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2501294,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_samiwalksalone",
+              "name": "SamiWalksAlone",
+              "name_original": "SamiWalksAlone",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2464838,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_tiboun",
+              "name": "TibOun",
+              "name_original": "TibOun",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2453276,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ginny",
+              "name": "Ginny",
+              "name_original": "Ginny",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1889314,
+              "is_leader": false
+            }
+          ]
+        },
+        {
+          "id": "2025-12-11-rally-24",
+          "leader": "Rapportde Combat",
+          "participants": [
+            {
+              "canonical_id": "pl_ogtomatoguy",
+              "name": "OGTomatoGuy",
+              "name_original": "OGTomatoGuy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 7048144,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_buffy",
+              "name": "Buffy",
+              "name_original": "Buffy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 6345178,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_tiboun",
+              "name": "TibOun",
+              "name_original": "TibOun",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 5104824,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_ventura",
+              "name": "Menace Ventura",
+              "name_original": "Menace Ventura",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 5104824,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_lord_goldwater",
+              "name": "Lord Goldwater",
+              "name_original": "Lord Goldwater",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 5098077,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_domination",
+              "name": "DomInation",
+              "name_original": "DomInation",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 4794074,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_anxiko",
+              "name": "Anxiko",
+              "name_original": "Anxiko",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 4555393,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_sky",
+              "name": "Sky",
+              "name_original": "Sky",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 4326338,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_samiwalksalone",
+              "name": "SamiWalksAlone",
+              "name_original": "SamiWalksAlone",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 4241849,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_money",
+              "name": "Money",
+              "name_original": "Money",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2585591,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_danieladh",
+              "name": "Danieladh",
+              "name_original": "Danieladh",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1986346,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ayman",
+              "name": "Ayman",
+              "name_original": "Ayman",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1651812,
+              "is_leader": false
+            }
+          ]
+        },
+        {
+          "id": "2025-12-11-rally-25",
+          "leader": "RapportdeCombat",
+          "participants": [
+            {
+              "canonical_id": "pl_ogtomatoguy",
+              "name": "OGTomatoGuy",
+              "name_original": "OGTomatoGuy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 12996716,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_buffy",
+              "name": "Buffy",
+              "name_original": "Buffy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 10268631,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_domination",
+              "name": "DomInation",
+              "name_original": "DomInation",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 10098204,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_donxo",
+              "name": "Donxo",
+              "name_original": "Donxo",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 9207029,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ayman",
+              "name": "Ayman",
+              "name_original": "Ayman",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 8764093,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_tiboun",
+              "name": "TibOun",
+              "name_original": "TibOun",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 8542961,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_korea_machine",
+              "name": "Korea Machine",
+              "name_original": "Korea Machine",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 8222847,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_the_1_true_king",
+              "name": "The 1 True King",
+              "name_original": "The 1 True King",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 8058734,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_lord_goldwater",
+              "name": "Lord Goldwater",
+              "name_original": "Lord Goldwater",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 7929247,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_sky",
+              "name": "Sky",
+              "name_original": "Sky",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 7240160,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_ventura",
+              "name": "Menace Ventura",
+              "name_original": "Menace Ventura",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 5951202,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_samiwalksalone",
+              "name": "SamiWalksAlone",
+              "name_original": "SamiWalksAlone",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 4170314,
+              "is_leader": false
+            }
+          ]
+        },
+        {
+          "id": "2025-12-11-rally-26",
+          "leader": "RapportdeCombat",
+          "participants": [
+            {
+              "canonical_id": "pl_tiboun",
+              "name": "TibOun",
+              "name_original": "TibOun",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2715630,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_ventura",
+              "name": "Menace Ventura",
+              "name_original": "Menace Ventura",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2715630,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_anxiko",
+              "name": "Anxiko",
+              "name_original": "Anxiko",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2660507,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_money",
+              "name": "Money",
+              "name_original": "Money",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2592977,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_buffy",
+              "name": "Buffy",
+              "name_original": "Buffy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2579664,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_donxo",
+              "name": "Donxo",
+              "name_original": "Donxo",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2328075,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_the_1_true_king",
+              "name": "The 1 True King",
+              "name_original": "The 1 True King",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2261320,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ogtomatoguy",
+              "name": "OGTomatoGuy",
+              "name_original": "OGTomatoGuy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2222364,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_the_tank",
+              "name": "Menace the Tank",
+              "name_original": "Menace the Tank",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2132776,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_samiwalksalone",
+              "name": "SamiWalksAlone",
+              "name_original": "SamiWalksAlone",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2000700,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_domination",
+              "name": "DomInation",
+              "name_original": "DomInation",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1894704,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ayman",
+              "name": "Ayman",
+              "name_original": "Ayman",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1851181,
+              "is_leader": false
+            }
+          ]
+        },
+        {
+          "id": "2025-12-11-rally-27",
+          "leader": "RapportdeCombat",
+          "participants": [
+            {
+              "canonical_id": "pl_ogtomatoguy",
+              "name": "OGTomatoGuy",
+              "name_original": "OGTomatoGuy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 4645462,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_domination",
+              "name": "DomInation",
+              "name_original": "DomInation",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 4206932,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_tiboun",
+              "name": "TibOun",
+              "name_original": "TibOun",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3304467,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_lord_goldwater",
+              "name": "Lord Goldwater",
+              "name_original": "Lord Goldwater",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3300200,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_wild_lord",
+              "name": "Wild Lord",
+              "name_original": "Wild Lord",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3226679,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ginny",
+              "name": "Ginny",
+              "name_original": "Ginny",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 3017589,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_buffy",
+              "name": "Buffy",
+              "name_original": "Buffy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2968902,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_sky",
+              "name": "Sky",
+              "name_original": "Sky",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2800536,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_menace_ventura",
+              "name": "Menace Ventura",
+              "name_original": "Menace Ventura",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 2234309,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_money",
+              "name": "Money",
+              "name_original": "Money",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 1660590,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ayman",
+              "name": "Ayman",
+              "name_original": "Ayman",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 885027,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_donxo",
+              "name": "Donxo",
+              "name_original": "Donxo",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 4660,
+              "is_leader": false
+            }
+          ]
         }
       ],
+      "source_hash": "22c745af96ae0fc988b2b5ed625ce291ad15cf2d",
       "players": [
+        {
+          "id": "pl_money",
+          "name": "Money",
+          "total_damage": 124479039
+        },
         {
           "id": "pl_ogtomatoguy",
           "name": "OGTomatoGuy",
-          "total_damage": 8561295
+          "total_damage": 113363715
         },
         {
           "id": "pl_buffy",
           "name": "Buffy",
-          "total_damage": 7687755
-        },
-        {
-          "id": "pl_korea_machine",
-          "name": "Korea Machine",
-          "total_damage": 7342282
-        },
-        {
-          "id": "pl_domination",
-          "name": "DomInation",
-          "total_damage": 6813002
-        },
-        {
-          "id": "pl_the_1_true_king",
-          "name": "The 1 True King",
-          "total_damage": 6618359
+          "total_damage": 100580078
         },
         {
           "id": "pl_tiboun",
           "name": "TibOun",
-          "total_damage": 6230174
+          "total_damage": 83781991
         },
         {
           "id": "pl_menace_ventura",
           "name": "Menace Ventura",
-          "total_damage": 6230174
+          "total_damage": 78454642
         },
         {
-          "id": "pl_lord_goldwater",
-          "name": "Lord Goldwater",
-          "total_damage": 6221383
+          "id": "pl_domination",
+          "name": "DomInation",
+          "total_damage": 70305931
+        },
+        {
+          "id": "pl_the_1_true_king",
+          "name": "The 1 True King",
+          "total_damage": 67936503
+        },
+        {
+          "id": "pl_donxo",
+          "name": "Donxo",
+          "total_damage": 60142740
         },
         {
           "id": "pl_sky",
           "name": "Sky",
-          "total_damage": 5280073
-        },
-        {
-          "id": "pl_money",
-          "name": "Money",
-          "total_damage": 5178733
+          "total_damage": 53551650
         },
         {
           "id": "pl_samiwalksalone",
           "name": "SamiWalksAlone",
-          "total_damage": 5168370
+          "total_damage": 50430290
+        },
+        {
+          "id": "pl_lord_goldwater",
+          "name": "Lord Goldwater",
+          "total_damage": 45586513
+        },
+        {
+          "id": "pl_anxiko",
+          "name": "Anxiko",
+          "total_damage": 42420237
         },
         {
           "id": "pl_menace_the_tank",
           "name": "Menace the Tank",
-          "total_damage": 4817835
+          "total_damage": 41659907
+        },
+        {
+          "id": "pl_ayman",
+          "name": "Ayman",
+          "total_damage": 38873353
+        },
+        {
+          "id": "pl_korea_machine",
+          "name": "Korea Machine",
+          "total_damage": 34786787
+        },
+        {
+          "id": "pl_wild_lord",
+          "name": "Wild Lord",
+          "total_damage": 34376024
+        },
+        {
+          "id": "pl_ginny",
+          "name": "Ginny",
+          "total_damage": 26130988
+        },
+        {
+          "id": "pl_danieladh",
+          "name": "Danieladh",
+          "total_damage": 11607463
+        },
+        {
+          "id": "pl_warmachine5e",
+          "name": "Warmachine5e",
+          "total_damage": 2130801
+        },
+        {
+          "id": "pl_the_true_king",
+          "name": "The ] True King",
+          "total_damage": 1900901
         }
       ]
     }
