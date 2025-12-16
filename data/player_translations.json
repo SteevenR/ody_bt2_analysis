@@ -81,7 +81,7 @@
     "pl_domination": {
       "names_by_language": {
         "fr": "",
-        "en": "Dom1nation",
+        "en": "DomInation",
         "es": "",
         "zh": "",
         "ru": "",
@@ -120,15 +120,14 @@
       },
       "language_detected": "en",
       "aliases": [
-        "The 1 True King",
-        "The ] True King"
+        "The 1 True King"
       ],
       "pending_review": true
     },
     "pl_tiboun": {
       "names_by_language": {
         "fr": "",
-        "en": "Tib0un",
+        "en": "TibOun",
         "es": "",
         "zh": "",
         "ru": "",
@@ -144,8 +143,7 @@
       },
       "language_detected": "en",
       "aliases": [
-        "TibOun",
-        "Tib0un"
+        "TibOun"
       ],
       "pending_review": true
     },
@@ -425,7 +423,7 @@
       ],
       "pending_review": true
     },
-    "pl_warmachine5e": {
+    "pl_warmachine58": {
       "names_by_language": {
         "fr": "",
         "en": "Warmachine58",
@@ -446,98 +444,6 @@
       "aliases": [
         "Warmachine5e",
         "Warmachine58"
-      ],
-      "pending_review": true
-    },
-    "pl_rapportde_combat": {
-      "names_by_language": {
-        "fr": "",
-        "en": "Rapportde Combat",
-        "es": "",
-        "zh": "",
-        "ru": "",
-        "ko": ""
-      },
-      "transliterations_by_language": {
-        "fr": null,
-        "en": null,
-        "es": null,
-        "zh": null,
-        "ru": null,
-        "ko": null
-      },
-      "language_detected": "en",
-      "aliases": [
-        "Rapportde Combat"
-      ],
-      "pending_review": true
-    },
-    "pl_rapportdecombat": {
-      "names_by_language": {
-        "fr": "",
-        "en": "RapportdeCombat",
-        "es": "",
-        "zh": "",
-        "ru": "",
-        "ko": ""
-      },
-      "transliterations_by_language": {
-        "fr": null,
-        "en": null,
-        "es": null,
-        "zh": null,
-        "ru": null,
-        "ko": null
-      },
-      "language_detected": "en",
-      "aliases": [
-        "RapportdeCombat"
-      ],
-      "pending_review": true
-    },
-    "pl_rapportdacombat": {
-      "names_by_language": {
-        "fr": "",
-        "en": "RapportdaCombat",
-        "es": "",
-        "zh": "",
-        "ru": "",
-        "ko": ""
-      },
-      "transliterations_by_language": {
-        "fr": null,
-        "en": null,
-        "es": null,
-        "zh": null,
-        "ru": null,
-        "ko": null
-      },
-      "language_detected": "en",
-      "aliases": [
-        "RapportdaCombat"
-      ],
-      "pending_review": true
-    },
-    "pl_the_true_king": {
-      "names_by_language": {
-        "fr": "",
-        "en": "The ] True King",
-        "es": "",
-        "zh": "",
-        "ru": "",
-        "ko": ""
-      },
-      "transliterations_by_language": {
-        "fr": null,
-        "en": null,
-        "es": null,
-        "zh": null,
-        "ru": null,
-        "ko": null
-      },
-      "language_detected": "en",
-      "aliases": [
-        "The ] True King"
       ],
       "pending_review": true
     }
@@ -561,10 +467,10 @@
     "anxiko": "pl_anxiko",
     "wild lord": "pl_wild_lord",
     "danieladh": "pl_danieladh",
-    "warmachine5e": "pl_warmachine5e",
+    "warmachine5e": "pl_warmachine58",
     "rapportde combat": "pl_rapportde_combat",
     "rapportdecombat": "pl_rapportdecombat",
     "rapportdacombat": "pl_rapportdacombat",
-    "the true king": "pl_the_true_king"
+    "the true king": "pl_the_1_true_king"
   }
 }
