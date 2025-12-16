@@ -32,11 +32,20 @@
   </header>
 
   <main>
+    <section id="events-timeseries-section">
+      <h2 id="events-evolution-title">Évolution des événements</h2>
+      <div class="controls">
+        <label><input type="checkbox" id="toggleDamage" checked /> <span id="toggle-damage-label">Dégâts totaux</span></label>
+        <label><input type="checkbox" id="toggleRallies" checked /> <span id="toggle-rallies-label">Ralliements</span></label>
+        <label><input type="checkbox" id="togglePlayers" checked /> <span id="toggle-players-label">Joueurs présents</span></label>
+      </div>
+      <canvas id="events-timeseries" height="140"></canvas>
+    </section>
+
     <section id="summary">
-      <h2 id="last-event-label">Dernier événement</h2>
+      <h2 id="last-event-label">Résumé (<span id="summary-event-date">-</span>)</h2>
       <div id="last-event-info">
         <p><strong id="last-event-name-label">Nom :</strong> <span id="last-event-name">-</span></p>
-        <p><strong id="last-event-date-label">Date :</strong> <span id="last-event-date">-</span></p>
         <p><strong id="last-event-rallies-label">Ralliements :</strong> <span id="last-event-rallies-count">-</span></p>
         <p><strong id="last-event-players-label">Joueurs :</strong> <span id="last-event-players-count">-</span></p>
         <p><strong id="last-event-damage-label">Dégâts totaux alliance :</strong> <span id="last-event-total-damage">-</span></p>
@@ -44,7 +53,7 @@
     </section>
 
     <section id="ranking">
-      <h2 id="ranking-title">Classement des joueurs (dernier événement)</h2>
+      <h2 id="ranking-title">Classement des joueurs (<span id="ranking-date">-</span>)</h2>
       <table id="ranking-table">
         <thead>
           <tr>
@@ -58,18 +67,8 @@
     </section>
 
     <section id="charts">
-      <h2 id="damage-chart-title">Graphique des dégâts (dernier événement)</h2>
+      <h2 id="damage-chart-title">Graphique des dégâts (<span id="damage-chart-date">-</span>)</h2>
       <canvas id="damage-chart" height="120"></canvas>
-    </section>
-
-    <section id="events-timeseries-section">
-      <h2 id="events-evolution-title">Évolution des événements</h2>
-      <div class="controls">
-        <label><input type="checkbox" id="toggleDamage" checked /> <span id="toggle-damage-label">Dégâts totaux</span></label>
-        <label><input type="checkbox" id="toggleRallies" checked /> <span id="toggle-rallies-label">Ralliements</span></label>
-        <label><input type="checkbox" id="togglePlayers" checked /> <span id="toggle-players-label">Joueurs présents</span></label>
-      </div>
-      <canvas id="events-timeseries" height="140"></canvas>
     </section>
 
     <section id="players-over-time-section">
@@ -121,6 +120,6 @@
     <p id="footer-text">Made with ❤️ just for fun by R4 [ODY]Tib0un – Kingshot Bear Trap Stats</p>
   </footer>
 
-  <script src="app.js"></script>
+  <script type="module" src="./dashboard.js"></script>
 </body>
 </html>

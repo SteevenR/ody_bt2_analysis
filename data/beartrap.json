@@ -1,6 +1,94 @@
 {
   "events": [
     {
+      "id": "2025-12-15",
+      "date": "2025-12-15",
+      "name": "Bear Trap",
+      "alliance_total_damage": 1727852468,
+      "rally_count_total": 38,
+      "rallies": []
+    },
+    {
+      "id": "2025-12-13",
+      "date": "2025-12-13",
+      "name": "Bear Trap",
+      "alliance_total_damage": 1384194048,
+      "rally_count_total": 33,
+      "rallies": []
+    },
+    {
+      "id": "2025-12-09",
+      "date": "2025-12-09",
+      "name": "Bear Trap",
+      "alliance_total_damage": 1360000000,
+      "rally_count_total": 37,
+      "rallies": []
+    },
+    {
+      "id": "2025-12-05",
+      "date": "2025-12-05",
+      "name": "Bear Trap",
+      "alliance_total_damage": 754000000,
+      "rally_count_total": 32,
+      "rallies": []
+    },
+    {
+      "id": "2025-12-03",
+      "date": "2025-12-03",
+      "name": "Bear Trap",
+      "alliance_total_damage": 643000000,
+      "rally_count_total": 29,
+      "rallies": []
+    },
+    {
+      "id": "2025-12-01",
+      "date": "2025-12-01",
+      "name": "Bear Trap",
+      "alliance_total_damage": 409000000,
+      "rally_count_total": 29,
+      "rallies": []
+    },
+    {
+      "id": "2025-11-29",
+      "date": "2025-11-29",
+      "name": "Bear Trap",
+      "alliance_total_damage": 529000000,
+      "rally_count_total": 30,
+      "rallies": []
+    },
+    {
+      "id": "2025-11-27",
+      "date": "2025-11-27",
+      "name": "Bear Trap",
+      "alliance_total_damage": 492000000,
+      "rally_count_total": 30,
+      "rallies": []
+    },
+    {
+      "id": "2025-11-25",
+      "date": "2025-11-25",
+      "name": "Bear Trap",
+      "alliance_total_damage": 287700000,
+      "rally_count_total": 24,
+      "rallies": []
+    },
+    {
+      "id": "2025-11-24",
+      "date": "2025-11-24",
+      "name": "Bear Trap",
+      "alliance_total_damage": 336000000,
+      "rally_count_total": 26,
+      "rallies": []
+    },
+    {
+      "id": "2025-11-21",
+      "date": "2025-11-21",
+      "name": "Bear Trap",
+      "alliance_total_damage": 185000000,
+      "rally_count_total": 18,
+      "rallies": []
+    },
+    {
       "id": "2025-12-11",
       "date": "2025-12-11",
       "name": "Bear Trap",
