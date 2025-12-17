@@ -104,7 +104,7 @@
     "pl_the_1_true_king": {
       "names_by_language": {
         "fr": "",
-        "en": "The 1 True King",
+        "en": "BabaYaga!",
         "es": "",
         "zh": "",
         "ru": "",
@@ -120,7 +120,9 @@
       },
       "language_detected": "en",
       "aliases": [
-        "The 1 True King"
+        "The 1 True King",
+        "BabaYaga!",
+        "BabaYaga?"
       ],
       "pending_review": true
     },
@@ -471,6 +473,7 @@
     "rapportde combat": "pl_rapportde_combat",
     "rapportdecombat": "pl_rapportdecombat",
     "rapportdacombat": "pl_rapportdacombat",
-    "the true king": "pl_the_1_true_king"
+    "the true king": "pl_the_1_true_king",
+    "babayaga": "pl_the_1_true_king"
   }
 }

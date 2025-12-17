@@ -1,75 +1,11 @@
 {
   "events": [
     {
-      "id": "2025-12-15",
-      "date": "2025-12-15",
+      "id": "2025-11-21",
+      "date": "2025-11-21",
       "name": "Bear Trap",
-      "alliance_total_damage": 1727852468,
-      "rally_count_total": 38,
-      "rallies": []
-    },
-    {
-      "id": "2025-12-13",
-      "date": "2025-12-13",
-      "name": "Bear Trap",
-      "alliance_total_damage": 1384194048,
-      "rally_count_total": 33,
-      "rallies": []
-    },
-    {
-      "id": "2025-12-09",
-      "date": "2025-12-09",
-      "name": "Bear Trap",
-      "alliance_total_damage": 1360000000,
-      "rally_count_total": 37,
-      "rallies": []
-    },
-    {
-      "id": "2025-12-05",
-      "date": "2025-12-05",
-      "name": "Bear Trap",
-      "alliance_total_damage": 754000000,
-      "rally_count_total": 32,
-      "rallies": []
-    },
-    {
-      "id": "2025-12-03",
-      "date": "2025-12-03",
-      "name": "Bear Trap",
-      "alliance_total_damage": 643000000,
-      "rally_count_total": 29,
-      "rallies": []
-    },
-    {
-      "id": "2025-12-01",
-      "date": "2025-12-01",
-      "name": "Bear Trap",
-      "alliance_total_damage": 409000000,
-      "rally_count_total": 29,
-      "rallies": []
-    },
-    {
-      "id": "2025-11-29",
-      "date": "2025-11-29",
-      "name": "Bear Trap",
-      "alliance_total_damage": 529000000,
-      "rally_count_total": 30,
-      "rallies": []
-    },
-    {
-      "id": "2025-11-27",
-      "date": "2025-11-27",
-      "name": "Bear Trap",
-      "alliance_total_damage": 492000000,
-      "rally_count_total": 30,
-      "rallies": []
-    },
-    {
-      "id": "2025-11-25",
-      "date": "2025-11-25",
-      "name": "Bear Trap",
-      "alliance_total_damage": 287700000,
-      "rally_count_total": 24,
+      "alliance_total_damage": 185000000,
+      "rally_count_total": 18,
       "rallies": []
     },
     {
@@ -81,11 +17,59 @@
       "rallies": []
     },
     {
-      "id": "2025-11-21",
-      "date": "2025-11-21",
+      "id": "2025-11-25",
+      "date": "2025-11-25",
       "name": "Bear Trap",
-      "alliance_total_damage": 185000000,
-      "rally_count_total": 18,
+      "alliance_total_damage": 287700000,
+      "rally_count_total": 24,
+      "rallies": []
+    },
+    {
+      "id": "2025-11-27",
+      "date": "2025-11-27",
+      "name": "Bear Trap",
+      "alliance_total_damage": 492000000,
+      "rally_count_total": 30,
+      "rallies": []
+    },
+    {
+      "id": "2025-11-29",
+      "date": "2025-11-29",
+      "name": "Bear Trap",
+      "alliance_total_damage": 529000000,
+      "rally_count_total": 30,
+      "rallies": []
+    },
+    {
+      "id": "2025-12-01",
+      "date": "2025-12-01",
+      "name": "Bear Trap",
+      "alliance_total_damage": 409000000,
+      "rally_count_total": 29,
+      "rallies": []
+    },
+    {
+      "id": "2025-12-03",
+      "date": "2025-12-03",
+      "name": "Bear Trap",
+      "alliance_total_damage": 643000000,
+      "rally_count_total": 29,
+      "rallies": []
+    },
+    {
+      "id": "2025-12-05",
+      "date": "2025-12-05",
+      "name": "Bear Trap",
+      "alliance_total_damage": 754000000,
+      "rally_count_total": 32,
+      "rallies": []
+    },
+    {
+      "id": "2025-12-09",
+      "date": "2025-12-09",
+      "name": "Bear Trap",
+      "alliance_total_damage": 1360000000,
+      "rally_count_total": 37,
       "rallies": []
     },
     {
@@ -3045,6 +3029,180 @@
           "id": "pl_warmachine58",
           "name": "Warmachine58",
           "total_damage": 2130801
+        }
+      ]
+    },
+    {
+      "id": "2025-12-13",
+      "date": "2025-12-13",
+      "name": "Bear Trap",
+      "alliance_total_damage": 1384194048,
+      "rally_count_total": 33,
+      "rallies": []
+    },
+    {
+      "id": "2025-12-15",
+      "date": "2025-12-15",
+      "name": "Bear Trap",
+      "alliance_total_damage": 1727852468,
+      "rally_count_total": 38,
+      "rallies": []
+    },
+    {
+      "id": "2025-12-17",
+      "date": "2025-12-17",
+      "name": "Bear Trap",
+      "alliance_total_damage": 61715917,
+      "rally_count_total": 0,
+      "rallies": [
+        {
+          "id": "2025-12-17-rally-1",
+          "leader": "Buffy",
+          "participants": [
+            {
+              "canonical_id": "pl_ogtomatoguy",
+              "name": "OGTomatoGuy",
+              "name_original": "OGTomatoGuy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 8420707,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_buffy",
+              "name": "Buffy",
+              "name_original": "Buffy",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 7662712,
+              "is_leader": true
+            },
+            {
+              "canonical_id": "pl_babayaga",
+              "name": "BabaYaga?",
+              "name_original": "BabaYaga?",
+              "matched_by": "auto",
+              "language_detected": "en",
+              "damage": 7026119,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_lord_goldwater",
+              "name": "Lord Goldwater",
+              "name_original": "Lord Goldwater <",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 6292104,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ginny",
+              "name": "Ginny",
+              "name_original": "Ginny",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 6008325,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_anxiko",
+              "name": "Anxiko",
+              "name_original": "Anxiko",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 5730181,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_donxo",
+              "name": "Donxo",
+              "name_original": "DonXo",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 5646520,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_samiwalksalone",
+              "name": "SamiWalksAlone",
+              "name_original": "SamiWalksAlone",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 5581984,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_sky",
+              "name": "Sky",
+              "name_original": "Sky",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 5332041,
+              "is_leader": false
+            },
+            {
+              "canonical_id": "pl_ayman",
+              "name": "Ayman",
+              "name_original": "Ayman",
+              "matched_by": "alias",
+              "language_detected": "en",
+              "damage": 4015224,
+              "is_leader": false
+            }
+          ]
+        }
+      ],
+      "source_hash": "d549b85cb3808a52feea260af7486c63ec251079",
+      "players": [
+        {
+          "id": "pl_ogtomatoguy",
+          "name": "OGTomatoGuy",
+          "total_damage": 8420707
+        },
+        {
+          "id": "pl_buffy",
+          "name": "Buffy",
+          "total_damage": 7662712
+        },
+        {
+          "id": "pl_babayaga",
+          "name": "BabaYaga?",
+          "total_damage": 7026119
+        },
+        {
+          "id": "pl_lord_goldwater",
+          "name": "Lord Goldwater",
+          "total_damage": 6292104
+        },
+        {
+          "id": "pl_ginny",
+          "name": "Ginny",
+          "total_damage": 6008325
+        },
+        {
+          "id": "pl_anxiko",
+          "name": "Anxiko",
+          "total_damage": 5730181
+        },
+        {
+          "id": "pl_donxo",
+          "name": "Donxo",
+          "total_damage": 5646520
+        },
+        {
+          "id": "pl_samiwalksalone",
+          "name": "SamiWalksAlone",
+          "total_damage": 5581984
+        },
+        {
+          "id": "pl_sky",
+          "name": "Sky",
+          "total_damage": 5332041
+        },
+        {
+          "id": "pl_ayman",
+          "name": "Ayman",
+          "total_damage": 4015224
         }
       ]
     }

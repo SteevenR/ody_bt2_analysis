@@ -696,6 +696,43 @@ def process_single_rally(args):
     print(f"[WORKER] PID={os.getpid()} rally {rally_id} finished; unique participants={len(participants_unique)}; leader='{leader_name_obs}'")
     return {"rally_id": rally_id, "leader_name_obs": leader_name_obs, "participants": participants_unique, "files": [str(f.name) for f in files]}
 
+
+def parse_top_players_from_total_pages(reader, total_pages: list[Path], trans_store: dict, event_id: str):
+    """Parse top players from total.0/1/2 pages using the rally extractor for consistency."""
+    participants_raw = extract_rally_participants_from_pages_v2(
+        reader, total_pages, ocr_logger=None, event_id=event_id, rally_id=-1
+    )
+    if not participants_raw:
+        return [], False
+
+    seen = set()
+    participants_unique = []
+    for p in participants_raw:
+        key = (p.get("name"), p.get("damage"))
+        if key in seen:
+            continue
+        seen.add(key)
+        participants_unique.append(p)
+
+    resolved_players = []
+    trans_added = False
+    for p in sorted(participants_unique, key=lambda x: x.get("damage", 0), reverse=True):
+        pid, cname, lang, matched_by, added = resolve_with_translation(trans_store, p.get("name"))
+        if added:
+            trans_added = True
+        resolved_players.append({
+            "id": pid,
+            "name": cname,
+            "name_original": p.get("name"),
+            "matched_by": matched_by,
+            "language_detected": lang,
+            "damage": p.get("damage", 0),
+            "rank": p.get("rank"),
+            "source_file": p.get("source_file"),
+        })
+
+    return resolved_players, trans_added
+
 def recalc_totals_mode(reader):
     """Quick mode: only recalculate alliance_total_damage and rally_count_total from total.png files."""
     print("[INFO] ===== RECALC TOTALS ONLY MODE =====")
@@ -834,6 +871,24 @@ def main(recalc_totals_only=False):
                     if val > 0:
                         alliance_damage = val
 
+        # Attempt to read top players from total.0/1/2 pages (top 10)
+        total_pages = [
+            f for f in day_dir.iterdir()
+            if f.is_file()
+            and f.suffix.lower() in [".png", ".jpg", ".jpeg"]
+            and re.match(r"total\.\d+$", f.stem)
+        ]
+        top_players_resolved = []
+        if total_pages:
+            top_players_resolved, added = parse_top_players_from_total_pages(
+                reader_main,
+                sorted(total_pages, key=lambda p: p.stem),
+                trans_store,
+                event_id=date_str,
+            )
+            if added:
+                trans_modified = True
+
         event = {
             "id": date_str,
             "date": date_str,
@@ -843,6 +898,9 @@ def main(recalc_totals_only=False):
             "rallies": [],
             "source_hash": current_hash,
         }
+
+        if top_players_resolved:
+            event["top_totals"] = {"players": top_players_resolved, "source": "total_pages"}
 
         rally_groups = {}
         for f in day_dir.iterdir():
@@ -898,12 +956,25 @@ def main(recalc_totals_only=False):
 
         players_map = {}
         id_to_name = {}
+
+        # Prefer totals from total.* pages when available
+        for tp in top_players_resolved:
+            pid = tp.get("id") or f"pl_{_normalize_key(tp.get('name') or '')}"
+            dmg = tp.get("damage", 0)
+            players_map[pid] = dmg
+            id_to_name.setdefault(pid, tp.get("name", pid))
+
+        # Add rally-based sums for players not present in totals
         for r in event["rallies"]:
             for p in r["participants"]:
                 pid = p.get("canonical_id") or f"pl_{_normalize_key(p['name'])}"
+                if pid in players_map:
+                    id_to_name.setdefault(pid, p["name"])
+                    continue
                 players_map.setdefault(pid, 0)
                 players_map[pid] += p["damage"]
                 id_to_name.setdefault(pid, p["name"])
+
         event["players"] = [
             {"id": pid, "name": id_to_name.get(pid, pid), "total_damage": dmg}
             for pid, dmg in sorted(players_map.items(), key=lambda kv: kv[1], reverse=True)
