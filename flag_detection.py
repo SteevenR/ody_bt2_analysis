@@ -192,7 +192,7 @@ def _detect_in_zone(zone_gray, zone_color, zone_name="zone"):
         "hit_wh": best_wh,
     }
 
-def detect_flag_in_row(row_color_img, tokens=None, save_roi_to=None, save_hit_to=None, save_avatar_to=None, save_tl50_to=None):
+def detect_flag_in_row(row_color_img, tokens=None, save_roi_to=None, save_hit_to=None, save_avatar_to=None, save_tl50_to=None, verbose=True):
     """
     Shared flag detection used by both test helper and parallel analysis.
     
@@ -201,6 +201,7 @@ def detect_flag_in_row(row_color_img, tokens=None, save_roi_to=None, save_hit_to
         tokens: Optional list of OCR tokens [{"text": str, "x": int, "y": int, "conf": float}]
                 Used to compute ROI bounds between rank and name.
         save_roi_to: Optional Path to save the ROI crop for debugging
+        verbose: Whether to print debug logs (default True for backward compatibility)
     
     Returns:
         dict with keys (TL50-only schema):
@@ -332,12 +333,14 @@ def detect_flag_in_row(row_color_img, tokens=None, save_roi_to=None, save_hit_to
     # TL50-only detection and logging
     tl_result = None
     if tl_gray is not None and tl_color is not None and tl_gray.size > 0:
-        print(f"\n=== TL50 (Top-Left 60x80) ===")
-        print(f"TL50 position: x={tl_rect[0]}, y={tl_rect[1]}, w={tl_rect[2]}, h={tl_rect[3]}")
+        if verbose:
+            print(f"\n=== TL50 (Top-Left 60x80) ===")
+            print(f"TL50 position: x={tl_rect[0]}, y={tl_rect[1]}, w={tl_rect[2]}, h={tl_rect[3]}")
         tl_result = _detect_in_zone(tl_gray, tl_color, zone_name="tl50")
-        print(f"- Flag image similarity: {tl_result['shape_score']:.4f}")
-        print(f"- Color #6cc5a0 ratio:   {tl_result['color6c_ratio']:.4f}")
-        print(f"- Color ffffff ratio:    {tl_result['white_ratio']:.4f}")
+        if verbose:
+            print(f"- Flag image similarity: {tl_result['shape_score']:.4f}")
+            print(f"- Color #6cc5a0 ratio:   {tl_result['color6c_ratio']:.4f}")
+            print(f"- Color ffffff ratio:    {tl_result['white_ratio']:.4f}")
     
     # Decision based solely on TL50 check (shape + green + white)
     if tl_result is None:
@@ -357,8 +360,9 @@ def detect_flag_in_row(row_color_img, tokens=None, save_roi_to=None, save_hit_to
     final_score = (shape_score + color6c_ratio + white_ratio) / 3.0
     left_bias_ok = True  # by design TL50 is top-left
 
-    print(f"\n=== DECISION (TL50 ONLY) ===")
-    print(f"Thresholds: shape>=0.42, green>=0.50, white>=0.50")
+    if verbose:
+        print(f"\n=== DECISION (TL50 ONLY) ===")
+        print(f"Thresholds: shape>=0.42, green>=0.50, white>=0.50")
     
     thr_shape = 0.42
     min_green_major = 0.50
@@ -367,11 +371,12 @@ def detect_flag_in_row(row_color_img, tokens=None, save_roi_to=None, save_hit_to
     green_ok = color6c_ratio >= min_green_major
     white_ok = white_ratio >= min_white_major
     has_flag = shape_ok and green_ok and white_ok and left_bias_ok
-    print(f"- Shape score {shape_score:.4f} >= {thr_shape}: {'OK' if shape_ok else 'FAIL'}")
-    print(f"- Green ratio  {color6c_ratio:.4f} >= {min_green_major}: {'OK' if green_ok else 'FAIL'}")
-    print(f"- White ratio  {white_ratio:.4f} >= {min_white_major}: {'OK' if white_ok else 'FAIL'}")
-    print(f"- Left bias: {left_bias_ok}")
-    print(f">>> HAS_FLAG: {has_flag}")
+    if verbose:
+        print(f"- Shape score {shape_score:.4f} >= {thr_shape}: {'OK' if shape_ok else 'FAIL'}")
+        print(f"- Green ratio  {color6c_ratio:.4f} >= {min_green_major}: {'OK' if green_ok else 'FAIL'}")
+        print(f"- White ratio  {white_ratio:.4f} >= {min_white_major}: {'OK' if white_ok else 'FAIL'}")
+        print(f"- Left bias: {left_bias_ok}")
+        print(f">>> HAS_FLAG: {has_flag}")
 
     # No hit box saving or return anymore
 

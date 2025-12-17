@@ -354,14 +354,20 @@ def preprocess_for_ocr(img):
 def detect_rank_icons_by_template(image_path: Path, rank_templates: dict[int, Path]):
     img = cv2.imread(str(image_path))
     if img is None:
+        print(f"[DEBUG] Cannot read image: {image_path}")
         return {}
+    
+    # Check which templates exist
+    existing_templates = {r: p for r, p in rank_templates.items() if p.exists()}
+    if not existing_templates:
+        print(f"[DEBUG] No rank templates found in {list(rank_templates.values())}")
+        return {}
+    
     scale = 2
     img_up = cv2.resize(img, (img.shape[1] * scale, img.shape[0] * scale), interpolation=cv2.INTER_CUBIC)
     gray_up = cv2.cvtColor(img_up, cv2.COLOR_BGR2GRAY)
     detected = {}
-    for rank, tpl_path in rank_templates.items():
-        if not tpl_path.exists():
-            continue
+    for rank, tpl_path in existing_templates.items():
         tpl = cv2.imread(str(tpl_path), cv2.IMREAD_GRAYSCALE)
         if tpl is None:
             continue
@@ -389,6 +395,7 @@ def detect_rank_icons_by_template(image_path: Path, rank_templates: dict[int, Pa
 def calibrate_line_height_from_dot_zero(dot_zero_file: Path):
     detected_ranks = detect_rank_icons_by_template(dot_zero_file, RANK_TEMPLATES)
     if len(detected_ranks) < 2:
+        print(f"[DEBUG] Template matching failed: detected_ranks={detected_ranks} (need at least 2)")
         return None, None, None
     sorted_ranks = sorted(detected_ranks.items())
     diffs = []
@@ -407,6 +414,61 @@ def calibrate_line_height_from_dot_zero(dot_zero_file: Path):
     if 3 not in rank_y_positions and 2 in rank_y_positions:
         rank_y_positions[3] = rank_y_positions[2] + line_height
     return line_height, rank_x_col, rank_y_positions
+
+def calibrate_for_total_two(reader, total_two_file: Path, line_height_from_one: float, debug_mode=False) -> tuple:
+    """For total.2, find the position of rank 8 and extrapolate for ranks 9, 10.
+    Returns positions in ORIGINAL pixel coordinates (before upsampling)."""
+    img = cv2.imread(str(total_two_file))
+    if img is None:
+        return None, None, None
+    
+    if debug_mode:
+        print(f"[DEBUG] {total_two_file.stem}: image height={img.shape[0]}, width={img.shape[1]}")
+    
+    img_up, _, scale = preprocess_for_ocr(img)
+    h, w = img_up.shape[:2]
+    
+    if debug_mode:
+        print(f"[DEBUG] {total_two_file.stem}: upsampled height={h}, scale={scale}")
+        print(f"[DEBUG] {total_two_file.stem}: line_height_from_one={line_height_from_one:.1f}")
+    
+    # Scan top-left area for rank number "8"
+    scan_height = int(line_height_from_one * scale * 2)
+    scan_width = int(w * 0.2)
+    scan_img = img_up[:scan_height, :scan_width]
+    
+    boxes = reader.readtext(scan_img, detail=1)
+    rank8_y = None
+    for box, text, conf in boxes:
+        t = text.strip()
+        if t == "8" and conf >= 0.5:
+            ys = [p[1] for p in box]
+            rank8_y = sum(ys) / len(ys)
+            break
+    
+    if rank8_y is None:
+        if debug_mode:
+            print(f"[DEBUG] {total_two_file.stem}: Could not find rank 8")
+        return None, None, None
+    
+    # Convert rank8_y back to original pixel coordinates
+    rank8_y_orig = rank8_y / scale
+    
+    if debug_mode:
+        print(f"[DEBUG] {total_two_file.stem}: Found rank 8 at y={rank8_y:.1f} (upsampled), {rank8_y_orig:.1f} (original)")
+    
+    # Extrapolate positions for ranks 9 and 10 using line height (in original coords)
+    rank_y_positions = {
+        8: rank8_y_orig,
+        9: rank8_y_orig + line_height_from_one,
+        10: rank8_y_orig + 2 * line_height_from_one,
+    }
+    
+    if debug_mode:
+        print(f"[DEBUG] {total_two_file.stem}: Extrapolated positions (orig): 8={rank8_y_orig:.1f}, 9={rank8_y_orig + line_height_from_one:.1f}, 10={rank8_y_orig + 2*line_height_from_one:.1f}")
+    
+    rank_x_col = scan_width / 2 / scale  # Convert back to original coords
+    return line_height_from_one, rank_x_col, rank_y_positions
 
 def find_first_rank_ocr(reader, img_up, line_height_px: float, expected_first_rank: int):
     h, w = img_up.shape[:2]
@@ -439,13 +501,20 @@ def segment_lines_by_rank_positions(img_up, line_height_px, rank_y_positions: di
             row_img = img_up[y1:y2, 0:w]
             if row_img.size > 0:
                 lines.append((y1, y2, row_img, rank))
+    elif page_stem.endswith(".2"):
+        # For total.2: use directly the pre-calculated rank_y_positions
+        for rank in sorted(rank_y_positions.keys()):
+            y_center = rank_y_positions[rank]
+            y1 = max(0, int(y_center - half_height))
+            y2 = min(h, int(y_center + half_height))
+            row_img = img_up[y1:y2, 0:w]
+            if row_img.size > 0:
+                lines.append((y1, y2, row_img, rank))
     else:
+        # For total.1 and others: find first rank via OCR then continue
         if page_stem.endswith(".1"):
             start_rank = 5
             num_ranks = 7
-        elif page_stem.endswith(".2"):
-            start_rank = 12
-            num_ranks = 1
         else:
             start_rank = 1
             num_ranks = 4
@@ -463,16 +532,50 @@ def segment_lines_by_rank_positions(img_up, line_height_px, rank_y_positions: di
             current_y += line_height_px
     return lines
 
-def extract_rally_participants_from_pages_v2(reader, page_files: list[Path], ocr_logger=None, event_id="", rally_id=0):
+def extract_rally_participants_from_pages_v2(reader, page_files: list[Path], ocr_logger=None, event_id="", rally_id=0, debug_mode=False):
     dot_zero_file = None
+    dot_one_file = None
+    dot_two_file = None
     for f in page_files:
         if f.stem.endswith(".0"):
             dot_zero_file = f
-            break
-    if dot_zero_file is None:
+        elif f.stem.endswith(".1"):
+            dot_one_file = f
+        elif f.stem.endswith(".2"):
+            dot_two_file = f
+
+    is_totals = rally_id == -1
+
+    # Calibration: rallies prefer .0; totals prefer .1
+    line_height = None
+    rank_x_col = None
+    rank_y_positions = None
+
+    if not is_totals and dot_zero_file is not None:
+        line_height, rank_x_col, rank_y_positions = calibrate_line_height_from_dot_zero(dot_zero_file)
+        if line_height is None:
+            if debug_mode:
+                print(f"[DEBUG] Calibration failed for {dot_zero_file.name} - line_height is None")
+            return []
+        if debug_mode:
+            print(f"[DEBUG] Calibration OK from .0: line_height={line_height:.1f}, positions={rank_y_positions}")
+    elif dot_one_file is not None:
+        line_height, rank_x_col, rank_y_positions = calibrate_line_height_from_dot_zero(dot_one_file)
+        if line_height is None:
+            if debug_mode:
+                print(f"[DEBUG] Calibration failed for {dot_one_file.name} - line_height is None")
+            return []
+        if debug_mode:
+            print(f"[DEBUG] Calibration OK from .1: line_height={line_height:.1f}, positions={rank_y_positions}")
+    elif dot_zero_file is None:
+        # No .0 and no .1 - nothing to process
+        if debug_mode:
+            print(f"[DEBUG] No .0 or .1 file found")
         return []
-    line_height, rank_x_col, rank_y_positions = calibrate_line_height_from_dot_zero(dot_zero_file)
-    if line_height is None:
+    else:
+        # Only .0 file and totals mode: nothing to extract
+        if debug_mode:
+            print(f"[DEBUG] Only .0 file found - skipping (no player data in total.0)")
         return []
     # Debug directories disabled to avoid file creation during pipeline
     debug_dir = None
@@ -480,7 +583,36 @@ def extract_rally_participants_from_pages_v2(reader, page_files: list[Path], ocr
     participants = []
     # Prepare optional flag metrics log for cross-checking with tests
     flag_metrics_log = DATA_OUTPUT_DIR / "flag_metrics.jsonl"
+    
     for f in sorted(page_files):
+        # For totals (.1/.2), skip .0; for rallies, process .0/.1/.2
+        if is_totals:
+            if f.stem.endswith(".0"):
+                if debug_mode:
+                    print(f"[DEBUG] Skipping {f.stem} (no player data in .0)")
+                continue
+            if not (f.stem.endswith(".1") or f.stem.endswith(".2")):
+                continue
+        else:
+            # Rally pages: accept .0/.1/.2
+            if not (f.stem.endswith(".0") or f.stem.endswith(".1") or f.stem.endswith(".2")):
+                continue
+        
+        # For totals .2, adapt the calibration to use ranks 8-10; for rallies, keep same calibration
+        lh = line_height
+        ry = rank_y_positions
+        if is_totals and f.stem.endswith(".2"):
+            lh_adapted, rx_adapted, ry_adapted = calibrate_for_total_two(reader, f, line_height, debug_mode=debug_mode)
+            if ry_adapted is not None:
+                lh = lh_adapted
+                ry = ry_adapted
+                if debug_mode:
+                    print(f"[DEBUG] Adapted calibration for .2: rank_8_y={ry[8]:.1f}")
+            else:
+                if debug_mode:
+                    print(f"[DEBUG] Failed to adapt calibration for .2")
+                continue
+        
         img = cv2.imread(str(f))
         if img is None:
             continue
@@ -488,15 +620,30 @@ def extract_rally_participants_from_pages_v2(reader, page_files: list[Path], ocr
         # Keep a color-upsampled version for color-based checks
         img_up_color = cv2.resize(img, (img.shape[1] * scale, img.shape[0] * scale), interpolation=cv2.INTER_CUBIC)
         page_debug_dir = None
-        lh_scaled = line_height * scale
-        scaled_rank_y = {r: y * scale for r, y in rank_y_positions.items()}
+        
+        if debug_mode:
+            print(f"[DEBUG] {f.stem}: Original image height={img.shape[0]}, Upsampled height={img_up.shape[0]}, scale={scale}")
+            print(f"[DEBUG] {f.stem}: Using line_height={lh:.1f}, rank_y_positions={ry}")
+        
+        # Use calibration-based segmentation for .1 and .2
+        lh_scaled = lh * scale
+        scaled_rank_y = {r: y * scale for r, y in ry.items()}
+        
+        if debug_mode:
+            print(f"[DEBUG] {f.stem}: Scaled line_height={lh_scaled:.1f}, scaled_rank_y={scaled_rank_y}")
+        
         lines = segment_lines_by_rank_positions(img_up, lh_scaled, scaled_rank_y, img_up.shape[1], f.stem, reader)
-        expected_map = {".0": 4, ".1": 7, ".2": 1}
+        
+        expected_map = {".0": 4, ".1": 7, ".2": 3}
         expected = None
         for suffix, cnt in expected_map.items():
             if f.stem.endswith(suffix):
                 expected = cnt
                 break
+        
+        if debug_mode:
+            print(f"[DEBUG] {f.stem}: segmented {len(lines)} lines (expected {expected})")
+        
         if expected is not None and len(lines) > expected:
             lines = lines[:expected]
         for y1, y2, row_img, detected_rank in lines:
@@ -505,6 +652,17 @@ def extract_rally_participants_from_pages_v2(reader, page_files: list[Path], ocr
             # Ensure row grayscale is derived from color row to keep alignment
             row_gray = cv2.cvtColor(row_color_img, cv2.COLOR_BGR2GRAY)
             row_texts_detail = reader.readtext(row_gray, detail=1)
+            
+            # Debug: print raw OCR tokens
+            if debug_mode:
+                print(f"[DEBUG-RAW] {f.stem} rank {detected_rank}: {len(row_texts_detail)} tokens found")
+                for box, text, conf in row_texts_detail:
+                    xs = [p[0] for p in box]
+                    ys = [p[1] for p in box]
+                    x_min, x_max = min(xs), max(xs)
+                    y_min, y_max = min(ys), max(ys)
+                    print(f"  - '{text}' (conf={conf:.2f}) box=({x_min:.0f},{y_min:.0f})-({x_max:.0f},{y_max:.0f})")
+            
             tokens = []
             for box, text, conf in row_texts_detail:
                 xs = [p[0] for p in box]
@@ -538,6 +696,11 @@ def extract_rally_participants_from_pages_v2(reader, page_files: list[Path], ocr
             # Filter out rank numbers from damage candidates
             damage_numbers = [v for v in all_numbers if v[0] > 100]
             damage = max([v for v, _ in damage_numbers]) if damage_numbers else 0
+            
+            # Debug logging for each row
+            if debug_mode and (name or damage > 0):
+                print(f"[DEBUG-OCR] {f.stem} rank {detected_rank}: name='{name}' damage={damage}")
+            
             # Skip writing debug row or ROI images
             roi_debug_path = None
             
@@ -549,31 +712,32 @@ def extract_rally_participants_from_pages_v2(reader, page_files: list[Path], ocr
             hit_debug_path = None
             av_debug_path = None
             tl_debug_path = None
-            flag_result = detect_flag_in_row(row_color_img, tokens=tokens, save_roi_to=roi_debug_path, save_hit_to=hit_debug_path, save_avatar_to=av_debug_path, save_tl50_to=tl_debug_path)
+            flag_result = detect_flag_in_row(row_color_img, tokens=tokens, save_roi_to=roi_debug_path, save_hit_to=hit_debug_path, save_avatar_to=av_debug_path, save_tl50_to=tl_debug_path, verbose=debug_mode)
             has_flag = bool(flag_result.get("has_flag", False))
             # Use TL50 scoring fields; prefer final_score then shape_score
             flag_conf = float(flag_result.get("final_score", flag_result.get("shape_score", 0.0)))
             
-            # Write a compact metrics entry for this row to help debug divergences
-            try:
-                metrics_entry = {
-                    "event": event_id,
-                    "rally": rally_id,
-                    "page": f.stem,
-                    "file": f.name,
-                    "rank": int(detected_rank),
-                    "name": name,
-                    "shape_score": float(flag_result.get("shape_score", 0.0)),
-                    "green_score": float(flag_result.get("green_score", 0.0)),
-                    "white_score": float(flag_result.get("white_score", 0.0)),
-                    "final_score": float(flag_result.get("final_score", 0.0)),
-                    "has_flag": bool(has_flag),
-                    "tl50": flag_result.get("tl50")
-                }
-                with open(flag_metrics_log, "a", encoding="utf-8") as fm:
-                    fm.write(json.dumps(metrics_entry, ensure_ascii=False) + "\n")
-            except Exception:
-                pass
+            # Write flag metrics only in debug mode
+            if debug_mode:
+                try:
+                    metrics_entry = {
+                        "event": event_id,
+                        "rally": rally_id,
+                        "page": f.stem,
+                        "file": f.name,
+                        "rank": int(detected_rank),
+                        "name": name,
+                        "shape_score": float(flag_result.get("shape_score", 0.0)),
+                        "green_score": float(flag_result.get("green_score", 0.0)),
+                        "white_score": float(flag_result.get("white_score", 0.0)),
+                        "final_score": float(flag_result.get("final_score", 0.0)),
+                        "has_flag": bool(has_flag),
+                        "tl50": flag_result.get("tl50")
+                    }
+                    with open(flag_metrics_log, "a", encoding="utf-8") as fm:
+                        fm.write(json.dumps(metrics_entry, ensure_ascii=False) + "\n")
+                except Exception:
+                    pass
             
             raw_ocr = " ".join([t["text"] for t in tokens])
             if ocr_logger:
@@ -651,7 +815,7 @@ def compute_event_source_hash(day_dir: Path) -> str:
     return digest
 
 def process_single_rally(args):
-    rally_id, files, date_str = args
+    rally_id, files, date_str, debug_mode = args
     print(f"[WORKER] PID={os.getpid()} starting rally {rally_id}; files={len(files)}")
     reader = init_reader()
     t0 = time.time()
@@ -697,13 +861,17 @@ def process_single_rally(args):
     return {"rally_id": rally_id, "leader_name_obs": leader_name_obs, "participants": participants_unique, "files": [str(f.name) for f in files]}
 
 
-def parse_top_players_from_total_pages(reader, total_pages: list[Path], trans_store: dict, event_id: str):
-    """Parse top players from total.0/1/2 pages using the rally extractor for consistency."""
+def parse_top_players_from_total_pages(reader, total_pages: list[Path], trans_store: dict, event_id: str, ocr_logger=None, debug_mode=False):
+    """Parse top players AND totals from total.0/1/2 pages using the rally extractor for consistency.
+    
+    Returns: (players_list, trans_added, alliance_damage, rally_count)
+    where alliance_damage and rally_count are extracted from the total.0 page if available.
+    """
     participants_raw = extract_rally_participants_from_pages_v2(
-        reader, total_pages, ocr_logger=None, event_id=event_id, rally_id=-1
+        reader, total_pages, ocr_logger=ocr_logger, event_id=event_id, rally_id=-1, debug_mode=debug_mode
     )
     if not participants_raw:
-        return [], False
+        return [], False, 0, 0
 
     seen = set()
     participants_unique = []
@@ -728,20 +896,84 @@ def parse_top_players_from_total_pages(reader, total_pages: list[Path], trans_st
             "language_detected": lang,
             "damage": p.get("damage", 0),
             "rank": p.get("rank"),
-            "source_file": p.get("source_file"),
         })
 
-    return resolved_players, trans_added
+    # Extract totals from total.0 page if available
+    alliance_damage = 0
+    rally_count_total = 0
+    
+    dot_zero_file = None
+    for f in total_pages:
+        if f.stem.endswith(".0"):
+            dot_zero_file = f
+            break
+    
+    if dot_zero_file:
+        # OCR the total.0 file to extract totals from header/footer
+        total_lines = ocr_image_lines(reader, dot_zero_file)
+        if debug_mode:
+            print(f"[DEBUG] OCR'd {dot_zero_file.name}: {len(total_lines)} lines found")
+        for i, line in enumerate(total_lines):
+            line_lower = str(line).lower()
+            if debug_mode and ("ralliement" in line_lower or "dégât" in line_lower):
+                print(f"[DEBUG]   Line {i}: '{line}'")
+            
+            # Find rally count (usually near "ralliement" label)
+            if "ralliement" in line_lower and i + 1 < len(total_lines):
+                next_line = str(total_lines[i + 1])
+                val = normalize_damage(next_line)
+                if debug_mode:
+                    print(f"[DEBUG]   Found 'ralliement', next line: '{next_line}' -> val={val}")
+                if val > 0 and val <= 100:  # rally count should be reasonable (< 100)
+                    rally_count_total = val
+                    if debug_mode:
+                        print(f"[DEBUG]   -> Accepted as rally_count_total={val}")
+            
+            # Find total damage - look for "alliance" specifically
+            if alliance_damage == 0 and ("alliance" in line_lower or "dégâts totaux" in line_lower):
+                # Try to extract from the current line itself
+                val = normalize_damage(str(line))
+                if val > 1000:
+                    alliance_damage = val
+                    if debug_mode:
+                        print(f"[DEBUG]   Found alliance damage in same line with value {val}")
+                # If not found in current line, try next line
+                elif i + 1 < len(total_lines):
+                    next_line = str(total_lines[i + 1])
+                    val = normalize_damage(next_line)
+                    if debug_mode:
+                        print(f"[DEBUG]   Checking next line: '{next_line}' -> val={val}")
+                    if val > 1000:  # alliance damage should be large
+                        alliance_damage = val
+                        if debug_mode:
+                            print(f"[DEBUG]   -> Accepted as alliance_damage={val}")
+    else:
+        if debug_mode:
+            print(f"[DEBUG] No .0 file found")
 
-def recalc_totals_mode(reader):
-    """Quick mode: only recalculate alliance_total_damage and rally_count_total from total.png files."""
-    print("[INFO] ===== RECALC TOTALS ONLY MODE =====")
+    return resolved_players, trans_added, alliance_damage, rally_count_total
+
+def totals_only_mode(reader, trans_store: dict, debug_mode=False):
+    """Refresh all totals and top players from total.* pages (skip rally OCR)."""
+    print("[INFO] ===== TOTALS ONLY MODE (skip rallies) =====")
     if not DATA_OUTPUT_FILE.exists():
         print("[WARN] No existing beartrap.json found. Run full analysis first.")
         return
     
     with open(DATA_OUTPUT_FILE, "r", encoding="utf-8") as f:
         data = json.load(f)
+    
+    totals_log = DATA_OUTPUT_DIR / "totals_log.jsonl"
+    if totals_log.exists():
+        totals_log.unlink()
+    
+    # Initialize OCR logger if in debug mode
+    ocr_logger = None
+    if debug_mode:
+        ocr_logger = OCRLogger(OCR_LOG_FILE)
+        print("[DEBUG] OCR logging ENABLED for totals extraction")
+    else:
+        print("[INFO] Debug mode OFF - no OCR logging")
     
     for event in data.get("events", []):
         event_date = event.get("id") or event.get("date", "")
@@ -750,64 +982,92 @@ def recalc_totals_mode(reader):
             print(f"[WARN] Directory not found: {day_dir}")
             continue
         
-        total_file = day_dir / "total.png"
-        if not total_file.exists():
-            print(f"[WARN] total.png not found for {event_date}")
-            continue
+        # Collect total.0/1/2 files
+        total_pages = [
+            f for f in day_dir.iterdir()
+            if f.is_file()
+            and f.suffix.lower() in [".png", ".jpg", ".jpeg"]
+            and re.match(r"total\.\d+$", f.stem)
+        ]
         
-        # Parse totals from total.png. OCR can shuffle lines, so look around keywords and fall back to best candidates.
         alliance_damage = 0
-        rally_count = 0
-        total_lines = [str(t) for t in ocr_image_lines(reader, total_file) if str(t).strip()]
-
-        # Pre-collect numeric candidates with their line index
-        numeric_candidates = []
-        for idx, line in enumerate(total_lines):
-            val = normalize_damage(line)
-            if val > 0:
-                numeric_candidates.append((idx, val, line))
-
-        def find_number_near_keyword(keywords, prefer_small=False, window=2):
-            hits = []
-            for i, line in enumerate(total_lines):
-                line_lower = line.lower()
-                if any(k in line_lower for k in keywords):
-                    for j in range(0, window + 1):
-                        if i + j < len(total_lines):
-                            val = normalize_damage(total_lines[i + j])
-                            if val > 0:
-                                hits.append(val)
-            if prefer_small:
-                hits = [v for v in hits if v <= 100]
-                if hits:
-                    return min(hits)
-            else:
-                hits = [v for v in hits if v >= 1_000]
-                if hits:
-                    return max(hits)
-            return 0
-
-        rally_count = find_number_near_keyword(["ralliement"], prefer_small=True)
-        if rally_count == 0:
-            small_numbers = [v for _, v, _ in numeric_candidates if v <= 100]
-            if small_numbers:
-                rally_count = min(small_numbers)
-
-        alliance_damage = find_number_near_keyword(["degat", "degats", "dégat", "dégâts", "total"], prefer_small=False)
-        if alliance_damage == 0:
-            large_numbers = [v for _, v, _ in numeric_candidates if v >= 1_000]
-            if large_numbers:
-                alliance_damage = max(large_numbers)
+        rally_count_total = 0
+        top_players_resolved = []
         
+        if total_pages:
+            # Use consolidated parser to get both totals and players
+            top_players_resolved, _, dmg_from_total, rally_from_total = parse_top_players_from_total_pages(
+                reader,
+                sorted(total_pages, key=lambda p: p.stem),
+                trans_store,
+                event_id=event_date,
+                ocr_logger=ocr_logger,
+                debug_mode=debug_mode,
+            )
+            alliance_damage = dmg_from_total
+            rally_count_total = rally_from_total
+            
+            if debug_mode:
+                print(f"[DEBUG] {event_date}: Found {len(total_pages)} total.* files, extracted {len(top_players_resolved)} players")
+            
+            if debug_mode and top_players_resolved:
+                for i, p in enumerate(top_players_resolved[:5], 1):
+                    print(f"  [{i}] {p.get('name')} (id={p.get('id')}) - {p.get('damage')} damage")
+        else:
+            if debug_mode:
+                print(f"[DEBUG] {event_date}: No total.* files found")
+        
+        # Fallback to total.png if totals not found
+        if alliance_damage == 0 and rally_count_total == 0:
+            total_file = day_dir / "total.png"
+            if total_file.exists():
+                total_lines = ocr_image_lines(reader, total_file)
+                for i, line in enumerate(total_lines):
+                    line_lower = str(line).lower()
+                    if "ralliement" in line_lower and i + 1 < len(total_lines):
+                        next_line = str(total_lines[i + 1])
+                        val = normalize_damage(next_line)
+                        if val > 0 and val <= 100:
+                            rally_count_total = val
+                    if "dégât" in line_lower and i + 1 < len(total_lines):
+                        next_line = str(total_lines[i + 1])
+                        val = normalize_damage(next_line)
+                        if val > 1000:
+                            alliance_damage = val
+        
+        # Update event
         event["alliance_total_damage"] = alliance_damage
-        event["rally_count_total"] = rally_count
-        print(f"[RECALC] {event_date}: alliance_damage={alliance_damage}, rally_count={rally_count}")
+        event["rally_count_total"] = rally_count_total
+        
+        if top_players_resolved:
+            event["top_totals"] = {"players": top_players_resolved, "source": "total_pages"}
+        
+        # Log detected totals
+        log_entry = {
+            "event_date": event_date,
+            "detected_alliance_damage": alliance_damage,
+            "detected_rally_count": rally_count_total,
+            "detected_top_players": [
+                {"id": p.get("id"), "name": p.get("name"), "damage": p.get("damage")}
+                for p in top_players_resolved[:10]
+            ] if top_players_resolved else [],
+        }
+        with open(totals_log, "a", encoding="utf-8") as tl:
+            tl.write(json.dumps(log_entry, ensure_ascii=False) + "\n")
+        
+        print(f"[TOTALS] {event_date}: alliance_damage={alliance_damage}, rally_count={rally_count_total}, top_players={len(top_players_resolved)}")
     
     with open(DATA_OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
-    print("[INFO] Totals recalculated and saved.")
+    
+    if debug_mode and ocr_logger:
+        ocr_logger.save()
+    
+    print("[INFO] Totals refreshed and saved.")
+    print(f"[INFO] Totals log: {totals_log}")
 
-def main(recalc_totals_only=False):
+def main(totals_only=False, debug_mode=False):
+    
     start_total = time.time()
     print("[INFO] ===== BeartrapAnalysis PARALLEL (GPU-Optimized) =====")
     init_gpu()
@@ -816,12 +1076,14 @@ def main(recalc_totals_only=False):
 
     reader_main = init_reader()
     
-    # Quick totals recalc mode
-    if recalc_totals_only:
-        recalc_totals_mode(reader_main)
+    # Load translations store for all modes
+    trans_store = load_translations_store(DATA_OUTPUT_DIR / "player_translations.json")
+    
+    # Totals-only mode (refresh totals from total.* pages, skip rallies)
+    if totals_only:
+        totals_only_mode(reader_main, trans_store, debug_mode=debug_mode)
         return
     
-    trans_store = load_translations_store(DATA_OUTPUT_DIR / "player_translations.json")
     trans_modified = False
     ocr_logger = OCRLogger(OCR_LOG_FILE)
     dmg_logger = DamageAggregationLogger(DAMAGE_AGG_LOG_FILE)
@@ -848,30 +1110,11 @@ def main(recalc_totals_only=False):
             print(f"[INFO] Event {date_str} unchanged (hash match), skipping.")
             continue
 
-        # Attempt to read totals from total.png
+        # Initialize totals
         alliance_damage = 0
         rally_count_total = 0
-        total_file = day_dir / "total.png"
-        if total_file.exists():
-            total_lines = ocr_image_lines(reader_main, total_file)
-            # total_lines should have label + value pairs
-            # Look for patterns: "Ralliements" or "Dégâts Totaux" labels
-            for i, line in enumerate(total_lines):
-                line_lower = str(line).lower()
-                # Find rally count (usually near "ralliement" label)
-                if "ralliement" in line_lower and i + 1 < len(total_lines):
-                    next_line = str(total_lines[i + 1])
-                    val = normalize_damage(next_line)
-                    if val > 0:
-                        rally_count_total = val
-                # Find total damage (usually near "dégât" label)
-                if "dégât" in line_lower and i + 1 < len(total_lines):
-                    next_line = str(total_lines[i + 1])
-                    val = normalize_damage(next_line)
-                    if val > 0:
-                        alliance_damage = val
-
-        # Attempt to read top players from total.0/1/2 pages (top 10)
+        
+        # Attempt to read totals and top players from total.0/1/2 pages (consolidated approach)
         total_pages = [
             f for f in day_dir.iterdir()
             if f.is_file()
@@ -879,8 +1122,11 @@ def main(recalc_totals_only=False):
             and re.match(r"total\.\d+$", f.stem)
         ]
         top_players_resolved = []
+        totals_from_pages = False
+        
         if total_pages:
-            top_players_resolved, added = parse_top_players_from_total_pages(
+            # Consolidated parsing: get both totals AND players from total.0/1/2
+            top_players_resolved, added, dmg_from_total, rally_from_total = parse_top_players_from_total_pages(
                 reader_main,
                 sorted(total_pages, key=lambda p: p.stem),
                 trans_store,
@@ -888,6 +1134,36 @@ def main(recalc_totals_only=False):
             )
             if added:
                 trans_modified = True
+            
+            # Use totals extracted from total.0 if they were found
+            if dmg_from_total > 0:
+                alliance_damage = dmg_from_total
+                totals_from_pages = True
+            if rally_from_total > 0:
+                rally_count_total = rally_from_total
+                totals_from_pages = True
+        
+        # Fallback to total.png only if totals not found in total.0/1/2
+        if not totals_from_pages:
+            total_file = day_dir / "total.png"
+            if total_file.exists():
+                total_lines = ocr_image_lines(reader_main, total_file)
+                # total_lines should have label + value pairs
+                # Look for patterns: "Ralliements" or "Dégâts Totaux" labels
+                for i, line in enumerate(total_lines):
+                    line_lower = str(line).lower()
+                    # Find rally count (usually near "ralliement" label)
+                    if "ralliement" in line_lower and i + 1 < len(total_lines):
+                        next_line = str(total_lines[i + 1])
+                        val = normalize_damage(next_line)
+                        if val > 0 and val <= 100:
+                            rally_count_total = val
+                    # Find total damage (usually near "dégât" label)
+                    if "dégât" in line_lower and i + 1 < len(total_lines):
+                        next_line = str(total_lines[i + 1])
+                        val = normalize_damage(next_line)
+                        if val > 1000:
+                            alliance_damage = val
 
         event = {
             "id": date_str,
@@ -914,7 +1190,7 @@ def main(recalc_totals_only=False):
             rally_id = int(m.group(1))
             rally_groups.setdefault(rally_id, []).append(f)
 
-        work_items = [(rally_id, sorted(files), date_str) for rally_id, files in sorted(rally_groups.items())]
+        work_items = [(rally_id, sorted(files), date_str, debug_mode) for rally_id, files in sorted(rally_groups.items())]
 
         if work_items:
             with Pool(processes=NUM_WORKERS) as pool:
@@ -1005,5 +1281,7 @@ def main(recalc_totals_only=False):
 
 if __name__ == "__main__":
     import sys
-    recalc_only = "--recalc-totals" in sys.argv
-    main(recalc_totals_only=recalc_only)
+    totals_only = "--totals-only" in sys.argv
+    debug_logs = "--debug" in sys.argv
+    print(f"[INFO] Starting BeartrapAnalysis with totals_only={totals_only}, debug_mode={debug_logs}")
+    main(totals_only=totals_only, debug_mode=debug_logs)

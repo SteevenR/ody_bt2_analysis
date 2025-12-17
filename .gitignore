@@ -16,3 +16,5 @@ data/damage_aggregation_log.jsonl
 data/flag_metrics.jsonl
 
 data/ocr_extraction_log.jsonl
+
+data/totals_log.jsonl

@@ -6,8 +6,6 @@ on:
     paths:
       - 'beartrap_data/**'
       - 'data/beartrap.json'
-      - 'data/ocr_extraction_log.jsonl'
-      - 'player_aliases.json'
       - 'data/player_translations.json'
       - '.github/workflows/deploy.yml'
     branches:
