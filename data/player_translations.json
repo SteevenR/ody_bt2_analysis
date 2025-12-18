@@ -122,6 +122,7 @@
       "aliases": [
         "The 1 True King",
         "BabaYaga!",
+        "Baba Yaga !",
         "BabaYaga?"
       ],
       "pending_review": false
@@ -497,29 +498,6 @@
       ],
       "pending_review": true
     },
-    "pl_baba_yaga": {
-      "names_by_language": {
-        "fr": "",
-        "en": "Baba Yaga !",
-        "es": "",
-        "zh": "",
-        "ru": "",
-        "ko": ""
-      },
-      "transliterations_by_language": {
-        "fr": null,
-        "en": null,
-        "es": null,
-        "zh": null,
-        "ru": null,
-        "ko": null
-      },
-      "language_detected": "en",
-      "aliases": [
-        "Baba Yaga !"
-      ],
-      "pending_review": true
-    },
     "pl_blackthornoo1": {
       "names_by_language": {
         "fr": "",
@@ -541,7 +519,7 @@
       "aliases": [
         "Blackthornoo1"
       ],
-      "pending_review": true
+      "pending_review": false
     }
   },
   "alias_to_id": {
@@ -572,7 +550,7 @@
     "menacho libre": "pl_menace_ventura",
     "jan janssen": "pl_jan_janssen",
     "gingbob": "pl_gingbob",
-    "baba yaga": "pl_baba_yaga",
+    "baba yaga": "pl_the_1_true_king",
     "menacito": "pl_menace_the_tank",
     "blackthornoo1": "pl_blackthornoo1"
   }

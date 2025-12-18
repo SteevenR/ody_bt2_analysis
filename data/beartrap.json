@@ -3513,7 +3513,7 @@
           "leader": "Tib0un",
           "participants": [
             {
-              "canonical_id": "pl_baba_yaga",
+              "canonical_id": "pl_the_1_true_king",
               "name": "Baba Yaga !",
               "name_original": "Baba Yaga !",
               "matched_by": "auto",
@@ -3792,7 +3792,7 @@
               "is_leader": false
             },
             {
-              "canonical_id": "pl_baba_yaga",
+              "canonical_id": "pl_the_1_true_king",
               "name": "Baba Yaga !",
               "name_original": "Baba Yaga !",
               "matched_by": "alias",
@@ -5464,7 +5464,7 @@
         {
           "id": "pl_the_1_true_king",
           "name": "BabaYaga!",
-          "total_damage": 115682029
+          "total_damage": 119100723
         },
         {
           "id": "pl_tiboun",
@@ -5525,11 +5525,6 @@
           "id": "pl_sky",
           "name": "Sky",
           "total_damage": 5332041
-        },
-        {
-          "id": "pl_baba_yaga",
-          "name": "Baba Yaga !",
-          "total_damage": 3418694
         },
         {
           "id": "pl_gingbob",
