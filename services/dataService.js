@@ -39,33 +39,36 @@ export const DataService = (() => {
 
   function buildPlayers(events) {
     for (let ev of events) {        
-        const playersMap = new Map();
-        // dictionary of player id and accumulated damage
-        const playerDamageMap = new Map();
+      // Keep backend-provided players (from total.* top10 + rally merge)
+      if (ev.players && ev.players.length > 0) {
+        continue;
+      }
 
-        for (const rally of ev.rallies || []) {
-            for (const p of rally.participants || []) {
-                const id = p.canonical_id;
-                if (!playersMap.has(id)) {
-                    playersMap.set(id, 
-                        { 
-                            id,
-                            name: p.name || id,
-                            total_damage: 0,
-                        });
-                }
-                playerDamageMap.set(id, (playerDamageMap.get(id) || 0) + (p.damage || 0));
-            }
+      const playersMap = new Map();
+      const playerDamageMap = new Map();
+
+      for (const rally of ev.rallies || []) {
+        for (const p of rally.participants || []) {
+          const id = p.canonical_id;
+          if (!playersMap.has(id)) {
+            playersMap.set(id, {
+              id,
+              name: p.name || id,
+              total_damage: 0,
+            });
+          }
+          playerDamageMap.set(id, (playerDamageMap.get(id) || 0) + (p.damage || 0));
         }
-        // Set total damage for each player
-        for (const [id, damage] of playerDamageMap.entries()) {
-            const player = playersMap.get(id);
-            if (player) {
-                player.total_damage = damage;
-            }
+      }
+
+      for (const [id, damage] of playerDamageMap.entries()) {
+        const player = playersMap.get(id);
+        if (player) {
+          player.total_damage = damage;
         }
-        // Convert playersMap to array and assign to event
-        ev.players = Array.from(playersMap.values());
+      }
+
+      ev.players = Array.from(playersMap.values());
     }
 
     return events;

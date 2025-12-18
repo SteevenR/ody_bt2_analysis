@@ -30,7 +30,7 @@
       "aliases": [
         "Buffy"
       ],
-      "pending_review": true
+      "pending_review": false
     },
     "pl_ogtomatoguy": {
       "names_by_language": {
@@ -53,7 +53,7 @@
       "aliases": [
         "OGTomatoGuy"
       ],
-      "pending_review": true
+      "pending_review": false
     },
     "pl_korea_machine": {
       "names_by_language": {
@@ -76,12 +76,12 @@
       "aliases": [
         "Korea Machine"
       ],
-      "pending_review": true
+      "pending_review": false
     },
     "pl_domination": {
       "names_by_language": {
         "fr": "",
-        "en": "DomInation",
+        "en": "Dom1nation",
         "es": "",
         "zh": "",
         "ru": "",
@@ -99,12 +99,12 @@
       "aliases": [
         "DomInation"
       ],
-      "pending_review": true
+      "pending_review": false
     },
     "pl_the_1_true_king": {
       "names_by_language": {
         "fr": "",
-        "en": "The 1 True King",
+        "en": "BabaYaga!",
         "es": "",
         "zh": "",
         "ru": "",
@@ -120,9 +120,11 @@
       },
       "language_detected": "en",
       "aliases": [
-        "The 1 True King"
+        "The 1 True King",
+        "BabaYaga!",
+        "BabaYaga?"
       ],
-      "pending_review": true
+      "pending_review": false
     },
     "pl_tiboun": {
       "names_by_language": {
@@ -145,12 +147,12 @@
       "aliases": [
         "TibOun"
       ],
-      "pending_review": true
+      "pending_review": false
     },
     "pl_menace_ventura": {
       "names_by_language": {
         "fr": "",
-        "en": "Menace Ventura",
+        "en": "Menacho Libre",
         "es": "",
         "zh": "",
         "ru": "",
@@ -166,9 +168,10 @@
       },
       "language_detected": "en",
       "aliases": [
-        "Menace Ventura"
+        "Menace Ventura",
+        "Menacho Libre"
       ],
-      "pending_review": true
+      "pending_review": false
     },
     "pl_lord_goldwater": {
       "names_by_language": {
@@ -191,7 +194,7 @@
       "aliases": [
         "Lord Goldwater"
       ],
-      "pending_review": true
+      "pending_review": false
     },
     "pl_sky": {
       "names_by_language": {
@@ -214,7 +217,7 @@
       "aliases": [
         "Sky"
       ],
-      "pending_review": true
+      "pending_review": false
     },
     "pl_money": {
       "names_by_language": {
@@ -237,7 +240,7 @@
       "aliases": [
         "Money"
       ],
-      "pending_review": true
+      "pending_review": false
     },
     "pl_samiwalksalone": {
       "names_by_language": {
@@ -260,12 +263,12 @@
       "aliases": [
         "SamiWalksAlone"
       ],
-      "pending_review": true
+      "pending_review": false
     },
     "pl_menace_the_tank": {
       "names_by_language": {
         "fr": "",
-        "en": "Menace the Tank",
+        "en": "Menacito",
         "es": "",
         "zh": "",
         "ru": "",
@@ -281,9 +284,10 @@
       },
       "language_detected": "en",
       "aliases": [
-        "Menace the Tank"
+        "Menace the Tank",
+        "Menacito"
       ],
-      "pending_review": true
+      "pending_review": false
     },
     "pl_ginny": {
       "names_by_language": {
@@ -306,12 +310,12 @@
       "aliases": [
         "Ginny"
       ],
-      "pending_review": true
+      "pending_review": false
     },
     "pl_donxo": {
       "names_by_language": {
         "fr": "",
-        "en": "Donxo",
+        "en": "DonXo",
         "es": "",
         "zh": "",
         "ru": "",
@@ -329,7 +333,7 @@
       "aliases": [
         "Donxo"
       ],
-      "pending_review": true
+      "pending_review": false
     },
     "pl_ayman": {
       "names_by_language": {
@@ -352,7 +356,7 @@
       "aliases": [
         "Ayman"
       ],
-      "pending_review": true
+      "pending_review": false
     },
     "pl_anxiko": {
       "names_by_language": {
@@ -375,7 +379,7 @@
       "aliases": [
         "Anxiko"
       ],
-      "pending_review": true
+      "pending_review": false
     },
     "pl_wild_lord": {
       "names_by_language": {
@@ -398,7 +402,7 @@
       "aliases": [
         "Wild Lord"
       ],
-      "pending_review": true
+      "pending_review": false
     },
     "pl_danieladh": {
       "names_by_language": {
@@ -421,7 +425,7 @@
       "aliases": [
         "Danieladh"
       ],
-      "pending_review": true
+      "pending_review": false
     },
     "pl_warmachine58": {
       "names_by_language": {
@@ -444,6 +448,98 @@
       "aliases": [
         "Warmachine5e",
         "Warmachine58"
+      ],
+      "pending_review": false
+    },
+    "pl_jan_janssen": {
+      "names_by_language": {
+        "fr": "",
+        "en": "Jan Janssen",
+        "es": "",
+        "zh": "",
+        "ru": "",
+        "ko": ""
+      },
+      "transliterations_by_language": {
+        "fr": null,
+        "en": null,
+        "es": null,
+        "zh": null,
+        "ru": null,
+        "ko": null
+      },
+      "language_detected": "en",
+      "aliases": [
+        "Jan Janssen"
+      ],
+      "pending_review": true
+    },
+    "pl_gingbob": {
+      "names_by_language": {
+        "fr": "",
+        "en": "Gingbob",
+        "es": "",
+        "zh": "",
+        "ru": "",
+        "ko": ""
+      },
+      "transliterations_by_language": {
+        "fr": null,
+        "en": null,
+        "es": null,
+        "zh": null,
+        "ru": null,
+        "ko": null
+      },
+      "language_detected": "en",
+      "aliases": [
+        "Gingbob"
+      ],
+      "pending_review": true
+    },
+    "pl_baba_yaga": {
+      "names_by_language": {
+        "fr": "",
+        "en": "Baba Yaga !",
+        "es": "",
+        "zh": "",
+        "ru": "",
+        "ko": ""
+      },
+      "transliterations_by_language": {
+        "fr": null,
+        "en": null,
+        "es": null,
+        "zh": null,
+        "ru": null,
+        "ko": null
+      },
+      "language_detected": "en",
+      "aliases": [
+        "Baba Yaga !"
+      ],
+      "pending_review": true
+    },
+    "pl_blackthornoo1": {
+      "names_by_language": {
+        "fr": "",
+        "en": "Blackthornoo1",
+        "es": "",
+        "zh": "",
+        "ru": "",
+        "ko": ""
+      },
+      "transliterations_by_language": {
+        "fr": null,
+        "en": null,
+        "es": null,
+        "zh": null,
+        "ru": null,
+        "ko": null
+      },
+      "language_detected": "en",
+      "aliases": [
+        "Blackthornoo1"
       ],
       "pending_review": true
     }
@@ -471,6 +567,13 @@
     "rapportde combat": "pl_rapportde_combat",
     "rapportdecombat": "pl_rapportdecombat",
     "rapportdacombat": "pl_rapportdacombat",
-    "the true king": "pl_the_1_true_king"
+    "the true king": "pl_the_1_true_king",
+    "babayaga": "pl_the_1_true_king",
+    "menacho libre": "pl_menace_ventura",
+    "jan janssen": "pl_jan_janssen",
+    "gingbob": "pl_gingbob",
+    "baba yaga": "pl_baba_yaga",
+    "menacito": "pl_menace_the_tank",
+    "blackthornoo1": "pl_blackthornoo1"
   }
 }
