@@ -81,7 +81,7 @@
     "pl_domination": {
       "names_by_language": {
         "fr": "",
-        "en": "Dom1nation",
+        "en": "007",
         "es": "",
         "zh": "",
         "ru": "",
@@ -97,7 +97,8 @@
       },
       "language_detected": "en",
       "aliases": [
-        "DomInation"
+        "DomInation",
+        "Dom1nation"
       ],
       "pending_review": false
     },

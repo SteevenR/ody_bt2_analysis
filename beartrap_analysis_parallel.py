@@ -25,6 +25,7 @@ BASE_DIR = Path(__file__).parent
 DATA_INPUT_DIR = BASE_DIR / "beartrap_data"
 DATA_OUTPUT_DIR = BASE_DIR / "data"
 DATA_OUTPUT_FILE = DATA_OUTPUT_DIR / "beartrap.json"
+PLAYER_EVOLUTION_FILE = DATA_OUTPUT_DIR / "top_10_evolution.json"
 FLAG_TEMPLATE_PATH = BASE_DIR / "assets" / "flag.png"
 ALIASES_FILE = DATA_OUTPUT_DIR / "player_aliases.json"
 OCR_LOG_FILE = DATA_OUTPUT_DIR / "ocr_extraction_log.jsonl"
@@ -553,20 +554,30 @@ def extract_rally_participants_from_pages_v2(reader, page_files: list[Path], ocr
 
     if not is_totals and dot_zero_file is not None:
         line_height, rank_x_col, rank_y_positions = calibrate_line_height_from_dot_zero(dot_zero_file)
+        if line_height is None and dot_one_file is not None:
+            if debug_mode:
+                print(f"[DEBUG] Calibration failed for {dot_zero_file.name}; falling back to {dot_one_file.name}")
+            line_height, rank_x_col, rank_y_positions = calibrate_line_height_from_dot_zero(dot_one_file)
         if line_height is None:
             if debug_mode:
-                print(f"[DEBUG] Calibration failed for {dot_zero_file.name} - line_height is None")
+                print(f"[DEBUG] Calibration failed for both .0 and .1 - aborting rally parsing")
             return []
         if debug_mode:
-            print(f"[DEBUG] Calibration OK from .0: line_height={line_height:.1f}, positions={rank_y_positions}")
+            src = dot_zero_file.name if dot_zero_file else dot_one_file.name
+            print(f"[DEBUG] Calibration OK from {src}: line_height={line_height:.1f}, positions={rank_y_positions}")
     elif dot_one_file is not None:
         line_height, rank_x_col, rank_y_positions = calibrate_line_height_from_dot_zero(dot_one_file)
+        if line_height is None and dot_zero_file is not None:
+            if debug_mode:
+                print(f"[DEBUG] Calibration failed for {dot_one_file.name}; falling back to {dot_zero_file.name}")
+            line_height, rank_x_col, rank_y_positions = calibrate_line_height_from_dot_zero(dot_zero_file)
         if line_height is None:
             if debug_mode:
-                print(f"[DEBUG] Calibration failed for {dot_one_file.name} - line_height is None")
+                print(f"[DEBUG] Calibration failed for both .1 and .0 - aborting totals parsing")
             return []
         if debug_mode:
-            print(f"[DEBUG] Calibration OK from .1: line_height={line_height:.1f}, positions={rank_y_positions}")
+            src = dot_one_file.name if dot_one_file else dot_zero_file.name
+            print(f"[DEBUG] Calibration OK from {src}: line_height={line_height:.1f}, positions={rank_y_positions}")
     elif dot_zero_file is None:
         # No .0 and no .1 - nothing to process
         if debug_mode:
@@ -953,6 +964,77 @@ def parse_top_players_from_total_pages(reader, total_pages: list[Path], trans_st
 
     return resolved_players, trans_added, alliance_damage, rally_count_total
 
+
+def build_player_evolution(events: list[dict]) -> dict:
+    """Build full player evolution series across all events.
+
+    Output schema:
+    {
+        "generated_at": ISO8601 UTC string,
+        "default_top_n": 10,
+        "events": ["2025-12-11", ...],
+        "players": [
+            {"id": "pl_x", "name": "Foo", "total_all_time": 1234,
+             "series": [{"date": "2025-12-11", "damage": 1234}, ...]}
+        ]
+    }
+    """
+    series_map: dict[str, dict] = {}
+    event_dates = []
+
+    def _players_for_event(ev: dict) -> list[dict]:
+        # Prefer precomputed event players; fallback to rally aggregation if missing
+        if ev.get("players"):
+            return ev["players"]
+        tmp = {}
+        name_hint = {}
+        for rally in ev.get("rallies", []) or []:
+            for p in rally.get("participants", []) or []:
+                pid = p.get("canonical_id") or p.get("id") or _normalize_key(p.get("name") or "")
+                if not pid:
+                    continue
+                tmp[pid] = tmp.get(pid, 0) + (p.get("damage", 0) or 0)
+                name_hint.setdefault(pid, p.get("name") or pid)
+        return [{"id": pid, "name": name_hint.get(pid, pid), "total_damage": dmg} for pid, dmg in tmp.items()]
+
+    for ev in sorted(events or [], key=lambda e: e.get("date") or e.get("id", "")):
+        date = ev.get("date") or ev.get("id")
+        if not date:
+            continue
+        event_dates.append(date)
+        for p in _players_for_event(ev):
+            pid = p.get("id") or p.get("canonical_id") or _normalize_key(p.get("name") or "")
+            if not pid:
+                continue
+            dmg = p.get("total_damage") or p.get("damage") or 0
+            name = p.get("name") or p.get("name_original") or pid
+            if pid not in series_map:
+                series_map[pid] = {"id": pid, "name": name, "series": [], "total_all_time": 0}
+            entry = series_map[pid]
+            entry["series"].append({"date": date, "damage": int(dmg)})
+            entry["total_all_time"] += int(dmg)
+            if name and name != pid:
+                entry["name"] = name
+
+    for entry in series_map.values():
+        entry["series"].sort(key=lambda s: s["date"])
+
+    payload = {
+        "generated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        "default_top_n": 10,
+        "events": sorted(set(event_dates)),
+        "players": sorted(series_map.values(), key=lambda x: x["total_all_time"], reverse=True),
+    }
+    return payload
+
+
+def export_player_evolution(events: list[dict], output_path: Path):
+    payload = build_player_evolution(events)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(payload, f, indent=2, ensure_ascii=False)
+    print(f"[INFO] Player evolution exported to {output_path} ({len(payload['players'])} players, {len(payload['events'])} events)")
+
 def totals_only_mode(reader, trans_store: dict, debug_mode=False):
     """Refresh all totals and top players from total.* pages (skip rally OCR)."""
     print("[INFO] ===== TOTALS ONLY MODE (skip rallies) =====")
@@ -1059,6 +1141,11 @@ def totals_only_mode(reader, trans_store: dict, debug_mode=False):
     
     with open(DATA_OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
+
+    try:
+        export_player_evolution(data.get("events", []), PLAYER_EVOLUTION_FILE)
+    except Exception as e:
+        print(f"[WARN] Failed to export player evolution: {e}")
     
     if debug_mode and ocr_logger:
         ocr_logger.save()
@@ -1266,6 +1353,10 @@ def main(totals_only=False, debug_mode=False):
         existing_json["events"] = [existing_events[k] for k in sorted(existing_events.keys())]
     with open(DATA_OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(existing_json, f, indent=2, ensure_ascii=False)
+    try:
+        export_player_evolution(existing_json.get("events", []), PLAYER_EVOLUTION_FILE)
+    except Exception as e:
+        print(f"[WARN] Failed to export player evolution: {e}")
     if trans_modified or not (DATA_OUTPUT_DIR / "player_translations.json").exists():
         save_translations_store(DATA_OUTPUT_DIR / "player_translations.json", trans_store)
     try:
@@ -1283,5 +1374,17 @@ if __name__ == "__main__":
     import sys
     totals_only = "--totals-only" in sys.argv
     debug_logs = "--debug" in sys.argv
+    export_evolution_only = "--export-evolution-only" in sys.argv
+
+    if export_evolution_only:
+        print("[INFO] Exporting player evolution only (no OCR processing)")
+        try:
+            with open(DATA_OUTPUT_FILE, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            export_player_evolution(data.get("events", []), PLAYER_EVOLUTION_FILE)
+        except FileNotFoundError:
+            print(f"[ERROR] Missing {DATA_OUTPUT_FILE}; run analysis first")
+        sys.exit(0)
+
     print(f"[INFO] Starting BeartrapAnalysis with totals_only={totals_only}, debug_mode={debug_logs}")
     main(totals_only=totals_only, debug_mode=debug_logs)

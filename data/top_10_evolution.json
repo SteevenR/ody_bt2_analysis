@@ -1,0 +1,327 @@
+{
+  "generated_at": "2025-12-18T10:57:48Z",
+  "default_top_n": 10,
+  "events": [
+    "2025-11-21",
+    "2025-11-24",
+    "2025-11-25",
+    "2025-11-27",
+    "2025-11-29",
+    "2025-12-01",
+    "2025-12-03",
+    "2025-12-05",
+    "2025-12-09",
+    "2025-12-11",
+    "2025-12-13",
+    "2025-12-15",
+    "2025-12-17"
+  ],
+  "players": [
+    {
+      "id": "pl_ogtomatoguy",
+      "name": "OGTomatoGuy",
+      "series": [
+        {
+          "date": "2025-12-11",
+          "damage": 113363715
+        },
+        {
+          "date": "2025-12-17",
+          "damage": 171866179
+        }
+      ],
+      "total_all_time": 285229894
+    },
+    {
+      "id": "pl_buffy",
+      "name": "Buffy",
+      "series": [
+        {
+          "date": "2025-12-11",
+          "damage": 100580078
+        },
+        {
+          "date": "2025-12-17",
+          "damage": 154562470
+        }
+      ],
+      "total_all_time": 255142548
+    },
+    {
+      "id": "pl_the_1_true_king",
+      "name": "BabaYaga!",
+      "series": [
+        {
+          "date": "2025-12-11",
+          "damage": 69837404
+        },
+        {
+          "date": "2025-12-17",
+          "damage": 119100723
+        }
+      ],
+      "total_all_time": 188938127
+    },
+    {
+      "id": "pl_tiboun",
+      "name": "Tib0un",
+      "series": [
+        {
+          "date": "2025-12-11",
+          "damage": 83781991
+        },
+        {
+          "date": "2025-12-17",
+          "damage": 102664158
+        }
+      ],
+      "total_all_time": 186446149
+    },
+    {
+      "id": "pl_domination",
+      "name": "Dom1nation",
+      "series": [
+        {
+          "date": "2025-12-11",
+          "damage": 70305931
+        },
+        {
+          "date": "2025-12-17",
+          "damage": 102012314
+        }
+      ],
+      "total_all_time": 172318245
+    },
+    {
+      "id": "pl_menace_ventura",
+      "name": "Menacho Libre",
+      "series": [
+        {
+          "date": "2025-12-11",
+          "damage": 78454642
+        },
+        {
+          "date": "2025-12-17",
+          "damage": 93696867
+        }
+      ],
+      "total_all_time": 172151509
+    },
+    {
+      "id": "pl_donxo",
+      "name": "DonXo",
+      "series": [
+        {
+          "date": "2025-12-11",
+          "damage": 60142740
+        },
+        {
+          "date": "2025-12-17",
+          "damage": 98286012
+        }
+      ],
+      "total_all_time": 158428752
+    },
+    {
+      "id": "pl_samiwalksalone",
+      "name": "SamiWalksAlone",
+      "series": [
+        {
+          "date": "2025-12-11",
+          "damage": 50430290
+        },
+        {
+          "date": "2025-12-17",
+          "damage": 92260361
+        }
+      ],
+      "total_all_time": 142690651
+    },
+    {
+      "id": "pl_ayman",
+      "name": "Ayman",
+      "series": [
+        {
+          "date": "2025-12-11",
+          "damage": 38873353
+        },
+        {
+          "date": "2025-12-17",
+          "damage": 97834901
+        }
+      ],
+      "total_all_time": 136708254
+    },
+    {
+      "id": "pl_jan_janssen",
+      "name": "Jan Janssen",
+      "series": [
+        {
+          "date": "2025-12-17",
+          "damage": 88521816
+        }
+      ],
+      "total_all_time": 88521816
+    },
+    {
+      "id": "pl_sky",
+      "name": "Sky",
+      "series": [
+        {
+          "date": "2025-12-11",
+          "damage": 53551650
+        },
+        {
+          "date": "2025-12-17",
+          "damage": 5332041
+        }
+      ],
+      "total_all_time": 58883691
+    },
+    {
+      "id": "pl_lord_goldwater",
+      "name": "Lord Goldwater",
+      "series": [
+        {
+          "date": "2025-12-11",
+          "damage": 45586513
+        },
+        {
+          "date": "2025-12-17",
+          "damage": 6292104
+        }
+      ],
+      "total_all_time": 51878617
+    },
+    {
+      "id": "pl_anxiko",
+      "name": "Anxiko",
+      "series": [
+        {
+          "date": "2025-12-11",
+          "damage": 42420237
+        },
+        {
+          "date": "2025-12-17",
+          "damage": 5730181
+        }
+      ],
+      "total_all_time": 48150418
+    },
+    {
+      "id": "pl_money",
+      "name": "Money",
+      "series": [
+        {
+          "date": "2025-12-11",
+          "damage": 44479039
+        },
+        {
+          "date": "2025-12-17",
+          "damage": 1444701
+        }
+      ],
+      "total_all_time": 45923740
+    },
+    {
+      "id": "pl_menace_the_tank",
+      "name": "Menacito",
+      "series": [
+        {
+          "date": "2025-12-11",
+          "damage": 41659907
+        },
+        {
+          "date": "2025-12-17",
+          "damage": 471658
+        }
+      ],
+      "total_all_time": 42131565
+    },
+    {
+      "id": "pl_korea_machine",
+      "name": "Korea Machine",
+      "series": [
+        {
+          "date": "2025-12-11",
+          "damage": 34786787
+        },
+        {
+          "date": "2025-12-17",
+          "damage": 7232918
+        }
+      ],
+      "total_all_time": 42019705
+    },
+    {
+      "id": "pl_wild_lord",
+      "name": "Wild Lord",
+      "series": [
+        {
+          "date": "2025-12-11",
+          "damage": 34376024
+        }
+      ],
+      "total_all_time": 34376024
+    },
+    {
+      "id": "pl_ginny",
+      "name": "Ginny",
+      "series": [
+        {
+          "date": "2025-12-11",
+          "damage": 26130988
+        },
+        {
+          "date": "2025-12-17",
+          "damage": 6008325
+        }
+      ],
+      "total_all_time": 32139313
+    },
+    {
+      "id": "pl_danieladh",
+      "name": "Danieladh",
+      "series": [
+        {
+          "date": "2025-12-11",
+          "damage": 11607463
+        }
+      ],
+      "total_all_time": 11607463
+    },
+    {
+      "id": "pl_gingbob",
+      "name": "Gingbob",
+      "series": [
+        {
+          "date": "2025-12-17",
+          "damage": 2312854
+        }
+      ],
+      "total_all_time": 2312854
+    },
+    {
+      "id": "pl_warmachine58",
+      "name": "Warmachine58",
+      "series": [
+        {
+          "date": "2025-12-11",
+          "damage": 2130801
+        }
+      ],
+      "total_all_time": 2130801
+    },
+    {
+      "id": "pl_blackthornoo1",
+      "name": "Blackthornoo1",
+      "series": [
+        {
+          "date": "2025-12-17",
+          "damage": 1932994
+        }
+      ],
+      "total_all_time": 1932994
+    }
+  ]
+}

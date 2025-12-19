@@ -7,6 +7,8 @@ export const DataService = (() => {
   let _playerTranslations = null; // player_translations.json
   let _uiTranslations = null; // ui_translations.json
   let _selectedEventIndex = -1;
+  let _playerEvolution = null; // persisted evolution JSON
+  let _playerEvolutionMeta = null;
 
   function getDataPath(filename) {
     const pathSegments = window.location.pathname.split('/').filter(s => s);
@@ -88,6 +90,18 @@ export const DataService = (() => {
     return _uiTranslations;
   }
 
+  async function fetchPlayerEvolution() {
+    if (_playerEvolution) return _playerEvolution;
+    const data = await fetchJson('top_10_evolution.json');
+    const map = buildPlayerSeriesMapFromEvolution(data);
+    if (map) {
+      _playerEvolution = map;
+      _playerEvolutionMeta = data || {};
+      return _playerEvolution;
+    }
+    return null;
+  }
+
   function findLastEvent(events) {
     if (!events || events.length === 0) return null;
     const now = new Date();
@@ -109,6 +123,63 @@ export const DataService = (() => {
   function parseDate(str) {
     const d = new Date(str + 'T00:00:00');
     return isNaN(d.getTime()) ? new Date(Date.parse(str)) : d;
+  }
+
+  function buildPlayerSeriesMapFromEvolution(data) {
+    if (!data || !Array.isArray(data.players)) return null;
+    const map = new Map();
+    for (const p of data.players) {
+      const id = p.id || p.canonical_id || p.name;
+      if (!id) continue;
+      const series = (p.series || [])
+        .map(pt => ({ x: pt.date || pt.x, y: pt.damage ?? pt.y ?? 0 }))
+        .filter(pt => pt.x)
+        .map(pt => ({ x: parseDate(pt.x), y: pt.y }));
+      series.sort((a, b) => a.x - b.x);
+      const total = typeof p.total_all_time === 'number'
+        ? p.total_all_time
+        : series.reduce((s, pt) => s + (pt.y || 0), 0);
+      map.set(id, { name: p.name || id, series, totalAllTime: total });
+    }
+    return map.size > 0 ? map : null;
+  }
+
+  async function buildUnionTopNFromEvolution(topN) {
+    // Ensure evolution data is loaded
+    if (!_playerEvolution) {
+      await fetchPlayerEvolution();
+    }
+    if (!_playerEvolution || _playerEvolution.size === 0) {
+      console.log('[buildUnionTopN] No evolution data loaded');
+      return null;
+    }
+    console.log('[buildUnionTopN] Building union of top', topN, 'from', _playerEvolution.size, 'players');
+    // Build per-date buckets from evolution map
+    const perDate = new Map(); // key: epoch ms, value: [{ id, name, y }]
+    for (const [id, meta] of _playerEvolution.entries()) {
+      for (const pt of meta.series || []) {
+        const t = pt.x instanceof Date ? pt.x.getTime() : (new Date(pt.x)).getTime();
+        if (!t || isNaN(t)) continue;
+        if (!perDate.has(t)) perDate.set(t, []);
+        perDate.get(t).push({ id, name: meta.name || id, y: pt.y || 0 });
+      }
+    }
+    console.log('[buildUnionTopN] Found', perDate.size, 'unique dates');
+    // Union of players who were in topN at least once
+    const allowed = new Set();
+    for (const [date, list] of perDate.entries()) {
+      list.sort((a, b) => (b.y - a.y));
+      const top = list.slice(0, Math.max(1, parseInt(topN, 10) || 10));
+      for (const row of top) allowed.add(row.id);
+    }
+    console.log('[buildUnionTopN] Union contains', allowed.size, 'unique players:', Array.from(allowed).slice(0, 15));
+    // Build filtered series map for allowed players
+    const map = new Map();
+    for (const [id, meta] of _playerEvolution.entries()) {
+      if (!allowed.has(id)) continue;
+      map.set(id, { name: meta.name || id, series: meta.series || [], totalAllTime: meta.totalAllTime || 0 });
+    }
+    return map;
   }
 
   // ===== Derived series builders =====
@@ -214,8 +285,10 @@ export const DataService = (() => {
   return {
     getDataPath,
     fetchEvents,
+    fetchPlayerEvolution,
     fetchPlayerTranslations,
     fetchUiTranslations,
+    buildUnionTopNFromEvolution,
     findLastEvent,
     buildEventsSeries,
     buildPlayerSeriesMap,
@@ -227,5 +300,7 @@ export const DataService = (() => {
     get events() { return _events; },
     get playerTranslations() { return _playerTranslations; },
     get uiTranslations() { return _uiTranslations; },
+    get playerEvolution() { return _playerEvolution; },
+    get playerEvolutionMeta() { return _playerEvolutionMeta; },
   };
 })();

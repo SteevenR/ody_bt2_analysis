@@ -313,29 +313,58 @@ function renderPlayersOverTime(playerSeriesMap, topN) {
   const t = I18nService.t;
   const el = document.getElementById('players-over-time');
   if (!el) return;
+  if (!playerSeriesMap || playerSeriesMap.size === 0) return;
+  
   const ctx = el.getContext('2d');
   const entries = Array.from(playerSeriesMap.entries());
   entries.sort((a,b)=>b[1].totalAllTime - a[1].totalAllTime);
-  const top = entries.slice(0, topN);
+  // Don't slice - the map already contains the filtered players
+  const top = entries;
+  
+  const toDate = (v) => {
+    if (v instanceof Date) return v;
+    if (typeof v === 'string') return new Date(v);
+    try { return new Date(v); } catch { return null; }
+  };
   const datasets = top.map(([id, meta], idx) => {
     const color = colorPalette(idx);
     const displayName = I18nService.playerName(id, { translit: true });
-    return { label: displayName, data: meta.series, borderColor: color, backgroundColor: color + 'CC', tension: 0.2, fill: false, borderWidth: 3, pointRadius: 6, pointBorderWidth: 2, pointBorderColor: '#fff', pointBackgroundColor: color, pointHoverRadius: 8 };
+    const safeSeries = (meta.series || [])
+      .map(pt => ({ x: toDate(pt.x ?? pt.date), y: pt.y ?? pt.damage ?? 0 }))
+      .filter(pt => pt.x && !isNaN(pt.x.getTime()));
+    safeSeries.sort((a, b) => a.x - b.x);
+    return { label: displayName, data: safeSeries, borderColor: color, backgroundColor: color + 'CC', tension: 0.2, fill: false, borderWidth: 3, pointRadius: 6, pointBorderWidth: 2, pointBorderColor: '#fff', pointBackgroundColor: color, pointHoverRadius: 8 };
   });
   if (playersOverTimeChart) playersOverTimeChart.destroy();
+  // Compute bounds from data to ensure time scale renders correctly
+  const allPoints = datasets.flatMap(ds => ds.data || []);
+  const hasPoints = allPoints.length > 0;
+  const minX = hasPoints ? new Date(Math.min(...allPoints.map(p => +p.x))) : undefined;
+  const maxX = hasPoints ? new Date(Math.max(...allPoints.map(p => +p.x))) : undefined;
   playersOverTimeChart = new Chart(ctx, {
     type: 'line',
     data: { datasets },
     options: {
       responsive: true,
-      parsing: false,
+      parsing: true,
       scales: {
-        x: { type: 'time', time: { unit: 'day' }, title: { display: true, text: t('date') }, ticks: { color: '#f5f5f5' } },
-        y: { title: { display: true, text: t('label_damage') }, ticks: { color: '#f5f5f5', callback: v => formatDamage(v) } },
+        x: {
+          type: 'time',
+          time: { unit: 'day' },
+          ...(hasPoints ? { min: minX, max: maxX } : {}),
+          title: { display: true, text: t('date') },
+          ticks: { color: '#f5f5f5' },
+        },
+        y: {
+          beginAtZero: true,
+          title: { display: true, text: t('label_damage') },
+          ticks: { color: '#f5f5f5', callback: v => formatDamage(v) },
+        },
       },
       plugins: { legend: { position: 'top' } },
     },
   });
+  console.log('[renderPlayersOverTime] Chart created successfully');
 }
 
 function renderLeaderAnalytics(leaderId, maps) {
@@ -345,20 +374,26 @@ function renderLeaderAnalytics(leaderId, maps) {
   const ctx = el.getContext('2d');
   const lineSeries = maps.perEventSum.get(leaderId) || [];
   const showRallies = document.getElementById('leaderShowRallies')?.checked;
+  
+  console.log('[renderLeaderAnalytics] Leader:', leaderId, 'Line series points:', lineSeries.length, 'Show rallies:', showRallies);
+  if (lineSeries.length > 0) {
+    console.log('[renderLeaderAnalytics] Sample line point:', lineSeries[0]);
+  }
+  
   if (leaderChart) leaderChart.destroy();
   leaderChart = new Chart(ctx, {
     type: 'line',
     data: {
       datasets: [
-        { label: t('label_sum_per_event'), data: lineSeries, borderColor: '#4BC0C0', backgroundColor: 'rgba(75,192,192,0.3)', parsing: false, tension: 0.2, borderWidth: 3, pointRadius: 6, pointBorderWidth: 2, pointBorderColor: '#fff', pointBackgroundColor: '#4BC0C0', pointHoverRadius: 8 },
-        ...(showRallies ? [{ type: 'scatter', label: t('label_per_rally'), data: (maps.perRally.get(leaderId) || []), parsing: false, pointRadius: 4, backgroundColor: '#FF6384' }] : []),
+        { label: t('label_sum_per_event'), data: lineSeries, borderColor: '#4BC0C0', backgroundColor: 'rgba(75,192,192,0.3)', parsing: true, tension: 0.2, borderWidth: 3, pointRadius: 6, pointBorderWidth: 2, pointBorderColor: '#fff', pointBackgroundColor: '#4BC0C0', pointHoverRadius: 8 },
+        ...(showRallies ? [{ type: 'scatter', label: t('label_per_rally'), data: (maps.perRally.get(leaderId) || []), parsing: true, pointRadius: 4, backgroundColor: '#FF6384' }] : []),
       ],
     },
     options: {
       responsive: true,
       scales: {
         x: { type: 'time', time: { unit: 'day' }, title: { display: true, text: t('date') }, ticks: { color: '#f5f5f5' } },
-        y: { title: { display: true, text: t('label_damage') }, ticks: { color: '#f5f5f5', callback: v => formatDamage(v) } },
+        y: { beginAtZero: true, title: { display: true, text: t('label_damage') }, ticks: { color: '#f5f5f5', callback: v => formatDamage(v) } },
       },
       plugins: { legend: { position: 'top' } },
     },
@@ -489,12 +524,25 @@ async function initDashboard() {
   renderEventsTimeseries(eventSeries, events);
   wireEventsTimeseriesToggles();
 
-  const playerSeriesMap = DataService.buildPlayerSeriesMap(events);
   const topNSelect = document.getElementById('topNSelect');
   const renderTopN = () => {
-    const n = parseInt(topNSelect?.value || '10', 10);
-    renderPlayersOverTime(playerSeriesMap, n);
+    const defaultN = DataService.playerEvolutionMeta?.default_top_n || 10;
+    const n = parseInt(topNSelect?.value || String(defaultN), 10);
+    console.log('[renderTopN] Computing union-of-top-', n, 'from evolution data');
+    // Build union-of-topN across all dates when evolution is available
+    DataService.buildUnionTopNFromEvolution(n).then((unionMap) => {
+      if (unionMap && unionMap.size > 0) {
+        console.log('[renderTopN] Union map contains', unionMap.size, 'players:', Array.from(unionMap.keys()).slice(0, 15));
+        renderPlayersOverTime(unionMap, n);
+      } else {
+        console.log('[renderTopN] No union map, falling back to event-based series');
+        // Fallback to simple topN across all-time from events
+        let playerSeriesMap = DataService.buildPlayerSeriesMap(events);
+        renderPlayersOverTime(playerSeriesMap, n);
+      }
+    });
   };
+  if (topNSelect && !topNSelect.value) topNSelect.value = String(DataService.playerEvolutionMeta?.default_top_n || 10);
   if (topNSelect) topNSelect.addEventListener('change', renderTopN);
   renderTopN();
 
