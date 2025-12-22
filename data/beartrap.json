@@ -3253,7 +3253,7 @@
             },
             {
               "canonical_id": "pl_domination",
-              "name": "Dom1nation",
+              "name": "007",
               "name_original": "DomInation",
               "matched_by": "alias",
               "language_detected": "en",
@@ -3318,7 +3318,7 @@
               "canonical_id": "pl_gingbob",
               "name": "Gingbob",
               "name_original": "Gingbob",
-              "matched_by": "auto",
+              "matched_by": "alias",
               "language_detected": "en",
               "damage": 2312854,
               "is_leader": false
@@ -3358,7 +3358,7 @@
             },
             {
               "canonical_id": "pl_domination",
-              "name": "Dom1nation",
+              "name": "007",
               "name_original": "DomInation",
               "matched_by": "alias",
               "language_detected": "en",
@@ -3454,7 +3454,7 @@
             },
             {
               "canonical_id": "pl_domination",
-              "name": "Dom1nation",
+              "name": "007",
               "name_original": "DomInation",
               "matched_by": "alias",
               "language_detected": "en",
@@ -3514,9 +3514,9 @@
           "participants": [
             {
               "canonical_id": "pl_the_1_true_king",
-              "name": "Baba Yaga !",
+              "name": "BabaYaga!",
               "name_original": "Baba Yaga !",
-              "matched_by": "auto",
+              "matched_by": "alias",
               "language_detected": "en",
               "damage": 3418694,
               "is_leader": false
@@ -3559,7 +3559,7 @@
             },
             {
               "canonical_id": "pl_domination",
-              "name": "Dom1nation",
+              "name": "007",
               "name_original": "DomInation",
               "matched_by": "alias",
               "language_detected": "en",
@@ -3610,7 +3610,7 @@
             },
             {
               "canonical_id": "pl_domination",
-              "name": "Dom1nation",
+              "name": "007",
               "name_original": "DomInation",
               "matched_by": "alias",
               "language_detected": "en",
@@ -3751,7 +3751,7 @@
             },
             {
               "canonical_id": "pl_domination",
-              "name": "Dom1nation",
+              "name": "007",
               "name_original": "DomInation",
               "matched_by": "alias",
               "language_detected": "en",
@@ -3793,7 +3793,7 @@
             },
             {
               "canonical_id": "pl_the_1_true_king",
-              "name": "Baba Yaga !",
+              "name": "BabaYaga!",
               "name_original": "Baba Yaga !",
               "matched_by": "alias",
               "language_detected": "en",
@@ -3865,7 +3865,7 @@
             },
             {
               "canonical_id": "pl_domination",
-              "name": "Dom1nation",
+              "name": "007",
               "name_original": "DomInation",
               "matched_by": "alias",
               "language_detected": "en",
@@ -4023,7 +4023,7 @@
               "canonical_id": "pl_menace_the_tank",
               "name": "Menacito",
               "name_original": "Menacito",
-              "matched_by": "exact",
+              "matched_by": "alias",
               "language_detected": "en",
               "damage": 471658,
               "is_leader": false
@@ -4036,7 +4036,7 @@
           "participants": [
             {
               "canonical_id": "pl_domination",
-              "name": "Dom1nation",
+              "name": "007",
               "name_original": "DomInation",
               "matched_by": "alias",
               "language_detected": "en",
@@ -4186,7 +4186,7 @@
             },
             {
               "canonical_id": "pl_domination",
-              "name": "Dom1nation",
+              "name": "007",
               "name_original": "DomInation",
               "matched_by": "alias",
               "language_detected": "en",
@@ -4255,7 +4255,7 @@
             },
             {
               "canonical_id": "pl_domination",
-              "name": "Dom1nation",
+              "name": "007",
               "name_original": "DomInation",
               "matched_by": "alias",
               "language_detected": "en",
@@ -4378,7 +4378,7 @@
             },
             {
               "canonical_id": "pl_domination",
-              "name": "Dom1nation",
+              "name": "007",
               "name_original": "DomInation",
               "matched_by": "alias",
               "language_detected": "en",
@@ -4398,11 +4398,11 @@
         },
         {
           "id": "2025-12-17-rally-16",
-          "leader": "Dom1nation",
+          "leader": "007",
           "participants": [
             {
               "canonical_id": "pl_domination",
-              "name": "Dom1nation",
+              "name": "007",
               "name_original": "DomInation",
               "matched_by": "alias",
               "language_detected": "en",
@@ -4467,7 +4467,7 @@
               "canonical_id": "pl_blackthornoo1",
               "name": "Blackthornoo1",
               "name_original": "Blackthornoo1",
-              "matched_by": "auto",
+              "matched_by": "alias",
               "language_detected": "en",
               "damage": 1932994,
               "is_leader": false
@@ -4576,7 +4576,7 @@
             },
             {
               "canonical_id": "pl_domination",
-              "name": "Dom1nation",
+              "name": "007",
               "name_original": "DomInation",
               "matched_by": "alias",
               "language_detected": "en",
@@ -4717,7 +4717,7 @@
             },
             {
               "canonical_id": "pl_domination",
-              "name": "Dom1nation",
+              "name": "007",
               "name_original": "DomInation",
               "matched_by": "alias",
               "language_detected": "en",
@@ -4855,7 +4855,7 @@
             },
             {
               "canonical_id": "pl_domination",
-              "name": "Dom1nation",
+              "name": "007",
               "name_original": "DomInation",
               "matched_by": "alias",
               "language_detected": "en",
@@ -5020,7 +5020,7 @@
             },
             {
               "canonical_id": "pl_domination",
-              "name": "Dom1nation",
+              "name": "007",
               "name_original": "DomInation",
               "matched_by": "alias",
               "language_detected": "en",
@@ -5354,7 +5354,7 @@
           ]
         }
       ],
-      "source_hash": "9fcacd24dfd9f0ff548f0d71c9fec6e1fa61390c",
+      "source_hash": "b163c31e51bad7ad10392a95080f8091277e69a4",
       "top_totals": {
         "players": [
           {
@@ -5395,7 +5395,7 @@
           },
           {
             "id": "pl_domination",
-            "name": "Dom1nation",
+            "name": "007",
             "name_original": "DomInation",
             "matched_by": "alias",
             "language_detected": "en",
@@ -5464,7 +5464,7 @@
         {
           "id": "pl_the_1_true_king",
           "name": "BabaYaga!",
-          "total_damage": 119100723
+          "total_damage": 115682029
         },
         {
           "id": "pl_tiboun",
@@ -5473,7 +5473,7 @@
         },
         {
           "id": "pl_domination",
-          "name": "Dom1nation",
+          "name": "007",
           "total_damage": 102012314
         },
         {
@@ -5547,6 +5547,202 @@
           "total_damage": 471658
         }
       ]
+    },
+    {
+      "id": "2025-12-19",
+      "date": "2025-12-19",
+      "name": "Bear Trap",
+      "alliance_total_damage": 1903830504,
+      "rally_count_total": 31,
+      "rallies": [],
+      "source_hash": "daa465ce342abd21fc814194bf42a81a2ae6a40d",
+      "top_totals": {
+        "players": [
+          {
+            "id": "pl_ralliements_31",
+            "name": "Ralliements : 31",
+            "name_original": "Ralliements : 31",
+            "matched_by": "auto",
+            "language_detected": "en",
+            "damage": 1903830504,
+            "rank": 7
+          }
+        ],
+        "source": "total_pages"
+      },
+      "players": [
+        {
+          "id": "pl_ralliements_31",
+          "name": "Ralliements : 31",
+          "total_damage": 1903830504
+        }
+      ]
+    },
+    {
+      "id": "2025-12-21",
+      "date": "2025-12-21",
+      "name": "Bear Trap",
+      "alliance_total_damage": 1662090751,
+      "rally_count_total": 37,
+      "rallies": [],
+      "source_hash": "7f0c3edd56bc7e3c24a24696a6bdaec9fab61ad6",
+      "top_totals": {
+        "players": [
+          {
+            "id": "pl_ogtomatoguy",
+            "name": "OGTomatoGuy",
+            "name_original": "OGTomatoGuy",
+            "matched_by": "alias",
+            "language_detected": "en",
+            "damage": 182301733,
+            "rank": 5
+          },
+          {
+            "id": "pl_buffy",
+            "name": "Buffy",
+            "name_original": "Buffy",
+            "matched_by": "alias",
+            "language_detected": "en",
+            "damage": 165310498,
+            "rank": 6
+          },
+          {
+            "id": "pl_donxo",
+            "name": "DonXo",
+            "name_original": "Donxo",
+            "matched_by": "alias",
+            "language_detected": "en",
+            "damage": 140519165,
+            "rank": 7
+          },
+          {
+            "id": "pl_pumpkin",
+            "name": "Pumpkin <",
+            "name_original": "Pumpkin <",
+            "matched_by": "auto",
+            "language_detected": "en",
+            "damage": 129998438,
+            "rank": 8
+          },
+          {
+            "id": "pl_anxiko",
+            "name": "Anxiko",
+            "name_original": "Anxiko",
+            "matched_by": "alias",
+            "language_detected": "en",
+            "damage": 118010114,
+            "rank": 9
+          },
+          {
+            "id": "pl_samiwalksalone",
+            "name": "SamiWalksAlone",
+            "name_original": "SamiWalksAlone",
+            "matched_by": "alias",
+            "language_detected": "en",
+            "damage": 117167383,
+            "rank": 10
+          },
+          {
+            "id": "pl_menace_ventura",
+            "name": "Menacho Libre",
+            "name_original": "Menacho Libre",
+            "matched_by": "alias",
+            "language_detected": "en",
+            "damage": 109703054,
+            "rank": 11
+          },
+          {
+            "id": "pl_tiboun",
+            "name": "Tib0un",
+            "name_original": "TibOun",
+            "matched_by": "alias",
+            "language_detected": "en",
+            "damage": 103730037,
+            "rank": 8
+          },
+          {
+            "id": "pl_menace_the_tank",
+            "name": "Menacito",
+            "name_original": "Menacito",
+            "matched_by": "alias",
+            "language_detected": "en",
+            "damage": 101519695,
+            "rank": 9
+          },
+          {
+            "id": "pl_lord_goldwater",
+            "name": "Lord Goldwater",
+            "name_original": "Lord Goldwater",
+            "matched_by": "alias",
+            "language_detected": "en",
+            "damage": 96510751,
+            "rank": 10
+          }
+        ],
+        "source": "total_pages"
+      },
+      "players": [
+        {
+          "id": "pl_ogtomatoguy",
+          "name": "OGTomatoGuy",
+          "total_damage": 182301733
+        },
+        {
+          "id": "pl_buffy",
+          "name": "Buffy",
+          "total_damage": 165310498
+        },
+        {
+          "id": "pl_donxo",
+          "name": "DonXo",
+          "total_damage": 140519165
+        },
+        {
+          "id": "pl_pumpkin",
+          "name": "Pumpkin <",
+          "total_damage": 129998438
+        },
+        {
+          "id": "pl_anxiko",
+          "name": "Anxiko",
+          "total_damage": 118010114
+        },
+        {
+          "id": "pl_samiwalksalone",
+          "name": "SamiWalksAlone",
+          "total_damage": 117167383
+        },
+        {
+          "id": "pl_menace_ventura",
+          "name": "Menacho Libre",
+          "total_damage": 109703054
+        },
+        {
+          "id": "pl_tiboun",
+          "name": "Tib0un",
+          "total_damage": 103730037
+        },
+        {
+          "id": "pl_menace_the_tank",
+          "name": "Menacito",
+          "total_damage": 101519695
+        },
+        {
+          "id": "pl_lord_goldwater",
+          "name": "Lord Goldwater",
+          "total_damage": 96510751
+        }
+      ]
+    },
+    {
+      "id": "2025-12-23",
+      "date": "2025-12-23",
+      "name": "Bear Trap",
+      "alliance_total_damage": 0,
+      "rally_count_total": 0,
+      "rallies": [],
+      "source_hash": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+      "players": []
     }
   ]
 }

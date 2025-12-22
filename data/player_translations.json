@@ -521,6 +521,52 @@
         "Blackthornoo1"
       ],
       "pending_review": false
+    },
+    "pl_ralliements_31": {
+      "names_by_language": {
+        "fr": "",
+        "en": "Ralliements : 31",
+        "es": "",
+        "zh": "",
+        "ru": "",
+        "ko": ""
+      },
+      "transliterations_by_language": {
+        "fr": null,
+        "en": null,
+        "es": null,
+        "zh": null,
+        "ru": null,
+        "ko": null
+      },
+      "language_detected": "en",
+      "aliases": [
+        "Ralliements : 31"
+      ],
+      "pending_review": true
+    },
+    "pl_pumpkin": {
+      "names_by_language": {
+        "fr": "",
+        "en": "Pumpkin <",
+        "es": "",
+        "zh": "",
+        "ru": "",
+        "ko": ""
+      },
+      "transliterations_by_language": {
+        "fr": null,
+        "en": null,
+        "es": null,
+        "zh": null,
+        "ru": null,
+        "ko": null
+      },
+      "language_detected": "en",
+      "aliases": [
+        "Pumpkin <"
+      ],
+      "pending_review": true
     }
   },
   "alias_to_id": {
@@ -553,6 +599,8 @@
     "gingbob": "pl_gingbob",
     "baba yaga": "pl_the_1_true_king",
     "menacito": "pl_menace_the_tank",
-    "blackthornoo1": "pl_blackthornoo1"
+    "blackthornoo1": "pl_blackthornoo1",
+    "ralliements 31": "pl_ralliements_31",
+    "pumpkin": "pl_pumpkin"
   }
 }

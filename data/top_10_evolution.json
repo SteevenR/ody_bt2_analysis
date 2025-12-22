@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-12-18T10:57:48Z",
+  "generated_at": "2025-12-22T17:33:05Z",
   "default_top_n": 10,
   "events": [
     "2025-11-21",
@@ -14,9 +14,23 @@
     "2025-12-11",
     "2025-12-13",
     "2025-12-15",
-    "2025-12-17"
+    "2025-12-17",
+    "2025-12-19",
+    "2025-12-21",
+    "2025-12-23"
   ],
   "players": [
+    {
+      "id": "pl_ralliements_31",
+      "name": "Ralliements : 31",
+      "series": [
+        {
+          "date": "2025-12-19",
+          "damage": 1903830504
+        }
+      ],
+      "total_all_time": 1903830504
+    },
     {
       "id": "pl_ogtomatoguy",
       "name": "OGTomatoGuy",
@@ -28,9 +42,13 @@
         {
           "date": "2025-12-17",
           "damage": 171866179
+        },
+        {
+          "date": "2025-12-21",
+          "damage": 182301733
         }
       ],
-      "total_all_time": 285229894
+      "total_all_time": 467531627
     },
     {
       "id": "pl_buffy",
@@ -43,24 +61,32 @@
         {
           "date": "2025-12-17",
           "damage": 154562470
+        },
+        {
+          "date": "2025-12-21",
+          "damage": 165310498
         }
       ],
-      "total_all_time": 255142548
+      "total_all_time": 420453046
     },
     {
-      "id": "pl_the_1_true_king",
-      "name": "BabaYaga!",
+      "id": "pl_donxo",
+      "name": "DonXo",
       "series": [
         {
           "date": "2025-12-11",
-          "damage": 69837404
+          "damage": 60142740
         },
         {
           "date": "2025-12-17",
-          "damage": 119100723
+          "damage": 98286012
+        },
+        {
+          "date": "2025-12-21",
+          "damage": 140519165
         }
       ],
-      "total_all_time": 188938127
+      "total_all_time": 298947917
     },
     {
       "id": "pl_tiboun",
@@ -73,13 +99,70 @@
         {
           "date": "2025-12-17",
           "damage": 102664158
+        },
+        {
+          "date": "2025-12-21",
+          "damage": 103730037
         }
       ],
-      "total_all_time": 186446149
+      "total_all_time": 290176186
+    },
+    {
+      "id": "pl_menace_ventura",
+      "name": "Menacho Libre",
+      "series": [
+        {
+          "date": "2025-12-11",
+          "damage": 78454642
+        },
+        {
+          "date": "2025-12-17",
+          "damage": 93696867
+        },
+        {
+          "date": "2025-12-21",
+          "damage": 109703054
+        }
+      ],
+      "total_all_time": 281854563
+    },
+    {
+      "id": "pl_samiwalksalone",
+      "name": "SamiWalksAlone",
+      "series": [
+        {
+          "date": "2025-12-11",
+          "damage": 50430290
+        },
+        {
+          "date": "2025-12-17",
+          "damage": 92260361
+        },
+        {
+          "date": "2025-12-21",
+          "damage": 117167383
+        }
+      ],
+      "total_all_time": 259858034
+    },
+    {
+      "id": "pl_the_1_true_king",
+      "name": "BabaYaga!",
+      "series": [
+        {
+          "date": "2025-12-11",
+          "damage": 69837404
+        },
+        {
+          "date": "2025-12-17",
+          "damage": 115682029
+        }
+      ],
+      "total_all_time": 185519433
     },
     {
       "id": "pl_domination",
-      "name": "Dom1nation",
+      "name": "007",
       "series": [
         {
           "date": "2025-12-11",
@@ -93,49 +176,61 @@
       "total_all_time": 172318245
     },
     {
-      "id": "pl_menace_ventura",
-      "name": "Menacho Libre",
+      "id": "pl_anxiko",
+      "name": "Anxiko",
       "series": [
         {
           "date": "2025-12-11",
-          "damage": 78454642
+          "damage": 42420237
         },
         {
           "date": "2025-12-17",
-          "damage": 93696867
+          "damage": 5730181
+        },
+        {
+          "date": "2025-12-21",
+          "damage": 118010114
         }
       ],
-      "total_all_time": 172151509
+      "total_all_time": 166160532
     },
     {
-      "id": "pl_donxo",
-      "name": "DonXo",
+      "id": "pl_lord_goldwater",
+      "name": "Lord Goldwater",
       "series": [
         {
           "date": "2025-12-11",
-          "damage": 60142740
+          "damage": 45586513
         },
         {
           "date": "2025-12-17",
-          "damage": 98286012
+          "damage": 6292104
+        },
+        {
+          "date": "2025-12-21",
+          "damage": 96510751
         }
       ],
-      "total_all_time": 158428752
+      "total_all_time": 148389368
     },
     {
-      "id": "pl_samiwalksalone",
-      "name": "SamiWalksAlone",
+      "id": "pl_menace_the_tank",
+      "name": "Menacito",
       "series": [
         {
           "date": "2025-12-11",
-          "damage": 50430290
+          "damage": 41659907
         },
         {
           "date": "2025-12-17",
-          "damage": 92260361
+          "damage": 471658
+        },
+        {
+          "date": "2025-12-21",
+          "damage": 101519695
         }
       ],
-      "total_all_time": 142690651
+      "total_all_time": 143651260
     },
     {
       "id": "pl_ayman",
@@ -151,6 +246,17 @@
         }
       ],
       "total_all_time": 136708254
+    },
+    {
+      "id": "pl_pumpkin",
+      "name": "Pumpkin <",
+      "series": [
+        {
+          "date": "2025-12-21",
+          "damage": 129998438
+        }
+      ],
+      "total_all_time": 129998438
     },
     {
       "id": "pl_jan_janssen",
@@ -179,36 +285,6 @@
       "total_all_time": 58883691
     },
     {
-      "id": "pl_lord_goldwater",
-      "name": "Lord Goldwater",
-      "series": [
-        {
-          "date": "2025-12-11",
-          "damage": 45586513
-        },
-        {
-          "date": "2025-12-17",
-          "damage": 6292104
-        }
-      ],
-      "total_all_time": 51878617
-    },
-    {
-      "id": "pl_anxiko",
-      "name": "Anxiko",
-      "series": [
-        {
-          "date": "2025-12-11",
-          "damage": 42420237
-        },
-        {
-          "date": "2025-12-17",
-          "damage": 5730181
-        }
-      ],
-      "total_all_time": 48150418
-    },
-    {
       "id": "pl_money",
       "name": "Money",
       "series": [
@@ -222,21 +298,6 @@
         }
       ],
       "total_all_time": 45923740
-    },
-    {
-      "id": "pl_menace_the_tank",
-      "name": "Menacito",
-      "series": [
-        {
-          "date": "2025-12-11",
-          "damage": 41659907
-        },
-        {
-          "date": "2025-12-17",
-          "damage": 471658
-        }
-      ],
-      "total_all_time": 42131565
     },
     {
       "id": "pl_korea_machine",
