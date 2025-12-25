@@ -5738,11 +5738,318 @@
       "id": "2025-12-23",
       "date": "2025-12-23",
       "name": "Bear Trap",
-      "alliance_total_damage": 0,
-      "rally_count_total": 0,
+      "alliance_total_damage": 1995645652,
+      "rally_count_total": 37,
       "rallies": [],
-      "source_hash": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
-      "players": []
+      "source_hash": "eecf1b998548f7ed756e450ec0c24237c423d70a",
+      "top_totals": {
+        "players": [
+          {
+            "id": "pl_ogtomatoguy",
+            "name": "OGTomatoGuy",
+            "name_original": "OGTomatoGuy",
+            "matched_by": "alias",
+            "language_detected": "en",
+            "damage": 222055498,
+            "rank": 5
+          },
+          {
+            "id": "pl_buffy",
+            "name": "Buffy",
+            "name_original": "Buffy",
+            "matched_by": "alias",
+            "language_detected": "en",
+            "damage": 221335827,
+            "rank": 6
+          },
+          {
+            "id": "pl_domination",
+            "name": "Mercury",
+            "name_original": "Mercury",
+            "matched_by": "exact",
+            "language_detected": "en",
+            "damage": 180928094,
+            "rank": 7
+          },
+          {
+            "id": "pl_anxiko",
+            "name": "Anxiko",
+            "name_original": "Anxiko",
+            "matched_by": "alias",
+            "language_detected": "en",
+            "damage": 156096073,
+            "rank": 8
+          },
+          {
+            "id": "pl_samiwalksalone",
+            "name": "SamiWalksAlone",
+            "name_original": "SamiWalksAlone",
+            "matched_by": "alias",
+            "language_detected": "en",
+            "damage": 139147868,
+            "rank": 9
+          },
+          {
+            "id": "pl_tiboun",
+            "name": "Tib0un",
+            "name_original": "TibOun",
+            "matched_by": "alias",
+            "language_detected": "en",
+            "damage": 134790594,
+            "rank": 10
+          },
+          {
+            "id": "pl_the_1_true_king",
+            "name": "BabaYaga!",
+            "name_original": "BabaYaga?",
+            "matched_by": "alias",
+            "language_detected": "en",
+            "damage": 123007456,
+            "rank": 11
+          },
+          {
+            "id": "pl_ayman",
+            "name": "Ayman",
+            "name_original": "Ayman",
+            "matched_by": "alias",
+            "language_detected": "en",
+            "damage": 120153116,
+            "rank": 8
+          },
+          {
+            "id": "pl_sky",
+            "name": "Sky",
+            "name_original": "Sky",
+            "matched_by": "alias",
+            "language_detected": "en",
+            "damage": 115906089,
+            "rank": 9
+          },
+          {
+            "id": "pl_lord_goldwater",
+            "name": "Lord Goldwater",
+            "name_original": "Lord Goldwater",
+            "matched_by": "alias",
+            "language_detected": "en",
+            "damage": 114406227,
+            "rank": 10
+          }
+        ],
+        "source": "total_pages"
+      },
+      "players": [
+        {
+          "id": "pl_ogtomatoguy",
+          "name": "OGTomatoGuy",
+          "total_damage": 222055498
+        },
+        {
+          "id": "pl_buffy",
+          "name": "Buffy",
+          "total_damage": 221335827
+        },
+        {
+          "id": "pl_domination",
+          "name": "Mercury",
+          "total_damage": 180928094
+        },
+        {
+          "id": "pl_anxiko",
+          "name": "Anxiko",
+          "total_damage": 156096073
+        },
+        {
+          "id": "pl_samiwalksalone",
+          "name": "SamiWalksAlone",
+          "total_damage": 139147868
+        },
+        {
+          "id": "pl_tiboun",
+          "name": "Tib0un",
+          "total_damage": 134790594
+        },
+        {
+          "id": "pl_the_1_true_king",
+          "name": "BabaYaga!",
+          "total_damage": 123007456
+        },
+        {
+          "id": "pl_ayman",
+          "name": "Ayman",
+          "total_damage": 120153116
+        },
+        {
+          "id": "pl_sky",
+          "name": "Sky",
+          "total_damage": 115906089
+        },
+        {
+          "id": "pl_lord_goldwater",
+          "name": "Lord Goldwater",
+          "total_damage": 114406227
+        }
+      ]
+    },
+    {
+      "id": "2025-12-25",
+      "date": "2025-12-25",
+      "name": "Bear Trap",
+      "alliance_total_damage": 2133206646,
+      "rally_count_total": 43,
+      "rallies": [],
+      "source_hash": "2040d092e8ec95e55279c1f5ad42a5449767e238",
+      "top_totals": {
+        "players": [
+          {
+            "id": "pl_ogtomatoguy",
+            "name": "OGTomatoGuy",
+            "name_original": "OGTomatoGuy",
+            "matched_by": "alias",
+            "language_detected": "en",
+            "damage": 235527442,
+            "rank": 5
+          },
+          {
+            "id": "pl_buffy",
+            "name": "Buffy",
+            "name_original": "Buffy",
+            "matched_by": "alias",
+            "language_detected": "en",
+            "damage": 222027243,
+            "rank": 6
+          },
+          {
+            "id": "pl_donxo",
+            "name": "DonXo",
+            "name_original": "Donxo",
+            "matched_by": "alias",
+            "language_detected": "en",
+            "damage": 189385088,
+            "rank": 7
+          },
+          {
+            "id": "pl_pumpkin",
+            "name": "Pumpkin <",
+            "name_original": "Pumpkin",
+            "matched_by": "alias",
+            "language_detected": "en",
+            "damage": 161727801,
+            "rank": 8
+          },
+          {
+            "id": "pl_domination",
+            "name": "Mercury",
+            "name_original": "Mercury",
+            "matched_by": "alias",
+            "language_detected": "en",
+            "damage": 155357519,
+            "rank": 9
+          },
+          {
+            "id": "pl_anxiko",
+            "name": "Anxiko",
+            "name_original": "Anxiko",
+            "matched_by": "alias",
+            "language_detected": "en",
+            "damage": 144709471,
+            "rank": 10
+          },
+          {
+            "id": "pl_samiwalksalone",
+            "name": "SamiWalksAlone",
+            "name_original": "SamiWalksAlone",
+            "matched_by": "alias",
+            "language_detected": "en",
+            "damage": 140761849,
+            "rank": 11
+          },
+          {
+            "id": "pl_menace_ventura",
+            "name": "Menacho Libre",
+            "name_original": "Menacho Libre",
+            "matched_by": "alias",
+            "language_detected": "en",
+            "damage": 131786787,
+            "rank": 8
+          },
+          {
+            "id": "pl_ginny",
+            "name": "Ginny",
+            "name_original": "Ginny",
+            "matched_by": "alias",
+            "language_detected": "en",
+            "damage": 129050698,
+            "rank": 9
+          },
+          {
+            "id": "pl_menace_the_tank",
+            "name": "Menacito",
+            "name_original": "Menacito",
+            "matched_by": "alias",
+            "language_detected": "en",
+            "damage": 112635116,
+            "rank": 10
+          }
+        ],
+        "source": "total_pages"
+      },
+      "players": [
+        {
+          "id": "pl_ogtomatoguy",
+          "name": "OGTomatoGuy",
+          "total_damage": 235527442
+        },
+        {
+          "id": "pl_buffy",
+          "name": "Buffy",
+          "total_damage": 222027243
+        },
+        {
+          "id": "pl_donxo",
+          "name": "DonXo",
+          "total_damage": 189385088
+        },
+        {
+          "id": "pl_pumpkin",
+          "name": "Pumpkin <",
+          "total_damage": 161727801
+        },
+        {
+          "id": "pl_domination",
+          "name": "Mercury",
+          "total_damage": 155357519
+        },
+        {
+          "id": "pl_anxiko",
+          "name": "Anxiko",
+          "total_damage": 144709471
+        },
+        {
+          "id": "pl_samiwalksalone",
+          "name": "SamiWalksAlone",
+          "total_damage": 140761849
+        },
+        {
+          "id": "pl_menace_ventura",
+          "name": "Menacho Libre",
+          "total_damage": 131786787
+        },
+        {
+          "id": "pl_ginny",
+          "name": "Ginny",
+          "total_damage": 129050698
+        },
+        {
+          "id": "pl_menace_the_tank",
+          "name": "Menacito",
+          "total_damage": 112635116
+        },
+        {
+          "id": "pl_tiboun",
+          "name": "Tib0un",
+          "total_damage": 107394464
+        }
+      ]
     }
   ]
 }
