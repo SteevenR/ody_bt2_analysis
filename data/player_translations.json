@@ -81,7 +81,7 @@
     "pl_domination": {
       "names_by_language": {
         "fr": "",
-        "en": "007",
+        "en": "Mercury",
         "es": "",
         "zh": "",
         "ru": "",
@@ -98,7 +98,8 @@
       "language_detected": "en",
       "aliases": [
         "DomInation",
-        "Dom1nation"
+        "Dom1nation",
+        "007"
       ],
       "pending_review": false
     },
